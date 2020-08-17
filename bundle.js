@@ -1,9 +1,46 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-var {translateExpression} = require('@xon/translator-ts')
+var { translateProgram } = require("@xon/translator-ts");
+var code = require("./sample");
 
+input.value = code;
+translate();
 
-console.log(translateExpression('2*2'))
-},{"@xon/translator-ts":140}],2:[function(require,module,exports){
+const debounce = (func) => {
+  let timeoutId;
+  return () => {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(func, 500);
+  };
+};
+
+function translate() {
+  try {
+    output.textContent = translateProgram(input.value);
+    error.textContent = "";
+  } catch (err) {
+    error.textContent = err.message;
+  }
+}
+
+input.addEventListener("input", debounce(translate));
+
+input.onkeydown = function (e) {
+  console.log("sdf");
+  if (e.keyCode == 9 || e.which == 9) {
+    e.preventDefault();
+    var s = this.selectionStart;
+    this.value =
+      this.value.substring(0, this.selectionStart) +
+      "    " +
+      this.value.substring(this.selectionEnd);
+    this.selectionEnd = s + 4;
+  }
+};
+
+console.error = (x) =>
+  setTimeout(() => (document.getElementById("error").textContent = x));
+
+},{"./sample":375,"@xon/translator-ts":140}],2:[function(require,module,exports){
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -7774,17 +7811,24 @@ __exportStar(require("./util"), exports);
 },{"./translate":142,"./tree":197,"./types":215,"./util":216}],142:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.translateExpression = void 0;
+exports.translateProgram = exports.translateExpression = void 0;
 const ast_1 = require("@xon/ast");
 const expression_helper_1 = require("./tree/expression/expression-helper");
+const program_translator_1 = require("./tree/program/program.translator");
 function translateExpression(xonCode) {
     const tree = ast_1.parseExpression(xonCode);
     const translator = expression_helper_1.getExpressionTranslator(tree);
     return translator.translate();
 }
 exports.translateExpression = translateExpression;
+function translateProgram(xonCode) {
+    const tree = ast_1.parseCode(xonCode, ast_1.ProgramTree);
+    const translator = new program_translator_1.ProgramTranslator(tree);
+    return translator.translate();
+}
+exports.translateProgram = translateProgram;
 
-},{"./tree/expression/expression-helper":156,"@xon/ast":2}],143:[function(require,module,exports){
+},{"./tree/expression/expression-helper":156,"./tree/program/program.translator":199,"@xon/ast":2}],143:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BaseTranslator = void 0;
@@ -34575,4 +34619,41 @@ arguments[4][365][0].apply(exports,arguments)
 arguments[4][366][0].apply(exports,arguments)
 },{"dup":366}],374:[function(require,module,exports){
 arguments[4][367][0].apply(exports,arguments)
-},{"./support/isBuffer":373,"_process":371,"dup":367,"inherits":372}]},{},[1]);
+},{"./support/isBuffer":373,"_process":371,"dup":367,"inherits":372}],375:[function(require,module,exports){
+module.exports = `si = require('systeminformation')
+
+render_plugin()
+
+render_plugin():
+    si = 8
+    si.batter().then(init)
+
+get_charge_color(p Number):
+    return select:
+        p > 40: '\u001b[32m' //green
+        p > 20: '\u001b[33m' //yellow
+        p > 0: '\u001b[31m' //red
+
+init(battery any):
+    chargeIcon = battery.ischarging && '⚡' || ''
+    color = get_charge_color(battery.percent)
+    console.log(f'{color}{chargeIcon}{battery.percent}% | size=13')
+    console.log('---')
+    console.log('Refresh|refresh=true')
+
+
+SimpleClass:
+    _prop = 5
+    tryped Number = 6
+    only_typed String
+
+    method(t Number, v = 4, vt String = 'sff'):
+        if t+v+vt:
+            render_plugin()
+
+    location(x {z Number, dim String}, y Number = 6): ._coord(x.z, y)
+
+    _coord(x Number, y Number):
+        console.log(1 + 1)
+        console.log(222)`
+},{}]},{},[1]);
