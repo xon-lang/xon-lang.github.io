@@ -40,7 +40,7 @@ input.onkeydown = function (e) {
 console.error = (x) =>
   setTimeout(() => (document.getElementById("error").textContent = x));
 
-},{"./sample":375,"@xon/translator-ts":140}],2:[function(require,module,exports){
+},{"./sample":407,"@xon/translator-ts":140}],2:[function(require,module,exports){
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -545,7 +545,7 @@ class XonLexerBase extends antlr4ts_1.Lexer {
 }
 exports.XonLexerBase = XonLexerBase;
 
-},{"./xon-parser":8,"antlr4ts":324,"antlr4ts/CommonToken":224,"antlr4ts/Token":252}],7:[function(require,module,exports){
+},{"./xon-parser":8,"antlr4ts":356,"antlr4ts/CommonToken":256,"antlr4ts/Token":284}],7:[function(require,module,exports){
 "use strict";
 // Generated from XonLexer.g4 by ANTLR 4.7.3-SNAPSHOT
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
@@ -710,9 +710,9 @@ XonLexer.LineBreak = 14;
 XonLexer.BitAnd = 15;
 XonLexer.BitOr = 16;
 XonLexer.BitXor = 17;
-XonLexer.RightShiftArithmetic = 18;
-XonLexer.LeftShiftArithmetic = 19;
-XonLexer.RightShiftLogical = 20;
+XonLexer.BitNot = 18;
+XonLexer.RightShiftArithmetic = 19;
+XonLexer.LeftShiftArithmetic = 20;
 XonLexer.OpenBracket = 21;
 XonLexer.CloseBracket = 22;
 XonLexer.OpenParen = 23;
@@ -722,54 +722,49 @@ XonLexer.CloseBrace = 26;
 XonLexer.Ad = 27;
 XonLexer.Comma = 28;
 XonLexer.Assign = 29;
-XonLexer.QuestionMark = 30;
+XonLexer.Question = 30;
 XonLexer.Colon = 31;
-XonLexer.TwoColon = 32;
-XonLexer.Dot = 33;
-XonLexer.Plus = 34;
-XonLexer.Minus = 35;
-XonLexer.BitNot = 36;
-XonLexer.Not = 37;
-XonLexer.Multiply = 38;
-XonLexer.Divide = 39;
-XonLexer.Modulus = 40;
-XonLexer.Pow = 41;
-XonLexer.Sharp = 42;
-XonLexer.LessThan = 43;
-XonLexer.MoreThan = 44;
-XonLexer.LessThanEquals = 45;
-XonLexer.MoreThanEquals = 46;
-XonLexer.Equals = 47;
-XonLexer.NotEquals = 48;
-XonLexer.And = 49;
-XonLexer.Or = 50;
-XonLexer.MultiplyAssign = 51;
-XonLexer.DivideAssign = 52;
-XonLexer.ModulusAssign = 53;
-XonLexer.PlusAssign = 54;
-XonLexer.MinusAssign = 55;
-XonLexer.LeftShiftArithmeticAssign = 56;
-XonLexer.RightShiftArithmeticAssign = 57;
-XonLexer.RightShiftLogicalAssign = 58;
-XonLexer.BitAndAssign = 59;
-XonLexer.BitXorAssign = 60;
-XonLexer.BitOrAssign = 61;
-XonLexer.LambdaStart = 62;
-XonLexer.Pipe = 63;
-XonLexer.Underscore = 64;
-XonLexer.Declaration = 65;
-XonLexer.Constant = 66;
-XonLexer.Spread = 67;
-XonLexer.NullLiteral = 68;
-XonLexer.BooleanLiteral = 69;
-XonLexer.NumberLiteral = 70;
-XonLexer.StringLiteral = 71;
-XonLexer.StringFormatStart = 72;
-XonLexer.StringFormatMiddle = 73;
-XonLexer.StringFormatEnd = 74;
-XonLexer.ID = 75;
-XonLexer.Skip = 76;
-XonLexer.UnexpectedCharacter = 77;
+XonLexer.Dot = 32;
+XonLexer.Add = 33;
+XonLexer.Substract = 34;
+XonLexer.Not = 35;
+XonLexer.Multiply = 36;
+XonLexer.Divide = 37;
+XonLexer.Modulo = 38;
+XonLexer.Pow = 39;
+XonLexer.Sharp = 40;
+XonLexer.LessThan = 41;
+XonLexer.MoreThan = 42;
+XonLexer.LessThanEquals = 43;
+XonLexer.MoreThanEquals = 44;
+XonLexer.Equals = 45;
+XonLexer.NotEquals = 46;
+XonLexer.And = 47;
+XonLexer.Or = 48;
+XonLexer.MultiplyAssign = 49;
+XonLexer.DivideAssign = 50;
+XonLexer.ModuloAssign = 51;
+XonLexer.AddAssign = 52;
+XonLexer.SubstractAssign = 53;
+XonLexer.LeftShiftArithmeticAssign = 54;
+XonLexer.RightShiftArithmeticAssign = 55;
+XonLexer.BitAndAssign = 56;
+XonLexer.BitXorAssign = 57;
+XonLexer.BitOrAssign = 58;
+XonLexer.LambdaStart = 59;
+XonLexer.Pipe = 60;
+XonLexer.Underscore = 61;
+XonLexer.Spread = 62;
+XonLexer.NullLiteral = 63;
+XonLexer.BooleanLiteral = 64;
+XonLexer.NumberLiteral = 65;
+XonLexer.StringLiteral = 66;
+XonLexer.StringFormatStart = 67;
+XonLexer.StringFormatMiddle = 68;
+XonLexer.StringFormatEnd = 69;
+XonLexer.ID = 70;
+XonLexer.Skip = 71;
+XonLexer.UnexpectedCharacter = 72;
 XonLexer.ERROR = 2;
 // tslint:disable:no-trailing-whitespace
 XonLexer.channelNames = [
@@ -781,16 +776,15 @@ XonLexer.modeNames = [
 ];
 XonLexer.ruleNames = [
     "As", "If", "Else", "Loop", "In", "Pass", "Continue", "Break", "Return",
-    "Select", "Preprocessor", "LineBreak", "BitAnd", "BitOr", "BitXor", "RightShiftArithmetic",
-    "LeftShiftArithmetic", "RightShiftLogical", "OpenBracket", "CloseBracket",
+    "Select", "Preprocessor", "LineBreak", "BitAnd", "BitOr", "BitXor", "BitNot",
+    "RightShiftArithmetic", "LeftShiftArithmetic", "OpenBracket", "CloseBracket",
     "OpenParen", "CloseParen", "OpenBrace", "CloseBrace", "Ad", "Comma", "Assign",
-    "QuestionMark", "Colon", "TwoColon", "Dot", "Plus", "Minus", "BitNot",
-    "Not", "Multiply", "Divide", "Modulus", "Pow", "Sharp", "LessThan", "MoreThan",
-    "LessThanEquals", "MoreThanEquals", "Equals", "NotEquals", "And", "Or",
-    "MultiplyAssign", "DivideAssign", "ModulusAssign", "PlusAssign", "MinusAssign",
-    "LeftShiftArithmeticAssign", "RightShiftArithmeticAssign", "RightShiftLogicalAssign",
-    "BitAndAssign", "BitXorAssign", "BitOrAssign", "LambdaStart", "Pipe",
-    "Underscore", "Declaration", "Constant", "Spread", "NullLiteral", "BooleanLiteral",
+    "Question", "Colon", "Dot", "Add", "Substract", "Not", "Multiply", "Divide",
+    "Modulo", "Pow", "Sharp", "LessThan", "MoreThan", "LessThanEquals", "MoreThanEquals",
+    "Equals", "NotEquals", "And", "Or", "MultiplyAssign", "DivideAssign",
+    "ModuloAssign", "AddAssign", "SubstractAssign", "LeftShiftArithmeticAssign",
+    "RightShiftArithmeticAssign", "BitAndAssign", "BitXorAssign", "BitOrAssign",
+    "LambdaStart", "Pipe", "Underscore", "Spread", "NullLiteral", "BooleanLiteral",
     "NumberLiteral", "StringLiteral", "StringFormatStart", "StringFormatMiddle",
     "StringFormatEnd", "ID", "Skip", "UnexpectedCharacter", "SPACES", "MULTI_LINE_COMMENT",
     "SINGLE_LINE_COMMENT", "LINE_JOINING", "NUMBER", "CHARACTER",
@@ -798,31 +792,30 @@ XonLexer.ruleNames = [
 XonLexer._LITERAL_NAMES = [
     undefined, undefined, undefined, "'as'", "'if'", "'else'", "'loop'", "'in'",
     "'pass'", "'continue'", "'break'", "'return'", "'select'", undefined,
-    undefined, "'and'", "'or'", "'xor'", "'>>'", "'<<'", "'>>>'", "'['", "']'",
-    "'('", "')'", "'{'", "'}'", "'@'", "','", "'='", "'?'", "':'", "'::'",
-    "'.'", "'+'", "'-'", "'~'", "'!'", "'*'", "'/'", "'%'", "'^'", "'#'",
-    "'<'", "'>'", "'<='", "'>='", "'=='", "'!='", "'&&'", "'||'", "'*='",
-    "'/='", "'%='", "'+='", "'-='", "'<<='", "'>>='", "'>>>='", "'&='", "'^='",
-    "'|='", "'\\'", "'|'", "'_'", "':='", "'::='", "'...'", "'null'",
+    undefined, "'and'", "'or'", "'xor'", "'not'", "'>>'", "'<<'", "'['", "']'",
+    "'('", "')'", "'{'", "'}'", "'@'", "','", "'='", "'?'", "':'", "'.'",
+    "'+'", "'-'", "'!'", "'*'", "'/'", "'%'", "'^'", "'#'", "'<'", "'>'",
+    "'<='", "'>='", "'=='", "'!='", "'&&'", "'||'", "'*='", "'/='", "'%='",
+    "'+='", "'-='", "'<<='", "'>>='", undefined, undefined, undefined, "'\\'",
+    "'|'", "'_'", "'...'", "'null'",
 ];
 XonLexer._SYMBOLIC_NAMES = [
     undefined, "INDENT", "DEDENT", "As", "If", "Else", "Loop", "In", "Pass",
     "Continue", "Break", "Return", "Select", "Preprocessor", "LineBreak",
-    "BitAnd", "BitOr", "BitXor", "RightShiftArithmetic", "LeftShiftArithmetic",
-    "RightShiftLogical", "OpenBracket", "CloseBracket", "OpenParen", "CloseParen",
-    "OpenBrace", "CloseBrace", "Ad", "Comma", "Assign", "QuestionMark", "Colon",
-    "TwoColon", "Dot", "Plus", "Minus", "BitNot", "Not", "Multiply", "Divide",
-    "Modulus", "Pow", "Sharp", "LessThan", "MoreThan", "LessThanEquals", "MoreThanEquals",
-    "Equals", "NotEquals", "And", "Or", "MultiplyAssign", "DivideAssign",
-    "ModulusAssign", "PlusAssign", "MinusAssign", "LeftShiftArithmeticAssign",
-    "RightShiftArithmeticAssign", "RightShiftLogicalAssign", "BitAndAssign",
-    "BitXorAssign", "BitOrAssign", "LambdaStart", "Pipe", "Underscore", "Declaration",
-    "Constant", "Spread", "NullLiteral", "BooleanLiteral", "NumberLiteral",
+    "BitAnd", "BitOr", "BitXor", "BitNot", "RightShiftArithmetic", "LeftShiftArithmetic",
+    "OpenBracket", "CloseBracket", "OpenParen", "CloseParen", "OpenBrace",
+    "CloseBrace", "Ad", "Comma", "Assign", "Question", "Colon", "Dot", "Add",
+    "Substract", "Not", "Multiply", "Divide", "Modulo", "Pow", "Sharp", "LessThan",
+    "MoreThan", "LessThanEquals", "MoreThanEquals", "Equals", "NotEquals",
+    "And", "Or", "MultiplyAssign", "DivideAssign", "ModuloAssign", "AddAssign",
+    "SubstractAssign", "LeftShiftArithmeticAssign", "RightShiftArithmeticAssign",
+    "BitAndAssign", "BitXorAssign", "BitOrAssign", "LambdaStart", "Pipe",
+    "Underscore", "Spread", "NullLiteral", "BooleanLiteral", "NumberLiteral",
     "StringLiteral", "StringFormatStart", "StringFormatMiddle", "StringFormatEnd",
     "ID", "Skip", "UnexpectedCharacter",
 ];
 XonLexer.VOCABULARY = new VocabularyImpl_1.VocabularyImpl(XonLexer._LITERAL_NAMES, XonLexer._SYMBOLIC_NAMES, []);
-XonLexer._serializedATN = "\x03\uC91D\uCABA\u058D\uAFBA\u4F53\u0607\uEA8B\uC241\x02O\u0211\b\x01" +
+XonLexer._serializedATN = "\x03\uC91D\uCABA\u058D\uAFBA\u4F53\u0607\uEA8B\uC241\x02J\u0215\b\x01" +
     "\x04\x02\t\x02\x04\x03\t\x03\x04\x04\t\x04\x04\x05\t\x05\x04\x06\t\x06" +
     "\x04\x07\t\x07\x04\b\t\b\x04\t\t\t\x04\n\t\n\x04\v\t\v\x04\f\t\f\x04\r" +
     "\t\r\x04\x0E\t\x0E\x04\x0F\t\x0F\x04\x10\t\x10\x04\x11\t\x11\x04\x12\t" +
@@ -833,243 +826,247 @@ XonLexer._serializedATN = "\x03\uC91D\uCABA\u058D\uAFBA\u4F53\u0607\uEA8B\uC241\
     "+\t+\x04,\t,\x04-\t-\x04.\t.\x04/\t/\x040\t0\x041\t1\x042\t2\x043\t3\x04" +
     "4\t4\x045\t5\x046\t6\x047\t7\x048\t8\x049\t9\x04:\t:\x04;\t;\x04<\t<\x04" +
     "=\t=\x04>\t>\x04?\t?\x04@\t@\x04A\tA\x04B\tB\x04C\tC\x04D\tD\x04E\tE\x04" +
-    "F\tF\x04G\tG\x04H\tH\x04I\tI\x04J\tJ\x04K\tK\x04L\tL\x04M\tM\x04N\tN\x04" +
-    "O\tO\x04P\tP\x04Q\tQ\x04R\tR\x03\x02\x03\x02\x03\x02\x03\x03\x03\x03\x03" +
-    "\x03\x03\x04\x03\x04\x03\x04\x03\x04\x03\x04\x03\x05\x03\x05\x03\x05\x03" +
-    "\x05\x03\x05\x03\x06\x03\x06\x03\x06\x03\x07\x03\x07\x03\x07\x03\x07\x03" +
-    "\x07\x03\b\x03\b\x03\b\x03\b\x03\b\x03\b\x03\b\x03\b\x03\b\x03\t\x03\t" +
-    "\x03\t\x03\t\x03\t\x03\t\x03\n\x03\n\x03\n\x03\n\x03\n\x03\n\x03\n\x03" +
-    "\v\x03\v\x03\v\x03\v\x03\v\x03\v\x03\v\x03\f\x03\f\x03\f\x03\f\x06\f\xDF" +
-    "\n\f\r\f\x0E\f\xE0\x03\r\x03\r\x03\r\x05\r\xE6\n\r\x03\r\x03\r\x05\r\xEA" +
-    "\n\r\x03\r\x05\r\xED\n\r\x05\r\xEF\n\r\x03\r\x03\r\x03\x0E\x03\x0E\x03" +
-    "\x0E\x03\x0E\x03\x0F\x03\x0F\x03\x0F\x03\x10\x03\x10\x03\x10\x03\x10\x03" +
-    "\x11\x03\x11\x03\x11\x03\x12\x03\x12\x03\x12\x03\x13\x03\x13\x03\x13\x03" +
-    "\x13\x03\x14\x03\x14\x03\x14\x03\x15\x03\x15\x03\x15\x03\x16\x03\x16\x03" +
-    "\x16\x03\x17\x03\x17\x03\x17\x03\x18\x03\x18\x03\x18\x03\x19\x03\x19\x03" +
-    "\x19\x03\x1A\x03\x1A\x03\x1B\x03\x1B\x03\x1C\x03\x1C\x03\x1D\x03\x1D\x03" +
-    "\x1E\x03\x1E\x03\x1F\x03\x1F\x03\x1F\x03 \x03 \x03!\x03!\x03\"\x03\"\x03" +
-    "#\x03#\x03$\x03$\x03%\x03%\x03&\x03&\x03\'\x03\'\x03(\x03(\x03)\x03)\x03" +
-    "*\x03*\x03+\x03+\x03,\x03,\x03,\x03-\x03-\x03-\x03.\x03.\x03.\x03/\x03" +
-    "/\x03/\x030\x030\x030\x031\x031\x031\x032\x032\x032\x033\x033\x033\x03" +
-    "4\x034\x034\x035\x035\x035\x036\x036\x036\x037\x037\x037\x037\x038\x03" +
-    "8\x038\x038\x039\x039\x039\x039\x039\x03:\x03:\x03:\x03;\x03;\x03;\x03" +
-    "<\x03<\x03<\x03=\x03=\x03>\x03>\x03?\x03?\x03@\x03@\x03@\x03A\x03A\x03" +
-    "A\x03A\x03B\x03B\x03B\x03B\x03C\x03C\x03C\x03C\x03C\x03D\x03D\x03D\x03" +
-    "D\x03D\x03D\x03D\x03D\x03D\x05D\u0195\nD\x03E\x03E\x05E\u0199\nE\x03E" +
-    "\x03E\x05E\u019D\nE\x03F\x03F\x07F\u01A1\nF\fF\x0EF\u01A4\vF\x03F\x03" +
-    "F\x03G\x03G\x03G\x03G\x07G\u01AC\nG\fG\x0EG\u01AF\vG\x03G\x03G\x03H\x03" +
-    "H\x07H\u01B5\nH\fH\x0EH\u01B8\vH\x03H\x03H\x03I\x03I\x07I\u01BE\nI\fI" +
-    "\x0EI\u01C1\vI\x03I\x03I\x03J\x03J\x07J\u01C7\nJ\fJ\x0EJ\u01CA\vJ\x03" +
-    "K\x03K\x03K\x03K\x05K\u01D0\nK\x03K\x03K\x03L\x03L\x03L\x03L\x03M\x06" +
-    "M\u01D9\nM\rM\x0EM\u01DA\x03N\x03N\x03N\x03N\x07N\u01E1\nN\fN\x0EN\u01E4" +
-    "\vN\x03N\x03N\x03N\x03O\x03O\x03O\x03O\x07O\u01ED\nO\fO\x0EO\u01F0\vO" +
-    "\x03P\x03P\x05P\u01F4\nP\x03P\x05P\u01F7\nP\x03P\x03P\x05P\u01FB\nP\x03" +
-    "Q\x06Q\u01FE\nQ\rQ\x0EQ\u01FF\x03Q\x03Q\x06Q\u0204\nQ\rQ\x0EQ\u0205\x07" +
-    "Q\u0208\nQ\fQ\x0EQ\u020B\vQ\x03R\x03R\x03R\x05R\u0210\nR\x03\u01E2\x02" +
-    "\x02S\x03\x02\x05\x05\x02\x06\x07\x02\x07\t\x02\b\v\x02\t\r\x02\n\x0F" +
-    "\x02\v\x11\x02\f\x13\x02\r\x15\x02\x0E\x17\x02\x0F\x19\x02\x10\x1B\x02" +
-    "\x11\x1D\x02\x12\x1F\x02\x13!\x02\x14#\x02\x15%\x02\x16\'\x02\x17)\x02" +
-    "\x18+\x02\x19-\x02\x1A/\x02\x1B1\x02\x1C3\x02\x1D5\x02\x1E7\x02\x1F9\x02" +
-    " ;\x02!=\x02\"?\x02#A\x02$C\x02%E\x02&G\x02\'I\x02(K\x02)M\x02*O\x02+" +
-    "Q\x02,S\x02-U\x02.W\x02/Y\x020[\x021]\x022_\x023a\x024c\x025e\x026g\x02" +
-    "7i\x028k\x029m\x02:o\x02;q\x02<s\x02=u\x02>w\x02?y\x02@{\x02A}\x02B\x7F" +
-    "\x02C\x81\x02D\x83\x02E\x85\x02F\x87\x02G\x89\x02H\x8B\x02I\x8D\x02J\x8F" +
-    "\x02K\x91\x02L\x93\x02M\x95\x02N\x97\x02O\x99\x02\x02\x9B\x02\x02\x9D" +
-    "\x02\x02\x9F\x02\x02\xA1\x02\x02\xA3\x02\x02\x03\x02\t\x04\x02\f\f\x0F" +
-    "\x0F\x05\x02C\\aac|\x06\x022;C\\aac|\x04\x02\v\v\"\"\x03\x022;\x03\x02" +
-    "))\v\x02$$))^^ddhhppttvvxx\x02\u0224\x02\x03\x03\x02\x02\x02\x02\x05\x03" +
-    "\x02\x02\x02\x02\x07\x03\x02\x02\x02\x02\t\x03\x02\x02\x02\x02\v\x03\x02" +
-    "\x02\x02\x02\r\x03\x02\x02\x02\x02\x0F\x03\x02\x02\x02\x02\x11\x03\x02" +
-    "\x02\x02\x02\x13\x03\x02\x02\x02\x02\x15\x03\x02\x02\x02\x02\x17\x03\x02" +
-    "\x02\x02\x02\x19\x03\x02\x02\x02\x02\x1B\x03\x02\x02\x02\x02\x1D\x03\x02" +
-    "\x02\x02\x02\x1F\x03\x02\x02\x02\x02!\x03\x02\x02\x02\x02#\x03\x02\x02" +
-    "\x02\x02%\x03\x02\x02\x02\x02\'\x03\x02\x02\x02\x02)\x03\x02\x02\x02\x02" +
-    "+\x03\x02\x02\x02\x02-\x03\x02\x02\x02\x02/\x03\x02\x02\x02\x021\x03\x02" +
-    "\x02\x02\x023\x03\x02\x02\x02\x025\x03\x02\x02\x02\x027\x03\x02\x02\x02" +
-    "\x029\x03\x02\x02\x02\x02;\x03\x02\x02\x02\x02=\x03\x02\x02\x02\x02?\x03" +
-    "\x02\x02\x02\x02A\x03\x02\x02\x02\x02C\x03\x02\x02\x02\x02E\x03\x02\x02" +
-    "\x02\x02G\x03\x02\x02\x02\x02I\x03\x02\x02\x02\x02K\x03\x02\x02\x02\x02" +
-    "M\x03\x02\x02\x02\x02O\x03\x02\x02\x02\x02Q\x03\x02\x02\x02\x02S\x03\x02" +
-    "\x02\x02\x02U\x03\x02\x02\x02\x02W\x03\x02\x02\x02\x02Y\x03\x02\x02\x02" +
-    "\x02[\x03\x02\x02\x02\x02]\x03\x02\x02\x02\x02_\x03\x02\x02\x02\x02a\x03" +
-    "\x02\x02\x02\x02c\x03\x02\x02\x02\x02e\x03\x02\x02\x02\x02g\x03\x02\x02" +
-    "\x02\x02i\x03\x02\x02\x02\x02k\x03\x02\x02\x02\x02m\x03\x02\x02\x02\x02" +
-    "o\x03\x02\x02\x02\x02q\x03\x02\x02\x02\x02s\x03\x02\x02\x02\x02u\x03\x02" +
-    "\x02\x02\x02w\x03\x02\x02\x02\x02y\x03\x02\x02\x02\x02{\x03\x02\x02\x02" +
-    "\x02}\x03\x02\x02\x02\x02\x7F\x03\x02\x02\x02\x02\x81\x03\x02\x02\x02" +
-    "\x02\x83\x03\x02\x02\x02\x02\x85\x03\x02\x02\x02\x02\x87\x03\x02\x02\x02" +
-    "\x02\x89\x03\x02\x02\x02\x02\x8B\x03\x02\x02\x02\x02\x8D\x03\x02\x02\x02" +
-    "\x02\x8F\x03\x02\x02\x02\x02\x91\x03\x02\x02\x02\x02\x93\x03\x02\x02\x02" +
-    "\x02\x95\x03\x02\x02\x02\x02\x97\x03\x02\x02\x02\x03\xA5\x03\x02\x02\x02" +
-    "\x05\xA8\x03\x02\x02\x02\x07\xAB\x03\x02\x02\x02\t\xB0\x03\x02\x02\x02" +
-    "\v\xB5\x03\x02\x02\x02\r\xB8\x03\x02\x02\x02\x0F\xBD\x03\x02\x02\x02\x11" +
-    "\xC6\x03\x02\x02\x02\x13\xCC\x03\x02\x02\x02\x15\xD3\x03\x02\x02\x02\x17" +
-    "\xDA\x03\x02\x02\x02\x19\xEE\x03\x02\x02\x02\x1B\xF2\x03\x02\x02\x02\x1D" +
-    "\xF6\x03\x02\x02\x02\x1F\xF9\x03\x02\x02\x02!\xFD\x03\x02\x02\x02#\u0100" +
-    "\x03\x02\x02\x02%\u0103\x03\x02\x02\x02\'\u0107\x03\x02\x02\x02)\u010A" +
-    "\x03\x02\x02\x02+\u010D\x03\x02\x02\x02-\u0110\x03\x02\x02\x02/\u0113" +
-    "\x03\x02\x02\x021\u0116\x03\x02\x02\x023\u0119\x03\x02\x02\x025\u011B" +
-    "\x03\x02\x02\x027\u011D\x03\x02\x02\x029\u011F\x03\x02\x02\x02;\u0121" +
-    "\x03\x02\x02\x02=\u0123\x03\x02\x02\x02?\u0126\x03\x02\x02\x02A\u0128" +
-    "\x03\x02\x02\x02C\u012A\x03\x02\x02\x02E\u012C\x03\x02\x02\x02G\u012E" +
-    "\x03\x02\x02\x02I\u0130\x03\x02\x02\x02K\u0132\x03\x02\x02\x02M\u0134" +
-    "\x03\x02\x02\x02O\u0136\x03\x02\x02\x02Q\u0138\x03\x02\x02\x02S\u013A" +
-    "\x03\x02\x02\x02U\u013C\x03\x02\x02\x02W\u013E\x03\x02\x02\x02Y\u0141" +
-    "\x03\x02\x02\x02[\u0144\x03\x02\x02\x02]\u0147\x03\x02\x02\x02_\u014A" +
-    "\x03\x02\x02\x02a\u014D\x03\x02\x02\x02c\u0150\x03\x02\x02\x02e\u0153" +
-    "\x03\x02\x02\x02g\u0156\x03\x02\x02\x02i\u0159\x03\x02\x02\x02k\u015C" +
-    "\x03\x02\x02\x02m\u015F\x03\x02\x02\x02o\u0163\x03\x02\x02\x02q\u0167" +
-    "\x03\x02\x02\x02s\u016C\x03\x02\x02\x02u\u016F\x03\x02\x02\x02w\u0172" +
-    "\x03\x02\x02\x02y\u0175\x03\x02\x02\x02{\u0177\x03\x02\x02\x02}\u0179" +
-    "\x03\x02\x02\x02\x7F\u017B\x03\x02\x02\x02\x81\u017E\x03\x02\x02\x02\x83" +
-    "\u0182\x03\x02\x02\x02\x85\u0186\x03\x02\x02\x02\x87\u0194\x03\x02\x02" +
-    "\x02\x89\u019C\x03\x02\x02\x02\x8B\u019E\x03\x02\x02\x02\x8D\u01A7\x03" +
-    "\x02\x02\x02\x8F\u01B2\x03\x02\x02\x02\x91\u01BB\x03\x02\x02\x02\x93\u01C4" +
-    "\x03\x02\x02\x02\x95\u01CF\x03\x02\x02\x02\x97\u01D3\x03\x02\x02\x02\x99" +
-    "\u01D8\x03\x02\x02\x02\x9B\u01DC\x03\x02\x02\x02\x9D\u01E8\x03\x02\x02" +
-    "\x02\x9F\u01F1\x03\x02\x02\x02\xA1\u01FD\x03\x02\x02\x02\xA3\u020F\x03" +
-    "\x02\x02\x02\xA5\xA6\x07c\x02\x02\xA6\xA7\x07u\x02\x02\xA7\x04\x03\x02" +
-    "\x02\x02\xA8\xA9\x07k\x02\x02\xA9\xAA\x07h\x02\x02\xAA\x06\x03\x02\x02" +
-    "\x02\xAB\xAC\x07g\x02\x02\xAC\xAD\x07n\x02\x02\xAD\xAE\x07u\x02\x02\xAE" +
-    "\xAF\x07g\x02\x02\xAF\b\x03\x02\x02\x02\xB0\xB1\x07n\x02\x02\xB1\xB2\x07" +
-    "q\x02\x02\xB2\xB3\x07q\x02\x02\xB3\xB4\x07r\x02\x02\xB4\n\x03\x02\x02" +
-    "\x02\xB5\xB6\x07k\x02\x02\xB6\xB7\x07p\x02\x02\xB7\f\x03\x02\x02\x02\xB8" +
-    "\xB9\x07r\x02\x02\xB9\xBA\x07c\x02\x02\xBA\xBB\x07u\x02\x02\xBB\xBC\x07" +
-    "u\x02\x02\xBC\x0E\x03\x02\x02\x02\xBD\xBE\x07e\x02\x02\xBE\xBF\x07q\x02" +
-    "\x02\xBF\xC0\x07p\x02\x02\xC0\xC1\x07v\x02\x02\xC1\xC2\x07k\x02\x02\xC2" +
-    "\xC3\x07p\x02\x02\xC3\xC4\x07w\x02\x02\xC4\xC5\x07g\x02\x02\xC5\x10\x03" +
-    "\x02\x02\x02\xC6\xC7\x07d\x02\x02\xC7\xC8\x07t\x02\x02\xC8\xC9\x07g\x02" +
-    "\x02\xC9\xCA\x07c\x02\x02\xCA\xCB\x07m\x02\x02\xCB\x12\x03\x02\x02\x02" +
-    "\xCC\xCD\x07t\x02\x02\xCD\xCE\x07g\x02\x02\xCE\xCF\x07v\x02\x02\xCF\xD0" +
-    "\x07w\x02\x02\xD0\xD1\x07t\x02\x02\xD1\xD2\x07p\x02\x02\xD2\x14\x03\x02" +
-    "\x02\x02\xD3\xD4\x07u\x02\x02\xD4\xD5\x07g\x02\x02\xD5\xD6\x07n\x02\x02" +
-    "\xD6\xD7\x07g\x02\x02\xD7\xD8\x07e\x02\x02\xD8\xD9\x07v\x02\x02\xD9\x16" +
-    "\x03\x02\x02\x02\xDA\xDB\x07%\x02\x02\xDB\xDC\x07<\x02\x02\xDC\xDE\x03" +
-    "\x02\x02\x02\xDD\xDF\n\x02\x02\x02\xDE\xDD\x03\x02\x02\x02\xDF\xE0\x03" +
-    "\x02\x02\x02\xE0\xDE\x03\x02\x02\x02\xE0\xE1\x03\x02\x02\x02\xE1\x18\x03" +
-    "\x02\x02\x02\xE2\xE3\x06\r\x02\x02\xE3\xEF\x05\x99M\x02\xE4\xE6\x07\x0F" +
-    "\x02\x02\xE5\xE4\x03\x02\x02\x02\xE5\xE6\x03\x02\x02\x02\xE6\xE7\x03\x02" +
-    "\x02\x02\xE7\xEA\x07\f\x02\x02\xE8\xEA\x07\x0F\x02\x02\xE9\xE5\x03\x02" +
-    "\x02\x02\xE9\xE8\x03\x02\x02\x02\xEA\xEC\x03\x02\x02\x02\xEB\xED\x05\x99" +
-    "M\x02\xEC\xEB\x03\x02\x02\x02\xEC\xED\x03\x02\x02\x02\xED\xEF\x03\x02" +
-    "\x02\x02\xEE\xE2\x03\x02\x02\x02\xEE\xE9\x03\x02\x02\x02\xEF\xF0\x03\x02" +
-    "\x02\x02\xF0\xF1\b\r\x02\x02\xF1\x1A\x03\x02\x02\x02\xF2\xF3\x07c\x02" +
-    "\x02\xF3\xF4\x07p\x02\x02\xF4\xF5\x07f\x02\x02\xF5\x1C\x03\x02\x02\x02" +
-    "\xF6\xF7\x07q\x02\x02\xF7\xF8\x07t\x02\x02\xF8\x1E\x03\x02\x02\x02\xF9" +
-    "\xFA\x07z\x02\x02\xFA\xFB\x07q\x02\x02\xFB\xFC\x07t\x02\x02\xFC \x03\x02" +
-    "\x02\x02\xFD\xFE\x07@\x02\x02\xFE\xFF\x07@\x02\x02\xFF\"\x03\x02\x02\x02" +
-    "\u0100\u0101\x07>\x02\x02\u0101\u0102\x07>\x02\x02\u0102$\x03\x02\x02" +
-    "\x02\u0103\u0104\x07@\x02\x02\u0104\u0105\x07@\x02\x02\u0105\u0106\x07" +
-    "@\x02\x02\u0106&\x03\x02\x02\x02\u0107\u0108\x07]\x02\x02\u0108\u0109" +
-    "\b\x14\x03\x02\u0109(\x03\x02\x02\x02\u010A\u010B\x07_\x02\x02\u010B\u010C" +
-    "\b\x15\x04\x02\u010C*\x03\x02\x02\x02\u010D\u010E\x07*\x02\x02\u010E\u010F" +
-    "\b\x16\x05\x02\u010F,\x03\x02\x02\x02\u0110\u0111\x07+\x02\x02\u0111\u0112" +
-    "\b\x17\x06\x02\u0112.\x03\x02\x02\x02\u0113\u0114\x07}\x02\x02\u0114\u0115" +
-    "\b\x18\x07\x02\u01150\x03\x02\x02\x02\u0116\u0117\x07\x7F\x02\x02\u0117" +
-    "\u0118\b\x19\b\x02\u01182\x03\x02\x02\x02\u0119\u011A\x07B\x02\x02\u011A" +
-    "4\x03\x02\x02\x02\u011B\u011C\x07.\x02\x02\u011C6\x03\x02\x02\x02\u011D" +
-    "\u011E\x07?\x02\x02\u011E8\x03\x02\x02\x02\u011F\u0120\x07A\x02\x02\u0120" +
-    ":\x03\x02\x02\x02\u0121\u0122\x07<\x02\x02\u0122<\x03\x02\x02\x02\u0123" +
-    "\u0124\x07<\x02\x02\u0124\u0125\x07<\x02\x02\u0125>\x03\x02\x02\x02\u0126" +
-    "\u0127\x070\x02\x02\u0127@\x03\x02\x02\x02\u0128\u0129\x07-\x02\x02\u0129" +
-    "B\x03\x02\x02\x02\u012A\u012B\x07/\x02\x02\u012BD\x03\x02\x02\x02\u012C" +
-    "\u012D\x07\x80\x02\x02\u012DF\x03\x02\x02\x02\u012E\u012F\x07#\x02\x02" +
-    "\u012FH\x03\x02\x02\x02\u0130\u0131\x07,\x02\x02\u0131J\x03\x02\x02\x02" +
-    "\u0132\u0133\x071\x02\x02\u0133L\x03\x02\x02\x02\u0134\u0135\x07\'\x02" +
-    "\x02\u0135N\x03\x02\x02\x02\u0136\u0137\x07`\x02\x02\u0137P\x03\x02\x02" +
-    "\x02\u0138\u0139\x07%\x02\x02\u0139R\x03\x02\x02\x02\u013A\u013B\x07>" +
-    "\x02\x02\u013BT\x03\x02\x02\x02\u013C\u013D\x07@\x02\x02\u013DV\x03\x02" +
-    "\x02\x02\u013E\u013F\x07>\x02\x02\u013F\u0140\x07?\x02\x02\u0140X\x03" +
-    "\x02\x02\x02\u0141\u0142\x07@\x02\x02\u0142\u0143\x07?\x02\x02\u0143Z" +
-    "\x03\x02\x02\x02\u0144\u0145\x07?\x02\x02\u0145\u0146\x07?\x02\x02\u0146" +
-    "\\\x03\x02\x02\x02\u0147\u0148\x07#\x02\x02\u0148\u0149\x07?\x02\x02\u0149" +
-    "^\x03\x02\x02\x02\u014A\u014B\x07(\x02\x02\u014B\u014C\x07(\x02\x02\u014C" +
-    "`\x03\x02\x02\x02\u014D\u014E\x07~\x02\x02\u014E\u014F\x07~\x02\x02\u014F" +
-    "b\x03\x02\x02\x02\u0150\u0151\x07,\x02\x02\u0151\u0152\x07?\x02\x02\u0152" +
-    "d\x03\x02\x02\x02\u0153\u0154\x071\x02\x02\u0154\u0155\x07?\x02\x02\u0155" +
-    "f\x03\x02\x02\x02\u0156\u0157\x07\'\x02\x02\u0157\u0158\x07?\x02\x02\u0158" +
-    "h\x03\x02\x02\x02\u0159\u015A\x07-\x02\x02\u015A\u015B\x07?\x02\x02\u015B" +
-    "j\x03\x02\x02\x02\u015C\u015D\x07/\x02\x02\u015D\u015E\x07?\x02\x02\u015E" +
-    "l\x03\x02\x02\x02\u015F\u0160\x07>\x02\x02\u0160\u0161\x07>\x02\x02\u0161" +
-    "\u0162\x07?\x02\x02\u0162n\x03\x02\x02\x02\u0163\u0164\x07@\x02\x02\u0164" +
-    "\u0165\x07@\x02\x02\u0165\u0166\x07?\x02\x02\u0166p\x03\x02\x02\x02\u0167" +
-    "\u0168\x07@\x02\x02\u0168\u0169\x07@\x02\x02\u0169\u016A\x07@\x02\x02" +
-    "\u016A\u016B\x07?\x02\x02\u016Br\x03\x02\x02\x02\u016C\u016D\x07(\x02" +
-    "\x02\u016D\u016E\x07?\x02\x02\u016Et\x03\x02\x02\x02\u016F\u0170\x07`" +
-    "\x02\x02\u0170\u0171\x07?\x02\x02\u0171v\x03\x02\x02\x02\u0172\u0173\x07" +
-    "~\x02\x02\u0173\u0174\x07?\x02\x02\u0174x\x03\x02\x02\x02\u0175\u0176" +
-    "\x07^\x02\x02\u0176z\x03\x02\x02\x02\u0177\u0178\x07~\x02\x02\u0178|\x03" +
-    "\x02\x02\x02\u0179\u017A\x07a\x02\x02\u017A~\x03\x02\x02\x02\u017B\u017C" +
-    "\x07<\x02\x02\u017C\u017D\x07?\x02\x02\u017D\x80\x03\x02\x02\x02\u017E" +
-    "\u017F\x07<\x02\x02\u017F\u0180\x07<\x02\x02\u0180\u0181\x07?\x02\x02" +
-    "\u0181\x82\x03\x02\x02\x02\u0182\u0183\x070\x02\x02\u0183\u0184\x070\x02" +
-    "\x02\u0184\u0185\x070\x02\x02\u0185\x84\x03\x02\x02\x02\u0186\u0187\x07" +
-    "p\x02\x02\u0187\u0188\x07w\x02\x02\u0188\u0189\x07n\x02\x02\u0189\u018A" +
-    "\x07n\x02\x02\u018A\x86\x03\x02\x02\x02\u018B\u018C\x07v\x02\x02\u018C" +
-    "\u018D\x07t\x02\x02\u018D\u018E\x07w\x02\x02\u018E\u0195\x07g\x02\x02" +
-    "\u018F\u0190\x07h\x02\x02\u0190\u0191\x07c\x02\x02\u0191\u0192\x07n\x02" +
-    "\x02\u0192\u0193\x07u\x02\x02\u0193\u0195\x07g\x02\x02\u0194\u018B\x03" +
-    "\x02\x02\x02\u0194\u018F\x03\x02\x02\x02\u0195\x88\x03\x02\x02\x02\u0196" +
-    "\u019D\x05\xA1Q\x02\u0197\u0199\x05\xA1Q\x02\u0198\u0197\x03\x02\x02\x02" +
-    "\u0198\u0199\x03\x02\x02\x02\u0199\u019A\x03\x02\x02\x02\u019A\u019B\x07" +
-    "0\x02\x02\u019B\u019D\x05\xA1Q\x02\u019C\u0196\x03\x02\x02\x02\u019C\u0198" +
-    "\x03\x02\x02\x02\u019D\x8A\x03\x02\x02\x02\u019E\u01A2\x07)\x02\x02\u019F" +
-    "\u01A1\x05\xA3R\x02\u01A0\u019F\x03\x02\x02\x02\u01A1\u01A4\x03\x02\x02" +
-    "\x02\u01A2\u01A0\x03\x02\x02\x02\u01A2\u01A3\x03\x02\x02\x02\u01A3\u01A5" +
-    "\x03\x02\x02\x02\u01A4\u01A2\x03\x02\x02\x02\u01A5\u01A6\x07)\x02\x02" +
-    "\u01A6\x8C\x03\x02\x02\x02\u01A7\u01A8\x07h\x02\x02\u01A8\u01A9\x07)\x02" +
-    "\x02\u01A9\u01AD\x03\x02\x02\x02\u01AA\u01AC\x05\xA3R\x02\u01AB\u01AA" +
-    "\x03\x02\x02\x02\u01AC\u01AF\x03\x02\x02\x02\u01AD\u01AB\x03\x02\x02\x02" +
-    "\u01AD\u01AE\x03\x02\x02\x02\u01AE\u01B0\x03\x02\x02\x02\u01AF\u01AD\x03" +
-    "\x02\x02\x02\u01B0\u01B1\x07}\x02\x02\u01B1\x8E\x03\x02\x02\x02\u01B2" +
-    "\u01B6\x07\x7F\x02\x02\u01B3\u01B5\x05\xA3R\x02\u01B4\u01B3\x03\x02\x02" +
-    "\x02\u01B5\u01B8\x03\x02\x02\x02\u01B6\u01B4\x03\x02\x02\x02\u01B6\u01B7" +
-    "\x03\x02\x02\x02\u01B7\u01B9\x03\x02\x02\x02\u01B8\u01B6\x03\x02\x02\x02" +
-    "\u01B9\u01BA\x07}\x02\x02\u01BA\x90\x03\x02\x02\x02\u01BB\u01BF\x07\x7F" +
-    "\x02\x02\u01BC\u01BE\x05\xA3R\x02\u01BD\u01BC\x03\x02\x02\x02\u01BE\u01C1" +
-    "\x03\x02\x02\x02\u01BF\u01BD\x03\x02\x02\x02\u01BF\u01C0\x03\x02\x02\x02" +
-    "\u01C0\u01C2\x03\x02\x02\x02\u01C1\u01BF\x03\x02\x02\x02\u01C2\u01C3\x07" +
-    ")\x02\x02\u01C3\x92\x03\x02\x02\x02\u01C4\u01C8\t\x03\x02\x02\u01C5\u01C7" +
-    "\t\x04\x02\x02\u01C6\u01C5\x03\x02\x02\x02\u01C7\u01CA\x03\x02\x02\x02" +
-    "\u01C8\u01C6\x03\x02\x02\x02\u01C8\u01C9\x03\x02\x02\x02\u01C9\x94\x03" +
-    "\x02\x02\x02\u01CA\u01C8\x03\x02\x02\x02\u01CB\u01D0\x05\x99M\x02\u01CC" +
-    "\u01D0\x05\x9DO\x02\u01CD\u01D0\x05\x9BN\x02\u01CE\u01D0\x05\x9FP\x02" +
-    "\u01CF\u01CB\x03\x02\x02\x02\u01CF\u01CC\x03\x02\x02\x02\u01CF\u01CD\x03" +
-    "\x02\x02\x02\u01CF\u01CE\x03\x02\x02\x02\u01D0\u01D1\x03\x02\x02\x02\u01D1" +
-    "\u01D2\bK\t\x02\u01D2\x96\x03\x02\x02\x02\u01D3\u01D4\v\x02\x02\x02\u01D4" +
-    "\u01D5\x03\x02\x02\x02\u01D5\u01D6\bL\n\x02\u01D6\x98\x03\x02\x02\x02" +
-    "\u01D7\u01D9\t\x05\x02\x02\u01D8\u01D7\x03\x02\x02\x02\u01D9\u01DA\x03" +
-    "\x02\x02\x02\u01DA\u01D8\x03\x02\x02\x02\u01DA\u01DB\x03\x02\x02\x02\u01DB" +
-    "\x9A\x03\x02\x02\x02\u01DC\u01DD\x071\x02\x02\u01DD\u01DE\x07,\x02\x02" +
-    "\u01DE\u01E2\x03\x02\x02\x02\u01DF\u01E1\v\x02\x02\x02\u01E0\u01DF\x03" +
-    "\x02\x02\x02\u01E1\u01E4\x03\x02\x02\x02\u01E2\u01E3\x03\x02\x02\x02\u01E2" +
-    "\u01E0\x03\x02\x02\x02\u01E3\u01E5\x03\x02\x02\x02\u01E4\u01E2\x03\x02" +
-    "\x02\x02\u01E5\u01E6\x07,\x02\x02\u01E6\u01E7\x071\x02\x02\u01E7\x9C\x03" +
-    "\x02\x02\x02\u01E8\u01E9\x071\x02\x02\u01E9\u01EA\x071\x02\x02\u01EA\u01EE" +
-    "\x03\x02\x02\x02\u01EB\u01ED\n\x02\x02\x02\u01EC\u01EB\x03\x02\x02\x02" +
-    "\u01ED\u01F0\x03\x02\x02\x02\u01EE\u01EC\x03\x02\x02\x02\u01EE\u01EF\x03" +
-    "\x02\x02\x02\u01EF\x9E\x03\x02\x02\x02\u01F0\u01EE\x03\x02\x02\x02\u01F1" +
-    "\u01F3\x07^\x02\x02\u01F2\u01F4\x05\x99M\x02\u01F3\u01F2\x03\x02\x02\x02" +
-    "\u01F3\u01F4\x03\x02\x02\x02\u01F4\u01FA\x03\x02\x02\x02\u01F5\u01F7\x07" +
-    "\x0F\x02\x02\u01F6\u01F5\x03\x02\x02\x02\u01F6\u01F7\x03\x02\x02\x02\u01F7" +
-    "\u01F8\x03\x02\x02\x02\u01F8\u01FB\x07\f\x02\x02\u01F9\u01FB\x07\x0F\x02" +
-    "\x02\u01FA\u01F6\x03\x02\x02\x02\u01FA\u01F9\x03\x02\x02\x02\u01FB\xA0" +
-    "\x03\x02\x02\x02\u01FC\u01FE\t\x06\x02\x02\u01FD\u01FC\x03\x02\x02\x02" +
-    "\u01FE\u01FF\x03\x02\x02\x02\u01FF\u01FD\x03\x02\x02\x02\u01FF\u0200\x03" +
-    "\x02\x02\x02\u0200\u0209\x03\x02\x02\x02\u0201\u0203\x07a\x02\x02\u0202" +
-    "\u0204\t\x06\x02\x02\u0203\u0202\x03\x02\x02\x02\u0204\u0205\x03\x02\x02" +
-    "\x02\u0205\u0203\x03\x02\x02\x02\u0205\u0206\x03\x02\x02\x02\u0206\u0208" +
-    "\x03\x02\x02\x02\u0207\u0201\x03\x02\x02\x02\u0208\u020B\x03\x02\x02\x02" +
-    "\u0209\u0207\x03\x02\x02\x02\u0209\u020A\x03\x02\x02\x02\u020A\xA2\x03" +
-    "\x02\x02\x02\u020B\u0209\x03\x02\x02\x02\u020C\u0210\n\x07\x02\x02\u020D" +
-    "\u020E\x07^\x02\x02\u020E\u0210\t\b\x02\x02\u020F\u020C\x03\x02\x02\x02" +
-    "\u020F\u020D\x03\x02\x02\x02\u0210\xA4\x03\x02\x02\x02\x1B\x02\xE0\xE5" +
-    "\xE9\xEC\xEE\u0194\u0198\u019C\u01A2\u01AD\u01B6\u01BF\u01C8\u01CF\u01DA" +
-    "\u01E2\u01EE\u01F3\u01F6\u01FA\u01FF\u0205\u0209\u020F\v\x03\r\x02\x03" +
-    "\x14\x03\x03\x15\x04\x03\x16\x05\x03\x17\x06\x03\x18\x07\x03\x19\b\b\x02" +
-    "\x02\x02\x04\x02";
+    "F\tF\x04G\tG\x04H\tH\x04I\tI\x04J\tJ\x04K\tK\x04L\tL\x04M\tM\x03\x02\x03" +
+    "\x02\x03\x02\x03\x03\x03\x03\x03\x03\x03\x04\x03\x04\x03\x04\x03\x04\x03" +
+    "\x04\x03\x05\x03\x05\x03\x05\x03\x05\x03\x05\x03\x06\x03\x06\x03\x06\x03" +
+    "\x07\x03\x07\x03\x07\x03\x07\x03\x07\x03\b\x03\b\x03\b\x03\b\x03\b\x03" +
+    "\b\x03\b\x03\b\x03\b\x03\t\x03\t\x03\t\x03\t\x03\t\x03\t\x03\n\x03\n\x03" +
+    "\n\x03\n\x03\n\x03\n\x03\n\x03\v\x03\v\x03\v\x03\v\x03\v\x03\v\x03\v\x03" +
+    "\f\x03\f\x03\f\x03\f\x06\f\xD5\n\f\r\f\x0E\f\xD6\x03\r\x03\r\x03\r\x05" +
+    "\r\xDC\n\r\x03\r\x03\r\x05\r\xE0\n\r\x03\r\x05\r\xE3\n\r\x05\r\xE5\n\r" +
+    "\x03\r\x03\r\x03\x0E\x03\x0E\x03\x0E\x03\x0E\x03\x0F\x03\x0F\x03\x0F\x03" +
+    "\x10\x03\x10\x03\x10\x03\x10\x03\x11\x03\x11\x03\x11\x03\x11\x03\x12\x03" +
+    "\x12\x03\x12\x03\x13\x03\x13\x03\x13\x03\x14\x03\x14\x03\x14\x03\x15\x03" +
+    "\x15\x03\x15\x03\x16\x03\x16\x03\x16\x03\x17\x03\x17\x03\x17\x03\x18\x03" +
+    "\x18\x03\x18\x03\x19\x03\x19\x03\x19\x03\x1A\x03\x1A\x03\x1B\x03\x1B\x03" +
+    "\x1C\x03\x1C\x03\x1D\x03\x1D\x03\x1E\x03\x1E\x03\x1F\x03\x1F\x03 \x03" +
+    " \x03!\x03!\x03\"\x03\"\x03#\x03#\x03$\x03$\x03%\x03%\x03&\x03&\x03\'" +
+    "\x03\'\x03(\x03(\x03)\x03)\x03*\x03*\x03*\x03+\x03+\x03+\x03,\x03,\x03" +
+    ",\x03-\x03-\x03-\x03.\x03.\x03.\x03/\x03/\x03/\x030\x030\x030\x031\x03" +
+    "1\x031\x032\x032\x032\x033\x033\x033\x034\x034\x034\x035\x035\x035\x03" +
+    "5\x036\x036\x036\x036\x037\x037\x037\x037\x037\x037\x038\x038\x038\x03" +
+    "8\x038\x038\x039\x039\x039\x039\x039\x03:\x03:\x03;\x03;\x03<\x03<\x03" +
+    "=\x03=\x03=\x03=\x03>\x03>\x03>\x03>\x03>\x03?\x03?\x03?\x03?\x03?\x03" +
+    "?\x03?\x03?\x03?\x05?\u0182\n?\x03@\x03@\x05@\u0186\n@\x03@\x03@\x05@" +
+    "\u018A\n@\x03A\x03A\x07A\u018E\nA\fA\x0EA\u0191\vA\x03A\x03A\x03B\x03" +
+    "B\x03B\x03B\x07B\u0199\nB\fB\x0EB\u019C\vB\x03B\x03B\x03C\x03C\x07C\u01A2" +
+    "\nC\fC\x0EC\u01A5\vC\x03C\x03C\x03D\x03D\x07D\u01AB\nD\fD\x0ED\u01AE\v" +
+    "D\x03D\x03D\x03E\x03E\x07E\u01B4\nE\fE\x0EE\u01B7\vE\x03F\x03F\x03F\x03" +
+    "F\x05F\u01BD\nF\x03F\x03F\x03G\x03G\x03G\x03G\x03H\x06H\u01C6\nH\rH\x0E" +
+    "H\u01C7\x03I\x03I\x03I\x03I\x07I\u01CE\nI\fI\x0EI\u01D1\vI\x03I\x03I\x03" +
+    "I\x03J\x03J\x03J\x03J\x07J\u01DA\nJ\fJ\x0EJ\u01DD\vJ\x03K\x03K\x05K\u01E1" +
+    "\nK\x03K\x05K\u01E4\nK\x03K\x03K\x05K\u01E8\nK\x03L\x03L\x05L\u01EC\n" +
+    "L\x03L\x03L\x06L\u01F0\nL\rL\x0EL\u01F1\x03L\x03L\x06L\u01F6\nL\rL\x0E" +
+    "L\u01F7\x07L\u01FA\nL\fL\x0EL\u01FD\vL\x03L\x06L\u0200\nL\rL\x0EL\u0201" +
+    "\x03L\x03L\x06L\u0206\nL\rL\x0EL\u0207\x07L\u020A\nL\fL\x0EL\u020D\vL" +
+    "\x05L\u020F\nL\x03M\x03M\x03M\x05M\u0214\nM\x03\u01CF\x02\x02N\x03\x02" +
+    "\x05\x05\x02\x06\x07\x02\x07\t\x02\b\v\x02\t\r\x02\n\x0F\x02\v\x11\x02" +
+    "\f\x13\x02\r\x15\x02\x0E\x17\x02\x0F\x19\x02\x10\x1B\x02\x11\x1D\x02\x12" +
+    "\x1F\x02\x13!\x02\x14#\x02\x15%\x02\x16\'\x02\x17)\x02\x18+\x02\x19-\x02" +
+    "\x1A/\x02\x1B1\x02\x1C3\x02\x1D5\x02\x1E7\x02\x1F9\x02 ;\x02!=\x02\"?" +
+    "\x02#A\x02$C\x02%E\x02&G\x02\'I\x02(K\x02)M\x02*O\x02+Q\x02,S\x02-U\x02" +
+    ".W\x02/Y\x020[\x021]\x022_\x023a\x024c\x025e\x026g\x027i\x028k\x029m\x02" +
+    ":o\x02;q\x02<s\x02=u\x02>w\x02?y\x02@{\x02A}\x02B\x7F\x02C\x81\x02D\x83" +
+    "\x02E\x85\x02F\x87\x02G\x89\x02H\x8B\x02I\x8D\x02J\x8F\x02\x02\x91\x02" +
+    "\x02\x93\x02\x02\x95\x02\x02\x97\x02\x02\x99\x02\x02\x03\x02\n\x04\x02" +
+    "\f\f\x0F\x0F\x05\x02C\\aac|\x06\x022;C\\aac|\x04\x02\v\v\"\"\x03\x022" +
+    ";\x05\x022;C\\c|\x03\x02))\v\x02$$))^^ddhhppttvvxx\x02\u022D\x02\x03\x03" +
+    "\x02\x02\x02\x02\x05\x03\x02\x02\x02\x02\x07\x03\x02\x02\x02\x02\t\x03" +
+    "\x02\x02\x02\x02\v\x03\x02\x02\x02\x02\r\x03\x02\x02\x02\x02\x0F\x03\x02" +
+    "\x02\x02\x02\x11\x03\x02\x02\x02\x02\x13\x03\x02\x02\x02\x02\x15\x03\x02" +
+    "\x02\x02\x02\x17\x03\x02\x02\x02\x02\x19\x03\x02\x02\x02\x02\x1B\x03\x02" +
+    "\x02\x02\x02\x1D\x03\x02\x02\x02\x02\x1F\x03\x02\x02\x02\x02!\x03\x02" +
+    "\x02\x02\x02#\x03\x02\x02\x02\x02%\x03\x02\x02\x02\x02\'\x03\x02\x02\x02" +
+    "\x02)\x03\x02\x02\x02\x02+\x03\x02\x02\x02\x02-\x03\x02\x02\x02\x02/\x03" +
+    "\x02\x02\x02\x021\x03\x02\x02\x02\x023\x03\x02\x02\x02\x025\x03\x02\x02" +
+    "\x02\x027\x03\x02\x02\x02\x029\x03\x02\x02\x02\x02;\x03\x02\x02\x02\x02" +
+    "=\x03\x02\x02\x02\x02?\x03\x02\x02\x02\x02A\x03\x02\x02\x02\x02C\x03\x02" +
+    "\x02\x02\x02E\x03\x02\x02\x02\x02G\x03\x02\x02\x02\x02I\x03\x02\x02\x02" +
+    "\x02K\x03\x02\x02\x02\x02M\x03\x02\x02\x02\x02O\x03\x02\x02\x02\x02Q\x03" +
+    "\x02\x02\x02\x02S\x03\x02\x02\x02\x02U\x03\x02\x02\x02\x02W\x03\x02\x02" +
+    "\x02\x02Y\x03\x02\x02\x02\x02[\x03\x02\x02\x02\x02]\x03\x02\x02\x02\x02" +
+    "_\x03\x02\x02\x02\x02a\x03\x02\x02\x02\x02c\x03\x02\x02\x02\x02e\x03\x02" +
+    "\x02\x02\x02g\x03\x02\x02\x02\x02i\x03\x02\x02\x02\x02k\x03\x02\x02\x02" +
+    "\x02m\x03\x02\x02\x02\x02o\x03\x02\x02\x02\x02q\x03\x02\x02\x02\x02s\x03" +
+    "\x02\x02\x02\x02u\x03\x02\x02\x02\x02w\x03\x02\x02\x02\x02y\x03\x02\x02" +
+    "\x02\x02{\x03\x02\x02\x02\x02}\x03\x02\x02\x02\x02\x7F\x03\x02\x02\x02" +
+    "\x02\x81\x03\x02\x02\x02\x02\x83\x03\x02\x02\x02\x02\x85\x03\x02\x02\x02" +
+    "\x02\x87\x03\x02\x02\x02\x02\x89\x03\x02\x02\x02\x02\x8B\x03\x02\x02\x02" +
+    "\x02\x8D\x03\x02\x02\x02\x03\x9B\x03\x02\x02\x02\x05\x9E\x03\x02\x02\x02" +
+    "\x07\xA1\x03\x02\x02\x02\t\xA6\x03\x02\x02\x02\v\xAB\x03\x02\x02\x02\r" +
+    "\xAE\x03\x02\x02\x02\x0F\xB3\x03\x02\x02\x02\x11\xBC\x03\x02\x02\x02\x13" +
+    "\xC2\x03\x02\x02\x02\x15\xC9\x03\x02\x02\x02\x17\xD0\x03\x02\x02\x02\x19" +
+    "\xE4\x03\x02\x02\x02\x1B\xE8\x03\x02\x02\x02\x1D\xEC\x03\x02\x02\x02\x1F" +
+    "\xEF\x03\x02\x02\x02!\xF3\x03\x02\x02\x02#\xF7\x03\x02\x02\x02%\xFA\x03" +
+    "\x02\x02\x02\'\xFD\x03\x02\x02\x02)\u0100\x03\x02\x02\x02+\u0103\x03\x02" +
+    "\x02\x02-\u0106\x03\x02\x02\x02/\u0109\x03\x02\x02\x021\u010C\x03\x02" +
+    "\x02\x023\u010F\x03\x02\x02\x025\u0111\x03\x02\x02\x027\u0113\x03\x02" +
+    "\x02\x029\u0115\x03\x02\x02\x02;\u0117\x03\x02\x02\x02=\u0119\x03\x02" +
+    "\x02\x02?\u011B\x03\x02\x02\x02A\u011D\x03\x02\x02\x02C\u011F\x03\x02" +
+    "\x02\x02E\u0121\x03\x02\x02\x02G\u0123\x03\x02\x02\x02I\u0125\x03\x02" +
+    "\x02\x02K\u0127\x03\x02\x02\x02M\u0129\x03\x02\x02\x02O\u012B\x03\x02" +
+    "\x02\x02Q\u012D\x03\x02\x02\x02S\u012F\x03\x02\x02\x02U\u0132\x03\x02" +
+    "\x02\x02W\u0135\x03\x02\x02\x02Y\u0138\x03\x02\x02\x02[\u013B\x03\x02" +
+    "\x02\x02]\u013E\x03\x02\x02\x02_\u0141\x03\x02\x02\x02a\u0144\x03\x02" +
+    "\x02\x02c\u0147\x03\x02\x02\x02e\u014A\x03\x02\x02\x02g\u014D\x03\x02" +
+    "\x02\x02i\u0150\x03\x02\x02\x02k\u0154\x03\x02\x02\x02m\u0158\x03\x02" +
+    "\x02\x02o\u015E\x03\x02\x02\x02q\u0164\x03\x02\x02\x02s\u0169\x03\x02" +
+    "\x02\x02u\u016B\x03\x02\x02\x02w\u016D\x03\x02\x02\x02y\u016F\x03\x02" +
+    "\x02\x02{\u0173\x03\x02\x02\x02}\u0181\x03\x02\x02\x02\x7F\u0189\x03\x02" +
+    "\x02\x02\x81\u018B\x03\x02\x02\x02\x83\u0194\x03\x02\x02\x02\x85\u019F" +
+    "\x03\x02\x02\x02\x87\u01A8\x03\x02\x02\x02\x89\u01B1\x03\x02\x02\x02\x8B" +
+    "\u01BC\x03\x02\x02\x02\x8D\u01C0\x03\x02\x02\x02\x8F\u01C5\x03\x02\x02" +
+    "\x02\x91\u01C9\x03\x02\x02\x02\x93\u01D5\x03\x02\x02\x02\x95\u01DE\x03" +
+    "\x02\x02\x02\x97\u020E\x03\x02\x02\x02\x99\u0213\x03\x02\x02\x02\x9B\x9C" +
+    "\x07c\x02\x02\x9C\x9D\x07u\x02\x02\x9D\x04\x03\x02\x02\x02\x9E\x9F\x07" +
+    "k\x02\x02\x9F\xA0\x07h\x02\x02\xA0\x06\x03\x02\x02\x02\xA1\xA2\x07g\x02" +
+    "\x02\xA2\xA3\x07n\x02\x02\xA3\xA4\x07u\x02\x02\xA4\xA5\x07g\x02\x02\xA5" +
+    "\b\x03\x02\x02\x02\xA6\xA7\x07n\x02\x02\xA7\xA8\x07q\x02\x02\xA8\xA9\x07" +
+    "q\x02\x02\xA9\xAA\x07r\x02\x02\xAA\n\x03\x02\x02\x02\xAB\xAC\x07k\x02" +
+    "\x02\xAC\xAD\x07p\x02\x02\xAD\f\x03\x02\x02\x02\xAE\xAF\x07r\x02\x02\xAF" +
+    "\xB0\x07c\x02\x02\xB0\xB1\x07u\x02\x02\xB1\xB2\x07u\x02\x02\xB2\x0E\x03" +
+    "\x02\x02\x02\xB3\xB4\x07e\x02\x02\xB4\xB5\x07q\x02\x02\xB5\xB6\x07p\x02" +
+    "\x02\xB6\xB7\x07v\x02\x02\xB7\xB8\x07k\x02\x02\xB8\xB9\x07p\x02\x02\xB9" +
+    "\xBA\x07w\x02\x02\xBA\xBB\x07g\x02\x02\xBB\x10\x03\x02\x02\x02\xBC\xBD" +
+    "\x07d\x02\x02\xBD\xBE\x07t\x02\x02\xBE\xBF\x07g\x02\x02\xBF\xC0\x07c\x02" +
+    "\x02\xC0\xC1\x07m\x02\x02\xC1\x12\x03\x02\x02\x02\xC2\xC3\x07t\x02\x02" +
+    "\xC3\xC4\x07g\x02\x02\xC4\xC5\x07v\x02\x02\xC5\xC6\x07w\x02\x02\xC6\xC7" +
+    "\x07t\x02\x02\xC7\xC8\x07p\x02\x02\xC8\x14\x03\x02\x02\x02\xC9\xCA\x07" +
+    "u\x02\x02\xCA\xCB\x07g\x02\x02\xCB\xCC\x07n\x02\x02\xCC\xCD\x07g\x02\x02" +
+    "\xCD\xCE\x07e\x02\x02\xCE\xCF\x07v\x02\x02\xCF\x16\x03\x02\x02\x02\xD0" +
+    "\xD1\x07%\x02\x02\xD1\xD2\x07<\x02\x02\xD2\xD4\x03\x02\x02\x02\xD3\xD5" +
+    "\n\x02\x02\x02\xD4\xD3\x03\x02\x02\x02\xD5\xD6\x03\x02\x02\x02\xD6\xD4" +
+    "\x03\x02\x02\x02\xD6\xD7\x03\x02\x02\x02\xD7\x18\x03\x02\x02\x02\xD8\xD9" +
+    "\x06\r\x02\x02\xD9\xE5\x05\x8FH\x02\xDA\xDC\x07\x0F\x02\x02\xDB\xDA\x03" +
+    "\x02\x02\x02\xDB\xDC\x03\x02\x02\x02\xDC\xDD\x03\x02\x02\x02\xDD\xE0\x07" +
+    "\f\x02\x02\xDE\xE0\x07\x0F\x02\x02\xDF\xDB\x03\x02\x02\x02\xDF\xDE\x03" +
+    "\x02\x02\x02\xE0\xE2\x03\x02\x02\x02\xE1\xE3\x05\x8FH\x02\xE2\xE1\x03" +
+    "\x02\x02\x02\xE2\xE3\x03\x02\x02\x02\xE3\xE5\x03\x02\x02\x02\xE4\xD8\x03" +
+    "\x02\x02\x02\xE4\xDF\x03\x02\x02\x02\xE5\xE6\x03\x02\x02\x02\xE6\xE7\b" +
+    "\r\x02\x02\xE7\x1A\x03\x02\x02\x02\xE8\xE9\x07c\x02\x02\xE9\xEA\x07p\x02" +
+    "\x02\xEA\xEB\x07f\x02\x02\xEB\x1C\x03\x02\x02\x02\xEC\xED\x07q\x02\x02" +
+    "\xED\xEE\x07t\x02\x02\xEE\x1E\x03\x02\x02\x02\xEF\xF0\x07z\x02\x02\xF0" +
+    "\xF1\x07q\x02\x02\xF1\xF2\x07t\x02\x02\xF2 \x03\x02\x02\x02\xF3\xF4\x07" +
+    "p\x02\x02\xF4\xF5\x07q\x02\x02\xF5\xF6\x07v\x02\x02\xF6\"\x03\x02\x02" +
+    "\x02\xF7\xF8\x07@\x02\x02\xF8\xF9\x07@\x02\x02\xF9$\x03\x02\x02\x02\xFA" +
+    "\xFB\x07>\x02\x02\xFB\xFC\x07>\x02\x02\xFC&\x03\x02\x02\x02\xFD\xFE\x07" +
+    "]\x02\x02\xFE\xFF\b\x14\x03\x02\xFF(\x03\x02\x02\x02\u0100\u0101\x07_" +
+    "\x02\x02\u0101\u0102\b\x15\x04\x02\u0102*\x03\x02\x02\x02\u0103\u0104" +
+    "\x07*\x02\x02\u0104\u0105\b\x16\x05\x02\u0105,\x03\x02\x02\x02\u0106\u0107" +
+    "\x07+\x02\x02\u0107\u0108\b\x17\x06\x02\u0108.\x03\x02\x02\x02\u0109\u010A" +
+    "\x07}\x02\x02\u010A\u010B\b\x18\x07\x02\u010B0\x03\x02\x02\x02\u010C\u010D" +
+    "\x07\x7F\x02\x02\u010D\u010E\b\x19\b\x02\u010E2\x03\x02\x02\x02\u010F" +
+    "\u0110\x07B\x02\x02\u01104\x03\x02\x02\x02\u0111\u0112\x07.\x02\x02\u0112" +
+    "6\x03\x02\x02\x02\u0113\u0114\x07?\x02\x02\u01148\x03\x02\x02\x02\u0115" +
+    "\u0116\x07A\x02\x02\u0116:\x03\x02\x02\x02\u0117\u0118\x07<\x02\x02\u0118" +
+    "<\x03\x02\x02\x02\u0119\u011A\x070\x02\x02\u011A>\x03\x02\x02\x02\u011B" +
+    "\u011C\x07-\x02\x02\u011C@\x03\x02\x02\x02\u011D\u011E\x07/\x02\x02\u011E" +
+    "B\x03\x02\x02\x02\u011F\u0120\x07#\x02\x02\u0120D\x03\x02\x02\x02\u0121" +
+    "\u0122\x07,\x02\x02\u0122F\x03\x02\x02\x02\u0123\u0124\x071\x02\x02\u0124" +
+    "H\x03\x02\x02\x02\u0125\u0126\x07\'\x02\x02\u0126J\x03\x02\x02\x02\u0127" +
+    "\u0128\x07`\x02\x02\u0128L\x03\x02\x02\x02\u0129\u012A\x07%\x02\x02\u012A" +
+    "N\x03\x02\x02\x02\u012B\u012C\x07>\x02\x02\u012CP\x03\x02\x02\x02\u012D" +
+    "\u012E\x07@\x02\x02\u012ER\x03\x02\x02\x02\u012F\u0130\x07>\x02\x02\u0130" +
+    "\u0131\x07?\x02\x02\u0131T\x03\x02\x02\x02\u0132\u0133\x07@\x02\x02\u0133" +
+    "\u0134\x07?\x02\x02\u0134V\x03\x02\x02\x02\u0135\u0136\x07?\x02\x02\u0136" +
+    "\u0137\x07?\x02\x02\u0137X\x03\x02\x02\x02\u0138\u0139\x07#\x02\x02\u0139" +
+    "\u013A\x07?\x02\x02\u013AZ\x03\x02\x02\x02\u013B\u013C\x07(\x02\x02\u013C" +
+    "\u013D\x07(\x02\x02\u013D\\\x03\x02\x02\x02\u013E\u013F\x07~\x02\x02\u013F" +
+    "\u0140\x07~\x02\x02\u0140^\x03\x02\x02\x02\u0141\u0142\x07,\x02\x02\u0142" +
+    "\u0143\x07?\x02\x02\u0143`\x03\x02\x02\x02\u0144\u0145\x071\x02\x02\u0145" +
+    "\u0146\x07?\x02\x02\u0146b\x03\x02\x02\x02\u0147\u0148\x07\'\x02\x02\u0148" +
+    "\u0149\x07?\x02\x02\u0149d\x03\x02\x02\x02\u014A\u014B\x07-\x02\x02\u014B" +
+    "\u014C\x07?\x02\x02\u014Cf\x03\x02\x02\x02\u014D\u014E\x07/\x02\x02\u014E" +
+    "\u014F\x07?\x02\x02\u014Fh\x03\x02\x02\x02\u0150\u0151\x07>\x02\x02\u0151" +
+    "\u0152\x07>\x02\x02\u0152\u0153\x07?\x02\x02\u0153j\x03\x02\x02\x02\u0154" +
+    "\u0155\x07@\x02\x02\u0155\u0156\x07@\x02\x02\u0156\u0157\x07?\x02\x02" +
+    "\u0157l\x03\x02\x02\x02\u0158\u0159\x07c\x02\x02\u0159\u015A\x07p\x02" +
+    "\x02\u015A\u015B\x07f\x02\x02\u015B\u015C\x03\x02\x02\x02\u015C\u015D" +
+    "\x07?\x02\x02\u015Dn\x03\x02\x02\x02\u015E\u015F\x07z\x02\x02\u015F\u0160" +
+    "\x07q\x02\x02\u0160\u0161\x07t\x02\x02\u0161\u0162\x03\x02\x02\x02\u0162" +
+    "\u0163\x07?\x02\x02\u0163p\x03\x02\x02\x02\u0164\u0165\x07q\x02\x02\u0165" +
+    "\u0166\x07t\x02\x02\u0166\u0167\x03\x02\x02\x02\u0167\u0168\x07?\x02\x02" +
+    "\u0168r\x03\x02\x02\x02\u0169\u016A\x07^\x02\x02\u016At\x03\x02\x02\x02" +
+    "\u016B\u016C\x07~\x02\x02\u016Cv\x03\x02\x02\x02\u016D\u016E\x07a\x02" +
+    "\x02\u016Ex\x03\x02\x02\x02\u016F\u0170\x070\x02\x02\u0170\u0171\x070" +
+    "\x02\x02\u0171\u0172\x070\x02\x02\u0172z\x03\x02\x02\x02\u0173\u0174\x07" +
+    "p\x02\x02\u0174\u0175\x07w\x02\x02\u0175\u0176\x07n\x02\x02\u0176\u0177" +
+    "\x07n\x02\x02\u0177|\x03\x02\x02\x02\u0178\u0179\x07v\x02\x02\u0179\u017A" +
+    "\x07t\x02\x02\u017A\u017B\x07w\x02\x02\u017B\u0182\x07g\x02\x02\u017C" +
+    "\u017D\x07h\x02\x02\u017D\u017E\x07c\x02\x02\u017E\u017F\x07n\x02\x02" +
+    "\u017F\u0180\x07u\x02\x02\u0180\u0182\x07g\x02\x02\u0181\u0178\x03\x02" +
+    "\x02\x02\u0181\u017C\x03\x02\x02\x02\u0182~\x03\x02\x02\x02\u0183\u018A" +
+    "\x05\x97L\x02\u0184\u0186\x05\x97L\x02\u0185\u0184\x03\x02\x02\x02\u0185" +
+    "\u0186\x03\x02\x02\x02\u0186\u0187\x03\x02\x02\x02\u0187\u0188\x070\x02" +
+    "\x02\u0188\u018A\x05\x97L\x02\u0189\u0183\x03\x02\x02\x02\u0189\u0185" +
+    "\x03\x02\x02\x02\u018A\x80\x03\x02\x02\x02\u018B\u018F\x07)\x02\x02\u018C" +
+    "\u018E\x05\x99M\x02\u018D\u018C\x03\x02\x02\x02\u018E\u0191\x03\x02\x02" +
+    "\x02\u018F\u018D\x03\x02\x02\x02\u018F\u0190\x03\x02\x02\x02\u0190\u0192" +
+    "\x03\x02\x02\x02\u0191\u018F\x03\x02\x02\x02\u0192\u0193\x07)\x02\x02" +
+    "\u0193\x82\x03\x02\x02\x02\u0194\u0195\x07h\x02\x02\u0195\u0196\x07)\x02" +
+    "\x02\u0196\u019A\x03\x02\x02\x02\u0197\u0199\x05\x99M\x02\u0198\u0197" +
+    "\x03\x02\x02\x02\u0199\u019C\x03\x02\x02\x02\u019A\u0198\x03\x02\x02\x02" +
+    "\u019A\u019B\x03\x02\x02\x02\u019B\u019D\x03\x02\x02\x02\u019C\u019A\x03" +
+    "\x02\x02\x02\u019D\u019E\x07}\x02\x02\u019E\x84\x03\x02\x02\x02\u019F" +
+    "\u01A3\x07\x7F\x02\x02\u01A0\u01A2\x05\x99M\x02\u01A1\u01A0\x03\x02\x02" +
+    "\x02\u01A2\u01A5\x03\x02\x02\x02\u01A3\u01A1\x03\x02\x02\x02\u01A3\u01A4" +
+    "\x03\x02\x02\x02\u01A4\u01A6\x03\x02\x02\x02\u01A5\u01A3\x03\x02\x02\x02" +
+    "\u01A6\u01A7\x07}\x02\x02\u01A7\x86\x03\x02\x02\x02\u01A8\u01AC\x07\x7F" +
+    "\x02\x02\u01A9\u01AB\x05\x99M\x02\u01AA\u01A9\x03\x02\x02\x02\u01AB\u01AE" +
+    "\x03\x02\x02\x02\u01AC\u01AA\x03\x02\x02\x02\u01AC\u01AD\x03\x02\x02\x02" +
+    "\u01AD\u01AF\x03\x02\x02\x02\u01AE\u01AC\x03\x02\x02\x02\u01AF\u01B0\x07" +
+    ")\x02\x02\u01B0\x88\x03\x02\x02\x02\u01B1\u01B5\t\x03\x02\x02\u01B2\u01B4" +
+    "\t\x04\x02\x02\u01B3\u01B2\x03\x02\x02\x02\u01B4\u01B7\x03\x02\x02\x02" +
+    "\u01B5\u01B3\x03\x02\x02\x02\u01B5\u01B6\x03\x02\x02\x02\u01B6\x8A\x03" +
+    "\x02\x02\x02\u01B7\u01B5\x03\x02\x02\x02\u01B8\u01BD\x05\x8FH\x02\u01B9" +
+    "\u01BD\x05\x93J\x02\u01BA\u01BD\x05\x91I\x02\u01BB\u01BD\x05\x95K\x02" +
+    "\u01BC\u01B8\x03\x02\x02\x02\u01BC\u01B9\x03\x02\x02\x02\u01BC\u01BA\x03" +
+    "\x02\x02\x02\u01BC\u01BB\x03\x02\x02\x02\u01BD\u01BE\x03\x02\x02\x02\u01BE" +
+    "\u01BF\bF\t\x02\u01BF\x8C\x03\x02\x02\x02\u01C0\u01C1\v\x02\x02\x02\u01C1" +
+    "\u01C2\x03\x02\x02\x02\u01C2\u01C3\bG\n\x02\u01C3\x8E\x03\x02\x02\x02" +
+    "\u01C4\u01C6\t\x05\x02\x02\u01C5\u01C4\x03\x02\x02\x02\u01C6\u01C7\x03" +
+    "\x02\x02\x02\u01C7\u01C5\x03\x02\x02\x02\u01C7\u01C8\x03\x02\x02\x02\u01C8" +
+    "\x90\x03\x02\x02\x02\u01C9\u01CA\x071\x02\x02\u01CA\u01CB\x07,\x02\x02" +
+    "\u01CB\u01CF\x03\x02\x02\x02\u01CC\u01CE\v\x02\x02\x02\u01CD\u01CC\x03" +
+    "\x02\x02\x02\u01CE\u01D1\x03\x02\x02\x02\u01CF\u01D0\x03\x02\x02\x02\u01CF" +
+    "\u01CD\x03\x02\x02\x02\u01D0\u01D2\x03\x02\x02\x02\u01D1\u01CF\x03\x02" +
+    "\x02\x02\u01D2\u01D3\x07,\x02\x02\u01D3\u01D4\x071\x02\x02\u01D4\x92\x03" +
+    "\x02\x02\x02\u01D5\u01D6\x071\x02\x02\u01D6\u01D7\x071\x02\x02\u01D7\u01DB" +
+    "\x03\x02\x02\x02\u01D8\u01DA\n\x02\x02\x02\u01D9\u01D8\x03\x02\x02\x02" +
+    "\u01DA\u01DD\x03\x02\x02\x02\u01DB\u01D9\x03\x02\x02\x02\u01DB\u01DC\x03" +
+    "\x02\x02\x02\u01DC\x94\x03\x02\x02\x02\u01DD\u01DB\x03\x02\x02\x02\u01DE" +
+    "\u01E0\x07^\x02\x02\u01DF\u01E1\x05\x8FH\x02\u01E0\u01DF\x03\x02\x02\x02" +
+    "\u01E0\u01E1\x03\x02\x02\x02\u01E1\u01E7\x03\x02\x02\x02\u01E2\u01E4\x07" +
+    "\x0F\x02\x02\u01E3\u01E2\x03\x02\x02\x02\u01E3\u01E4\x03\x02\x02\x02\u01E4" +
+    "\u01E5\x03\x02\x02\x02\u01E5\u01E8\x07\f\x02\x02\u01E6\u01E8\x07\x0F\x02" +
+    "\x02\u01E7\u01E3\x03\x02\x02\x02\u01E7\u01E6\x03\x02\x02\x02\u01E8\x96" +
+    "\x03\x02\x02\x02\u01E9\u01EB\t\x06\x02\x02\u01EA\u01EC\t\x06\x02\x02\u01EB" +
+    "\u01EA\x03\x02\x02\x02\u01EB\u01EC\x03\x02\x02\x02\u01EC\u01ED\x03\x02" +
+    "\x02\x02\u01ED\u01EF\x07z\x02\x02\u01EE\u01F0\t\x07\x02\x02\u01EF\u01EE" +
+    "\x03\x02\x02\x02\u01F0\u01F1\x03\x02\x02\x02\u01F1\u01EF\x03\x02\x02\x02" +
+    "\u01F1\u01F2\x03\x02\x02\x02\u01F2\u01FB\x03\x02\x02\x02\u01F3\u01F5\x07" +
+    "a\x02\x02\u01F4\u01F6\t\x07\x02\x02\u01F5\u01F4\x03\x02\x02\x02\u01F6" +
+    "\u01F7\x03\x02\x02\x02\u01F7\u01F5\x03\x02\x02\x02\u01F7\u01F8\x03\x02" +
+    "\x02\x02\u01F8\u01FA\x03\x02\x02\x02\u01F9\u01F3\x03\x02\x02\x02\u01FA" +
+    "\u01FD\x03\x02\x02\x02\u01FB\u01F9\x03\x02\x02\x02\u01FB\u01FC\x03\x02" +
+    "\x02\x02\u01FC\u020F\x03\x02\x02\x02\u01FD\u01FB\x03\x02\x02\x02\u01FE" +
+    "\u0200\t\x06\x02\x02\u01FF\u01FE\x03\x02\x02\x02\u0200\u0201\x03\x02\x02" +
+    "\x02\u0201\u01FF\x03\x02\x02\x02\u0201\u0202\x03\x02\x02\x02\u0202\u020B" +
+    "\x03\x02\x02\x02\u0203\u0205\x07a\x02\x02\u0204\u0206\t\x06\x02\x02\u0205" +
+    "\u0204\x03\x02\x02\x02\u0206\u0207\x03\x02\x02\x02\u0207\u0205\x03\x02" +
+    "\x02\x02\u0207\u0208\x03\x02\x02\x02\u0208\u020A\x03\x02\x02\x02\u0209" +
+    "\u0203\x03\x02\x02\x02\u020A\u020D\x03\x02\x02\x02\u020B\u0209\x03\x02" +
+    "\x02\x02\u020B\u020C\x03\x02\x02\x02\u020C\u020F\x03\x02\x02\x02\u020D" +
+    "\u020B\x03\x02\x02\x02\u020E\u01E9\x03\x02\x02\x02\u020E\u01FF\x03\x02" +
+    "\x02\x02\u020F\x98\x03\x02\x02\x02\u0210\u0214\n\b\x02\x02\u0211\u0212" +
+    "\x07^\x02\x02\u0212\u0214\t\t\x02\x02\u0213\u0210\x03\x02\x02\x02\u0213" +
+    "\u0211\x03\x02\x02\x02\u0214\x9A\x03\x02\x02\x02 \x02\xD6\xDB\xDF\xE2" +
+    "\xE4\u0181\u0185\u0189\u018F\u019A\u01A3\u01AC\u01B5\u01BC\u01C7\u01CF" +
+    "\u01DB\u01E0\u01E3\u01E7\u01EB\u01F1\u01F7\u01FB\u0201\u0207\u020B\u020E" +
+    "\u0213\v\x03\r\x02\x03\x14\x03\x03\x15\x04\x03\x16\x05\x03\x17\x06\x03" +
+    "\x18\x07\x03\x19\b\b\x02\x02\x02\x04\x02";
 
-},{"./xon-lexer-base":6,"antlr4ts/VocabularyImpl":254,"antlr4ts/atn/ATNDeserializer":259,"antlr4ts/atn/LexerATNSimulator":280,"antlr4ts/misc/Utils":341}],8:[function(require,module,exports){
+},{"./xon-lexer-base":6,"antlr4ts/VocabularyImpl":286,"antlr4ts/atn/ATNDeserializer":291,"antlr4ts/atn/LexerATNSimulator":312,"antlr4ts/misc/Utils":373}],8:[function(require,module,exports){
 "use strict";
 // Generated from XonParser.g4 by ANTLR 4.7.3-SNAPSHOT
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
@@ -1149,7 +1146,7 @@ class XonParser extends Parser_1.Parser {
                 this.state = 44;
                 this._errHandler.sync(this);
                 _la = this._input.LA(1);
-                while ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << XonParser.If) | (1 << XonParser.Loop) | (1 << XonParser.Pass) | (1 << XonParser.Continue) | (1 << XonParser.Break) | (1 << XonParser.Return) | (1 << XonParser.Select) | (1 << XonParser.Preprocessor) | (1 << XonParser.LineBreak) | (1 << XonParser.OpenBracket) | (1 << XonParser.OpenParen) | (1 << XonParser.OpenBrace) | (1 << XonParser.Ad) | (1 << XonParser.Comma))) !== 0) || ((((_la - 33)) & ~0x1F) === 0 && ((1 << (_la - 33)) & ((1 << (XonParser.Dot - 33)) | (1 << (XonParser.Plus - 33)) | (1 << (XonParser.Minus - 33)) | (1 << (XonParser.BitNot - 33)) | (1 << (XonParser.Not - 33)) | (1 << (XonParser.LambdaStart - 33)))) !== 0) || ((((_la - 67)) & ~0x1F) === 0 && ((1 << (_la - 67)) & ((1 << (XonParser.Spread - 67)) | (1 << (XonParser.NullLiteral - 67)) | (1 << (XonParser.BooleanLiteral - 67)) | (1 << (XonParser.NumberLiteral - 67)) | (1 << (XonParser.StringLiteral - 67)) | (1 << (XonParser.StringFormatStart - 67)) | (1 << (XonParser.ID - 67)))) !== 0)) {
+                while (((((_la - 4)) & ~0x1F) === 0 && ((1 << (_la - 4)) & ((1 << (XonParser.If - 4)) | (1 << (XonParser.Loop - 4)) | (1 << (XonParser.Pass - 4)) | (1 << (XonParser.Continue - 4)) | (1 << (XonParser.Break - 4)) | (1 << (XonParser.Return - 4)) | (1 << (XonParser.Select - 4)) | (1 << (XonParser.Preprocessor - 4)) | (1 << (XonParser.LineBreak - 4)) | (1 << (XonParser.BitNot - 4)) | (1 << (XonParser.OpenBracket - 4)) | (1 << (XonParser.OpenParen - 4)) | (1 << (XonParser.OpenBrace - 4)) | (1 << (XonParser.Ad - 4)) | (1 << (XonParser.Comma - 4)) | (1 << (XonParser.Dot - 4)) | (1 << (XonParser.Add - 4)) | (1 << (XonParser.Substract - 4)) | (1 << (XonParser.Not - 4)))) !== 0) || ((((_la - 59)) & ~0x1F) === 0 && ((1 << (_la - 59)) & ((1 << (XonParser.LambdaStart - 59)) | (1 << (XonParser.Spread - 59)) | (1 << (XonParser.NullLiteral - 59)) | (1 << (XonParser.BooleanLiteral - 59)) | (1 << (XonParser.NumberLiteral - 59)) | (1 << (XonParser.StringLiteral - 59)) | (1 << (XonParser.StringFormatStart - 59)) | (1 << (XonParser.ID - 59)))) !== 0)) {
                     {
                         this.state = 42;
                         this._errHandler.sync(this);
@@ -2167,7 +2164,7 @@ class XonParser extends Parser_1.Parser {
                                 this.state = 249;
                                 this._errHandler.sync(this);
                                 _la = this._input.LA(1);
-                            } while ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << XonParser.If) | (1 << XonParser.Loop) | (1 << XonParser.Pass) | (1 << XonParser.Continue) | (1 << XonParser.Break) | (1 << XonParser.Return) | (1 << XonParser.Select) | (1 << XonParser.Preprocessor) | (1 << XonParser.LineBreak) | (1 << XonParser.OpenBracket) | (1 << XonParser.OpenParen) | (1 << XonParser.OpenBrace) | (1 << XonParser.Ad) | (1 << XonParser.Comma))) !== 0) || ((((_la - 33)) & ~0x1F) === 0 && ((1 << (_la - 33)) & ((1 << (XonParser.Dot - 33)) | (1 << (XonParser.Plus - 33)) | (1 << (XonParser.Minus - 33)) | (1 << (XonParser.BitNot - 33)) | (1 << (XonParser.Not - 33)) | (1 << (XonParser.LambdaStart - 33)))) !== 0) || ((((_la - 67)) & ~0x1F) === 0 && ((1 << (_la - 67)) & ((1 << (XonParser.Spread - 67)) | (1 << (XonParser.NullLiteral - 67)) | (1 << (XonParser.BooleanLiteral - 67)) | (1 << (XonParser.NumberLiteral - 67)) | (1 << (XonParser.StringLiteral - 67)) | (1 << (XonParser.StringFormatStart - 67)) | (1 << (XonParser.ID - 67)))) !== 0));
+                            } while (((((_la - 4)) & ~0x1F) === 0 && ((1 << (_la - 4)) & ((1 << (XonParser.If - 4)) | (1 << (XonParser.Loop - 4)) | (1 << (XonParser.Pass - 4)) | (1 << (XonParser.Continue - 4)) | (1 << (XonParser.Break - 4)) | (1 << (XonParser.Return - 4)) | (1 << (XonParser.Select - 4)) | (1 << (XonParser.Preprocessor - 4)) | (1 << (XonParser.LineBreak - 4)) | (1 << (XonParser.BitNot - 4)) | (1 << (XonParser.OpenBracket - 4)) | (1 << (XonParser.OpenParen - 4)) | (1 << (XonParser.OpenBrace - 4)) | (1 << (XonParser.Ad - 4)) | (1 << (XonParser.Comma - 4)) | (1 << (XonParser.Dot - 4)) | (1 << (XonParser.Add - 4)) | (1 << (XonParser.Substract - 4)) | (1 << (XonParser.Not - 4)))) !== 0) || ((((_la - 59)) & ~0x1F) === 0 && ((1 << (_la - 59)) & ((1 << (XonParser.LambdaStart - 59)) | (1 << (XonParser.Spread - 59)) | (1 << (XonParser.NullLiteral - 59)) | (1 << (XonParser.BooleanLiteral - 59)) | (1 << (XonParser.NumberLiteral - 59)) | (1 << (XonParser.StringLiteral - 59)) | (1 << (XonParser.StringFormatStart - 59)) | (1 << (XonParser.ID - 59)))) !== 0));
                             this.state = 251;
                             this.match(XonParser.DEDENT);
                         }
@@ -2255,7 +2252,7 @@ class XonParser extends Parser_1.Parser {
                             this.state = 283;
                             this._errHandler.sync(this);
                             _la = this._input.LA(1);
-                            if ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << XonParser.If) | (1 << XonParser.Loop) | (1 << XonParser.Select) | (1 << XonParser.OpenBracket) | (1 << XonParser.OpenParen) | (1 << XonParser.OpenBrace) | (1 << XonParser.Ad))) !== 0) || ((((_la - 33)) & ~0x1F) === 0 && ((1 << (_la - 33)) & ((1 << (XonParser.Dot - 33)) | (1 << (XonParser.Plus - 33)) | (1 << (XonParser.Minus - 33)) | (1 << (XonParser.BitNot - 33)) | (1 << (XonParser.Not - 33)) | (1 << (XonParser.LambdaStart - 33)))) !== 0) || ((((_la - 68)) & ~0x1F) === 0 && ((1 << (_la - 68)) & ((1 << (XonParser.NullLiteral - 68)) | (1 << (XonParser.BooleanLiteral - 68)) | (1 << (XonParser.NumberLiteral - 68)) | (1 << (XonParser.StringLiteral - 68)) | (1 << (XonParser.StringFormatStart - 68)) | (1 << (XonParser.ID - 68)))) !== 0)) {
+                            if (((((_la - 4)) & ~0x1F) === 0 && ((1 << (_la - 4)) & ((1 << (XonParser.If - 4)) | (1 << (XonParser.Loop - 4)) | (1 << (XonParser.Select - 4)) | (1 << (XonParser.BitNot - 4)) | (1 << (XonParser.OpenBracket - 4)) | (1 << (XonParser.OpenParen - 4)) | (1 << (XonParser.OpenBrace - 4)) | (1 << (XonParser.Ad - 4)) | (1 << (XonParser.Dot - 4)) | (1 << (XonParser.Add - 4)) | (1 << (XonParser.Substract - 4)) | (1 << (XonParser.Not - 4)))) !== 0) || ((((_la - 59)) & ~0x1F) === 0 && ((1 << (_la - 59)) & ((1 << (XonParser.LambdaStart - 59)) | (1 << (XonParser.NullLiteral - 59)) | (1 << (XonParser.BooleanLiteral - 59)) | (1 << (XonParser.NumberLiteral - 59)) | (1 << (XonParser.StringLiteral - 59)) | (1 << (XonParser.StringFormatStart - 59)) | (1 << (XonParser.ID - 59)))) !== 0)) {
                                 {
                                     this.state = 280;
                                     this._errHandler.sync(this);
@@ -2317,7 +2314,7 @@ class XonParser extends Parser_1.Parser {
                             this.state = 292;
                             this._errHandler.sync(this);
                             _la = this._input.LA(1);
-                            if ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << XonParser.If) | (1 << XonParser.Loop) | (1 << XonParser.Select) | (1 << XonParser.OpenBracket) | (1 << XonParser.OpenParen) | (1 << XonParser.OpenBrace) | (1 << XonParser.Ad))) !== 0) || ((((_la - 33)) & ~0x1F) === 0 && ((1 << (_la - 33)) & ((1 << (XonParser.Dot - 33)) | (1 << (XonParser.Plus - 33)) | (1 << (XonParser.Minus - 33)) | (1 << (XonParser.BitNot - 33)) | (1 << (XonParser.Not - 33)) | (1 << (XonParser.LambdaStart - 33)))) !== 0) || ((((_la - 68)) & ~0x1F) === 0 && ((1 << (_la - 68)) & ((1 << (XonParser.NullLiteral - 68)) | (1 << (XonParser.BooleanLiteral - 68)) | (1 << (XonParser.NumberLiteral - 68)) | (1 << (XonParser.StringLiteral - 68)) | (1 << (XonParser.StringFormatStart - 68)) | (1 << (XonParser.ID - 68)))) !== 0)) {
+                            if (((((_la - 4)) & ~0x1F) === 0 && ((1 << (_la - 4)) & ((1 << (XonParser.If - 4)) | (1 << (XonParser.Loop - 4)) | (1 << (XonParser.Select - 4)) | (1 << (XonParser.BitNot - 4)) | (1 << (XonParser.OpenBracket - 4)) | (1 << (XonParser.OpenParen - 4)) | (1 << (XonParser.OpenBrace - 4)) | (1 << (XonParser.Ad - 4)) | (1 << (XonParser.Dot - 4)) | (1 << (XonParser.Add - 4)) | (1 << (XonParser.Substract - 4)) | (1 << (XonParser.Not - 4)))) !== 0) || ((((_la - 59)) & ~0x1F) === 0 && ((1 << (_la - 59)) & ((1 << (XonParser.LambdaStart - 59)) | (1 << (XonParser.NullLiteral - 59)) | (1 << (XonParser.BooleanLiteral - 59)) | (1 << (XonParser.NumberLiteral - 59)) | (1 << (XonParser.StringLiteral - 59)) | (1 << (XonParser.StringFormatStart - 59)) | (1 << (XonParser.ID - 59)))) !== 0)) {
                                 {
                                     this.state = 287;
                                     _localctx._value = this.expression(0);
@@ -2365,7 +2362,7 @@ class XonParser extends Parser_1.Parser {
                                 this.state = 304;
                                 this._errHandler.sync(this);
                                 _la = this._input.LA(1);
-                            } while ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << XonParser.If) | (1 << XonParser.Loop) | (1 << XonParser.Select) | (1 << XonParser.OpenBracket) | (1 << XonParser.OpenParen) | (1 << XonParser.OpenBrace) | (1 << XonParser.Ad))) !== 0) || ((((_la - 33)) & ~0x1F) === 0 && ((1 << (_la - 33)) & ((1 << (XonParser.Dot - 33)) | (1 << (XonParser.Plus - 33)) | (1 << (XonParser.Minus - 33)) | (1 << (XonParser.BitNot - 33)) | (1 << (XonParser.Not - 33)) | (1 << (XonParser.LambdaStart - 33)))) !== 0) || ((((_la - 68)) & ~0x1F) === 0 && ((1 << (_la - 68)) & ((1 << (XonParser.NullLiteral - 68)) | (1 << (XonParser.BooleanLiteral - 68)) | (1 << (XonParser.NumberLiteral - 68)) | (1 << (XonParser.StringLiteral - 68)) | (1 << (XonParser.StringFormatStart - 68)) | (1 << (XonParser.ID - 68)))) !== 0));
+                            } while (((((_la - 4)) & ~0x1F) === 0 && ((1 << (_la - 4)) & ((1 << (XonParser.If - 4)) | (1 << (XonParser.Loop - 4)) | (1 << (XonParser.Select - 4)) | (1 << (XonParser.BitNot - 4)) | (1 << (XonParser.OpenBracket - 4)) | (1 << (XonParser.OpenParen - 4)) | (1 << (XonParser.OpenBrace - 4)) | (1 << (XonParser.Ad - 4)) | (1 << (XonParser.Dot - 4)) | (1 << (XonParser.Add - 4)) | (1 << (XonParser.Substract - 4)) | (1 << (XonParser.Not - 4)))) !== 0) || ((((_la - 59)) & ~0x1F) === 0 && ((1 << (_la - 59)) & ((1 << (XonParser.LambdaStart - 59)) | (1 << (XonParser.NullLiteral - 59)) | (1 << (XonParser.BooleanLiteral - 59)) | (1 << (XonParser.NumberLiteral - 59)) | (1 << (XonParser.StringLiteral - 59)) | (1 << (XonParser.StringFormatStart - 59)) | (1 << (XonParser.ID - 59)))) !== 0));
                             this.state = 306;
                             this.match(XonParser.DEDENT);
                         }
@@ -2398,7 +2395,7 @@ class XonParser extends Parser_1.Parser {
                             this._ctx = _localctx;
                             _prevctx = _localctx;
                             this.state = 312;
-                            this.match(XonParser.Plus);
+                            this.match(XonParser.Add);
                             this.state = 313;
                             this.expression(23);
                         }
@@ -2409,7 +2406,7 @@ class XonParser extends Parser_1.Parser {
                             this._ctx = _localctx;
                             _prevctx = _localctx;
                             this.state = 314;
-                            this.match(XonParser.Minus);
+                            this.match(XonParser.Substract);
                             this.state = 315;
                             this.expression(22);
                         }
@@ -2495,7 +2492,7 @@ class XonParser extends Parser_1.Parser {
                             this.state = 343;
                             this._errHandler.sync(this);
                             _la = this._input.LA(1);
-                            if ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << XonParser.If) | (1 << XonParser.Loop) | (1 << XonParser.Select) | (1 << XonParser.OpenBracket) | (1 << XonParser.OpenParen) | (1 << XonParser.OpenBrace) | (1 << XonParser.Ad))) !== 0) || ((((_la - 33)) & ~0x1F) === 0 && ((1 << (_la - 33)) & ((1 << (XonParser.Dot - 33)) | (1 << (XonParser.Plus - 33)) | (1 << (XonParser.Minus - 33)) | (1 << (XonParser.BitNot - 33)) | (1 << (XonParser.Not - 33)) | (1 << (XonParser.LambdaStart - 33)))) !== 0) || ((((_la - 67)) & ~0x1F) === 0 && ((1 << (_la - 67)) & ((1 << (XonParser.Spread - 67)) | (1 << (XonParser.NullLiteral - 67)) | (1 << (XonParser.BooleanLiteral - 67)) | (1 << (XonParser.NumberLiteral - 67)) | (1 << (XonParser.StringLiteral - 67)) | (1 << (XonParser.StringFormatStart - 67)) | (1 << (XonParser.ID - 67)))) !== 0)) {
+                            if (((((_la - 4)) & ~0x1F) === 0 && ((1 << (_la - 4)) & ((1 << (XonParser.If - 4)) | (1 << (XonParser.Loop - 4)) | (1 << (XonParser.Select - 4)) | (1 << (XonParser.BitNot - 4)) | (1 << (XonParser.OpenBracket - 4)) | (1 << (XonParser.OpenParen - 4)) | (1 << (XonParser.OpenBrace - 4)) | (1 << (XonParser.Ad - 4)) | (1 << (XonParser.Dot - 4)) | (1 << (XonParser.Add - 4)) | (1 << (XonParser.Substract - 4)) | (1 << (XonParser.Not - 4)))) !== 0) || ((((_la - 59)) & ~0x1F) === 0 && ((1 << (_la - 59)) & ((1 << (XonParser.LambdaStart - 59)) | (1 << (XonParser.Spread - 59)) | (1 << (XonParser.NullLiteral - 59)) | (1 << (XonParser.BooleanLiteral - 59)) | (1 << (XonParser.NumberLiteral - 59)) | (1 << (XonParser.StringLiteral - 59)) | (1 << (XonParser.StringFormatStart - 59)) | (1 << (XonParser.ID - 59)))) !== 0)) {
                                 {
                                     this.state = 335;
                                     this.arrayItem();
@@ -2559,7 +2556,7 @@ class XonParser extends Parser_1.Parser {
                             this.state = 383;
                             this._errHandler.sync(this);
                             _la = this._input.LA(1);
-                            if ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << XonParser.If) | (1 << XonParser.Loop) | (1 << XonParser.Select) | (1 << XonParser.OpenBracket) | (1 << XonParser.OpenParen) | (1 << XonParser.OpenBrace) | (1 << XonParser.Ad))) !== 0) || ((((_la - 33)) & ~0x1F) === 0 && ((1 << (_la - 33)) & ((1 << (XonParser.Dot - 33)) | (1 << (XonParser.Plus - 33)) | (1 << (XonParser.Minus - 33)) | (1 << (XonParser.BitNot - 33)) | (1 << (XonParser.Not - 33)) | (1 << (XonParser.LambdaStart - 33)))) !== 0) || ((((_la - 67)) & ~0x1F) === 0 && ((1 << (_la - 67)) & ((1 << (XonParser.Spread - 67)) | (1 << (XonParser.NullLiteral - 67)) | (1 << (XonParser.BooleanLiteral - 67)) | (1 << (XonParser.NumberLiteral - 67)) | (1 << (XonParser.StringLiteral - 67)) | (1 << (XonParser.StringFormatStart - 67)) | (1 << (XonParser.ID - 67)))) !== 0)) {
+                            if (((((_la - 4)) & ~0x1F) === 0 && ((1 << (_la - 4)) & ((1 << (XonParser.If - 4)) | (1 << (XonParser.Loop - 4)) | (1 << (XonParser.Select - 4)) | (1 << (XonParser.BitNot - 4)) | (1 << (XonParser.OpenBracket - 4)) | (1 << (XonParser.OpenParen - 4)) | (1 << (XonParser.OpenBrace - 4)) | (1 << (XonParser.Ad - 4)) | (1 << (XonParser.Dot - 4)) | (1 << (XonParser.Add - 4)) | (1 << (XonParser.Substract - 4)) | (1 << (XonParser.Not - 4)))) !== 0) || ((((_la - 59)) & ~0x1F) === 0 && ((1 << (_la - 59)) & ((1 << (XonParser.LambdaStart - 59)) | (1 << (XonParser.Spread - 59)) | (1 << (XonParser.NullLiteral - 59)) | (1 << (XonParser.BooleanLiteral - 59)) | (1 << (XonParser.NumberLiteral - 59)) | (1 << (XonParser.StringLiteral - 59)) | (1 << (XonParser.StringFormatStart - 59)) | (1 << (XonParser.ID - 59)))) !== 0)) {
                                 {
                                     this.state = 363;
                                     this._errHandler.sync(this);
@@ -2741,7 +2738,7 @@ class XonParser extends Parser_1.Parser {
                                         this.state = 409;
                                         _localctx._operation = this._input.LT(1);
                                         _la = this._input.LA(1);
-                                        if (!(((((_la - 38)) & ~0x1F) === 0 && ((1 << (_la - 38)) & ((1 << (XonParser.Multiply - 38)) | (1 << (XonParser.Divide - 38)) | (1 << (XonParser.Modulus - 38)))) !== 0))) {
+                                        if (!(((((_la - 36)) & ~0x1F) === 0 && ((1 << (_la - 36)) & ((1 << (XonParser.Multiply - 36)) | (1 << (XonParser.Divide - 36)) | (1 << (XonParser.Modulo - 36)))) !== 0))) {
                                             _localctx._operation = this._errHandler.recoverInline(this);
                                         }
                                         else {
@@ -2767,7 +2764,7 @@ class XonParser extends Parser_1.Parser {
                                         this.state = 412;
                                         _localctx._operation = this._input.LT(1);
                                         _la = this._input.LA(1);
-                                        if (!(_la === XonParser.Plus || _la === XonParser.Minus)) {
+                                        if (!(_la === XonParser.Add || _la === XonParser.Substract)) {
                                             _localctx._operation = this._errHandler.recoverInline(this);
                                         }
                                         else {
@@ -2819,7 +2816,7 @@ class XonParser extends Parser_1.Parser {
                                         this.state = 418;
                                         _localctx._operation = this._input.LT(1);
                                         _la = this._input.LA(1);
-                                        if (!(((((_la - 43)) & ~0x1F) === 0 && ((1 << (_la - 43)) & ((1 << (XonParser.LessThan - 43)) | (1 << (XonParser.MoreThan - 43)) | (1 << (XonParser.LessThanEquals - 43)) | (1 << (XonParser.MoreThanEquals - 43)))) !== 0))) {
+                                        if (!(((((_la - 41)) & ~0x1F) === 0 && ((1 << (_la - 41)) & ((1 << (XonParser.LessThan - 41)) | (1 << (XonParser.MoreThan - 41)) | (1 << (XonParser.LessThanEquals - 41)) | (1 << (XonParser.MoreThanEquals - 41)))) !== 0))) {
                                             _localctx._operation = this._errHandler.recoverInline(this);
                                         }
                                         else {
@@ -2975,7 +2972,7 @@ class XonParser extends Parser_1.Parser {
                                         this.state = 455;
                                         this._errHandler.sync(this);
                                         _la = this._input.LA(1);
-                                        if ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << XonParser.If) | (1 << XonParser.Loop) | (1 << XonParser.Select) | (1 << XonParser.OpenBracket) | (1 << XonParser.OpenParen) | (1 << XonParser.OpenBrace) | (1 << XonParser.Ad))) !== 0) || ((((_la - 33)) & ~0x1F) === 0 && ((1 << (_la - 33)) & ((1 << (XonParser.Dot - 33)) | (1 << (XonParser.Plus - 33)) | (1 << (XonParser.Minus - 33)) | (1 << (XonParser.BitNot - 33)) | (1 << (XonParser.Not - 33)) | (1 << (XonParser.LambdaStart - 33)))) !== 0) || ((((_la - 68)) & ~0x1F) === 0 && ((1 << (_la - 68)) & ((1 << (XonParser.NullLiteral - 68)) | (1 << (XonParser.BooleanLiteral - 68)) | (1 << (XonParser.NumberLiteral - 68)) | (1 << (XonParser.StringLiteral - 68)) | (1 << (XonParser.StringFormatStart - 68)) | (1 << (XonParser.ID - 68)))) !== 0)) {
+                                        if (((((_la - 4)) & ~0x1F) === 0 && ((1 << (_la - 4)) & ((1 << (XonParser.If - 4)) | (1 << (XonParser.Loop - 4)) | (1 << (XonParser.Select - 4)) | (1 << (XonParser.BitNot - 4)) | (1 << (XonParser.OpenBracket - 4)) | (1 << (XonParser.OpenParen - 4)) | (1 << (XonParser.OpenBrace - 4)) | (1 << (XonParser.Ad - 4)) | (1 << (XonParser.Dot - 4)) | (1 << (XonParser.Add - 4)) | (1 << (XonParser.Substract - 4)) | (1 << (XonParser.Not - 4)))) !== 0) || ((((_la - 59)) & ~0x1F) === 0 && ((1 << (_la - 59)) & ((1 << (XonParser.LambdaStart - 59)) | (1 << (XonParser.NullLiteral - 59)) | (1 << (XonParser.BooleanLiteral - 59)) | (1 << (XonParser.NumberLiteral - 59)) | (1 << (XonParser.StringLiteral - 59)) | (1 << (XonParser.StringFormatStart - 59)) | (1 << (XonParser.ID - 59)))) !== 0)) {
                                             {
                                                 this.state = 447;
                                                 _localctx._expression = this.expression(0);
@@ -3038,7 +3035,7 @@ class XonParser extends Parser_1.Parser {
                                         this.state = 468;
                                         this._errHandler.sync(this);
                                         _la = this._input.LA(1);
-                                        if ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << XonParser.If) | (1 << XonParser.Loop) | (1 << XonParser.Select) | (1 << XonParser.OpenBracket) | (1 << XonParser.OpenParen) | (1 << XonParser.OpenBrace) | (1 << XonParser.Ad))) !== 0) || ((((_la - 33)) & ~0x1F) === 0 && ((1 << (_la - 33)) & ((1 << (XonParser.Dot - 33)) | (1 << (XonParser.Plus - 33)) | (1 << (XonParser.Minus - 33)) | (1 << (XonParser.BitNot - 33)) | (1 << (XonParser.Not - 33)) | (1 << (XonParser.LambdaStart - 33)))) !== 0) || ((((_la - 68)) & ~0x1F) === 0 && ((1 << (_la - 68)) & ((1 << (XonParser.NullLiteral - 68)) | (1 << (XonParser.BooleanLiteral - 68)) | (1 << (XonParser.NumberLiteral - 68)) | (1 << (XonParser.StringLiteral - 68)) | (1 << (XonParser.StringFormatStart - 68)) | (1 << (XonParser.ID - 68)))) !== 0)) {
+                                        if (((((_la - 4)) & ~0x1F) === 0 && ((1 << (_la - 4)) & ((1 << (XonParser.If - 4)) | (1 << (XonParser.Loop - 4)) | (1 << (XonParser.Select - 4)) | (1 << (XonParser.BitNot - 4)) | (1 << (XonParser.OpenBracket - 4)) | (1 << (XonParser.OpenParen - 4)) | (1 << (XonParser.OpenBrace - 4)) | (1 << (XonParser.Ad - 4)) | (1 << (XonParser.Dot - 4)) | (1 << (XonParser.Add - 4)) | (1 << (XonParser.Substract - 4)) | (1 << (XonParser.Not - 4)))) !== 0) || ((((_la - 59)) & ~0x1F) === 0 && ((1 << (_la - 59)) & ((1 << (XonParser.LambdaStart - 59)) | (1 << (XonParser.NullLiteral - 59)) | (1 << (XonParser.BooleanLiteral - 59)) | (1 << (XonParser.NumberLiteral - 59)) | (1 << (XonParser.StringLiteral - 59)) | (1 << (XonParser.StringFormatStart - 59)) | (1 << (XonParser.ID - 59)))) !== 0)) {
                                             {
                                                 this.state = 467;
                                                 _localctx._endPos = this.expression(0);
@@ -3070,10 +3067,10 @@ class XonParser extends Parser_1.Parser {
                                         this.state = 478;
                                         this._errHandler.sync(this);
                                         _la = this._input.LA(1);
-                                        if (_la === XonParser.QuestionMark) {
+                                        if (_la === XonParser.Question) {
                                             {
                                                 this.state = 477;
-                                                this.match(XonParser.QuestionMark);
+                                                this.match(XonParser.Question);
                                             }
                                         }
                                         this.state = 480;
@@ -3279,9 +3276,9 @@ XonParser.LineBreak = 14;
 XonParser.BitAnd = 15;
 XonParser.BitOr = 16;
 XonParser.BitXor = 17;
-XonParser.RightShiftArithmetic = 18;
-XonParser.LeftShiftArithmetic = 19;
-XonParser.RightShiftLogical = 20;
+XonParser.BitNot = 18;
+XonParser.RightShiftArithmetic = 19;
+XonParser.LeftShiftArithmetic = 20;
 XonParser.OpenBracket = 21;
 XonParser.CloseBracket = 22;
 XonParser.OpenParen = 23;
@@ -3291,54 +3288,49 @@ XonParser.CloseBrace = 26;
 XonParser.Ad = 27;
 XonParser.Comma = 28;
 XonParser.Assign = 29;
-XonParser.QuestionMark = 30;
+XonParser.Question = 30;
 XonParser.Colon = 31;
-XonParser.TwoColon = 32;
-XonParser.Dot = 33;
-XonParser.Plus = 34;
-XonParser.Minus = 35;
-XonParser.BitNot = 36;
-XonParser.Not = 37;
-XonParser.Multiply = 38;
-XonParser.Divide = 39;
-XonParser.Modulus = 40;
-XonParser.Pow = 41;
-XonParser.Sharp = 42;
-XonParser.LessThan = 43;
-XonParser.MoreThan = 44;
-XonParser.LessThanEquals = 45;
-XonParser.MoreThanEquals = 46;
-XonParser.Equals = 47;
-XonParser.NotEquals = 48;
-XonParser.And = 49;
-XonParser.Or = 50;
-XonParser.MultiplyAssign = 51;
-XonParser.DivideAssign = 52;
-XonParser.ModulusAssign = 53;
-XonParser.PlusAssign = 54;
-XonParser.MinusAssign = 55;
-XonParser.LeftShiftArithmeticAssign = 56;
-XonParser.RightShiftArithmeticAssign = 57;
-XonParser.RightShiftLogicalAssign = 58;
-XonParser.BitAndAssign = 59;
-XonParser.BitXorAssign = 60;
-XonParser.BitOrAssign = 61;
-XonParser.LambdaStart = 62;
-XonParser.Pipe = 63;
-XonParser.Underscore = 64;
-XonParser.Declaration = 65;
-XonParser.Constant = 66;
-XonParser.Spread = 67;
-XonParser.NullLiteral = 68;
-XonParser.BooleanLiteral = 69;
-XonParser.NumberLiteral = 70;
-XonParser.StringLiteral = 71;
-XonParser.StringFormatStart = 72;
-XonParser.StringFormatMiddle = 73;
-XonParser.StringFormatEnd = 74;
-XonParser.ID = 75;
-XonParser.Skip = 76;
-XonParser.UnexpectedCharacter = 77;
+XonParser.Dot = 32;
+XonParser.Add = 33;
+XonParser.Substract = 34;
+XonParser.Not = 35;
+XonParser.Multiply = 36;
+XonParser.Divide = 37;
+XonParser.Modulo = 38;
+XonParser.Pow = 39;
+XonParser.Sharp = 40;
+XonParser.LessThan = 41;
+XonParser.MoreThan = 42;
+XonParser.LessThanEquals = 43;
+XonParser.MoreThanEquals = 44;
+XonParser.Equals = 45;
+XonParser.NotEquals = 46;
+XonParser.And = 47;
+XonParser.Or = 48;
+XonParser.MultiplyAssign = 49;
+XonParser.DivideAssign = 50;
+XonParser.ModuloAssign = 51;
+XonParser.AddAssign = 52;
+XonParser.SubstractAssign = 53;
+XonParser.LeftShiftArithmeticAssign = 54;
+XonParser.RightShiftArithmeticAssign = 55;
+XonParser.BitAndAssign = 56;
+XonParser.BitXorAssign = 57;
+XonParser.BitOrAssign = 58;
+XonParser.LambdaStart = 59;
+XonParser.Pipe = 60;
+XonParser.Underscore = 61;
+XonParser.Spread = 62;
+XonParser.NullLiteral = 63;
+XonParser.BooleanLiteral = 64;
+XonParser.NumberLiteral = 65;
+XonParser.StringLiteral = 66;
+XonParser.StringFormatStart = 67;
+XonParser.StringFormatMiddle = 68;
+XonParser.StringFormatEnd = 69;
+XonParser.ID = 70;
+XonParser.Skip = 71;
+XonParser.UnexpectedCharacter = 72;
 XonParser.RULE_program = 0;
 XonParser.RULE_imports = 1;
 XonParser.RULE_importMember = 2;
@@ -3365,31 +3357,30 @@ XonParser.ruleNames = [
 XonParser._LITERAL_NAMES = [
     undefined, undefined, undefined, "'as'", "'if'", "'else'", "'loop'", "'in'",
     "'pass'", "'continue'", "'break'", "'return'", "'select'", undefined,
-    undefined, "'and'", "'or'", "'xor'", "'>>'", "'<<'", "'>>>'", "'['", "']'",
-    "'('", "')'", "'{'", "'}'", "'@'", "','", "'='", "'?'", "':'", "'::'",
-    "'.'", "'+'", "'-'", "'~'", "'!'", "'*'", "'/'", "'%'", "'^'", "'#'",
-    "'<'", "'>'", "'<='", "'>='", "'=='", "'!='", "'&&'", "'||'", "'*='",
-    "'/='", "'%='", "'+='", "'-='", "'<<='", "'>>='", "'>>>='", "'&='", "'^='",
-    "'|='", "'\\'", "'|'", "'_'", "':='", "'::='", "'...'", "'null'",
+    undefined, "'and'", "'or'", "'xor'", "'not'", "'>>'", "'<<'", "'['", "']'",
+    "'('", "')'", "'{'", "'}'", "'@'", "','", "'='", "'?'", "':'", "'.'",
+    "'+'", "'-'", "'!'", "'*'", "'/'", "'%'", "'^'", "'#'", "'<'", "'>'",
+    "'<='", "'>='", "'=='", "'!='", "'&&'", "'||'", "'*='", "'/='", "'%='",
+    "'+='", "'-='", "'<<='", "'>>='", undefined, undefined, undefined, "'\\'",
+    "'|'", "'_'", "'...'", "'null'",
 ];
 XonParser._SYMBOLIC_NAMES = [
     undefined, "INDENT", "DEDENT", "As", "If", "Else", "Loop", "In", "Pass",
     "Continue", "Break", "Return", "Select", "Preprocessor", "LineBreak",
-    "BitAnd", "BitOr", "BitXor", "RightShiftArithmetic", "LeftShiftArithmetic",
-    "RightShiftLogical", "OpenBracket", "CloseBracket", "OpenParen", "CloseParen",
-    "OpenBrace", "CloseBrace", "Ad", "Comma", "Assign", "QuestionMark", "Colon",
-    "TwoColon", "Dot", "Plus", "Minus", "BitNot", "Not", "Multiply", "Divide",
-    "Modulus", "Pow", "Sharp", "LessThan", "MoreThan", "LessThanEquals", "MoreThanEquals",
-    "Equals", "NotEquals", "And", "Or", "MultiplyAssign", "DivideAssign",
-    "ModulusAssign", "PlusAssign", "MinusAssign", "LeftShiftArithmeticAssign",
-    "RightShiftArithmeticAssign", "RightShiftLogicalAssign", "BitAndAssign",
-    "BitXorAssign", "BitOrAssign", "LambdaStart", "Pipe", "Underscore", "Declaration",
-    "Constant", "Spread", "NullLiteral", "BooleanLiteral", "NumberLiteral",
+    "BitAnd", "BitOr", "BitXor", "BitNot", "RightShiftArithmetic", "LeftShiftArithmetic",
+    "OpenBracket", "CloseBracket", "OpenParen", "CloseParen", "OpenBrace",
+    "CloseBrace", "Ad", "Comma", "Assign", "Question", "Colon", "Dot", "Add",
+    "Substract", "Not", "Multiply", "Divide", "Modulo", "Pow", "Sharp", "LessThan",
+    "MoreThan", "LessThanEquals", "MoreThanEquals", "Equals", "NotEquals",
+    "And", "Or", "MultiplyAssign", "DivideAssign", "ModuloAssign", "AddAssign",
+    "SubstractAssign", "LeftShiftArithmeticAssign", "RightShiftArithmeticAssign",
+    "BitAndAssign", "BitXorAssign", "BitOrAssign", "LambdaStart", "Pipe",
+    "Underscore", "Spread", "NullLiteral", "BooleanLiteral", "NumberLiteral",
     "StringLiteral", "StringFormatStart", "StringFormatMiddle", "StringFormatEnd",
     "ID", "Skip", "UnexpectedCharacter",
 ];
 XonParser.VOCABULARY = new VocabularyImpl_1.VocabularyImpl(XonParser._LITERAL_NAMES, XonParser._SYMBOLIC_NAMES, []);
-XonParser._serializedATN = "\x03\uC91D\uCABA\u058D\uAFBA\u4F53\u0607\uEA8B\uC241\x03O\u01F5\x04\x02" +
+XonParser._serializedATN = "\x03\uC91D\uCABA\u058D\uAFBA\u4F53\u0607\uEA8B\uC241\x03J\u01F5\x04\x02" +
     "\t\x02\x04\x03\t\x03\x04\x04\t\x04\x04\x05\t\x05\x04\x06\t\x06\x04\x07" +
     "\t\x07\x04\b\t\b\x04\t\t\t\x04\n\t\n\x04\v\t\v\x04\f\t\f\x04\r\t\r\x04" +
     "\x0E\t\x0E\x04\x0F\t\x0F\x04\x10\t\x10\x04\x11\t\x11\x04\x12\t\x12\x03" +
@@ -3446,8 +3437,8 @@ XonParser._serializedATN = "\x03\uC91D\uCABA\u058D\uAFBA\u4F53\u0607\uEA8B\uC241
     "\v\x10\x03\x11\x05\x11\u01EB\n\x11\x03\x11\x03\x11\x03\x12\x03\x12\x03" +
     "\x12\x03\x12\x05\x12\u01F3\n\x12\x03\x12\x02\x02\x04\x16\x1E\x13\x02\x02" +
     "\x04\x02\x06\x02\b\x02\n\x02\f\x02\x0E\x02\x10\x02\x12\x02\x14\x02\x16" +
-    "\x02\x18\x02\x1A\x02\x1C\x02\x1E\x02 \x02\"\x02\x02\x07\x03\x02(*\x03" +
-    "\x02$%\x03\x02\x14\x15\x03\x02-0\x03\x0212\x02\u0257\x02\'\x03\x02\x02" +
+    "\x02\x18\x02\x1A\x02\x1C\x02\x1E\x02 \x02\"\x02\x02\x07\x03\x02&(\x03" +
+    "\x02#$\x03\x02\x15\x16\x03\x02+.\x03\x02/0\x02\u0257\x02\'\x03\x02\x02" +
     "\x02\x04A\x03\x02\x02\x02\x06C\x03\x02\x02\x02\bH\x03\x02\x02\x02\n_\x03" +
     "\x02\x02\x02\f{\x03\x02\x02\x02\x0E\x87\x03\x02\x02\x02\x10\x9B\x03\x02" +
     "\x02\x02\x12\x9D\x03\x02\x02\x02\x14\xAF\x03\x02\x02\x02\x16\xCF\x03\x02" +
@@ -3457,17 +3448,17 @@ XonParser._serializedATN = "\x03\uC91D\uCABA\u058D\uAFBA\u4F53\u0607\uEA8B\uC241
     "\x03\x02\x02\x02\'(\x03\x02\x02\x02(.\x03\x02\x02\x02)\'\x03\x02\x02\x02" +
     "*-\x05\f\x07\x02+-\x05\b\x05\x02,*\x03\x02\x02\x02,+\x03\x02\x02\x02-" +
     "0\x03\x02\x02\x02.,\x03\x02\x02\x02./\x03\x02\x02\x02/\x03\x03\x02\x02" +
-    "\x020.\x03\x02\x02\x0212\x07I\x02\x022>\x07!\x02\x0234\x07(\x02\x0245" +
-    "\x07\x05\x02\x025?\x07M\x02\x026;\x05\x06\x04\x0278\x07\x1E\x02\x028:" +
+    "\x020.\x03\x02\x02\x0212\x07D\x02\x022>\x07!\x02\x0234\x07&\x02\x0245" +
+    "\x07\x05\x02\x025?\x07H\x02\x026;\x05\x06\x04\x0278\x07\x1E\x02\x028:" +
     "\x05\x06\x04\x0297\x03\x02\x02\x02:=\x03\x02\x02\x02;9\x03\x02\x02\x02" +
     ";<\x03\x02\x02\x02<?\x03\x02\x02\x02=;\x03\x02\x02\x02>3\x03\x02\x02\x02" +
     ">6\x03\x02\x02\x02?B\x03\x02\x02\x02@B\x07\x10\x02\x02A1\x03\x02\x02\x02" +
-    "A@\x03\x02\x02\x02B\x05\x03\x02\x02\x02CF\x07M\x02\x02DE\x07\x05\x02\x02" +
-    "EG\x07M\x02\x02FD\x03\x02\x02\x02FG\x03\x02\x02\x02G\x07\x03\x02\x02\x02" +
-    "HI\x07M\x02\x02IJ\x07!\x02\x02JK\x07\x10\x02\x02KM\x07\x03\x02\x02LN\x05" +
+    "A@\x03\x02\x02\x02B\x05\x03\x02\x02\x02CF\x07H\x02\x02DE\x07\x05\x02\x02" +
+    "EG\x07H\x02\x02FD\x03\x02\x02\x02FG\x03\x02\x02\x02G\x07\x03\x02\x02\x02" +
+    "HI\x07H\x02\x02IJ\x07!\x02\x02JK\x07\x10\x02\x02KM\x07\x03\x02\x02LN\x05" +
     "\n\x06\x02ML\x03\x02\x02\x02NO\x03\x02\x02\x02OM\x03\x02\x02\x02OP\x03" +
     "\x02\x02\x02PQ\x03\x02\x02\x02QR\x07\x04\x02\x02R\t\x03\x02\x02\x02SZ" +
-    "\x07M\x02\x02T[\x05\x16\f\x02UW\x05\x16\f\x02VU\x03\x02\x02\x02VW\x03" +
+    "\x07H\x02\x02T[\x05\x16\f\x02UW\x05\x16\f\x02VU\x03\x02\x02\x02VW\x03" +
     "\x02\x02\x02WX\x03\x02\x02\x02XY\x07\x1F\x02\x02Y[\x05\x1E\x10\x02ZT\x03" +
     "\x02\x02\x02ZV\x03\x02\x02\x02[`\x03\x02\x02\x02\\`\x05\x18\r\x02]`\x07" +
     "\n\x02\x02^`\x07\x10\x02\x02_S\x03\x02\x02\x02_\\\x03\x02\x02\x02_]\x03" +
@@ -3486,26 +3477,26 @@ XonParser._serializedATN = "\x03\uC91D\uCABA\u058D\uAFBA\u4F53\u0607\uEA8B\uC241
     "\x03\x02\x02\x02\x82\x88\x03\x02\x02\x02\x83\x85\x05\x12\n\x02\x84\x86" +
     "\x05\x14\v\x02\x85\x84\x03\x02\x02\x02\x85\x86\x03\x02\x02\x02\x86\x88" +
     "\x03\x02\x02\x02\x87}\x03\x02\x02\x02\x87~\x03\x02\x02\x02\x87\x83\x03" +
-    "\x02\x02\x02\x88\x0F\x03\x02\x02\x02\x89\x90\x07M\x02\x02\x8A\x8C\x07" +
-    "\x1E\x02\x02\x8B\x8D\x07M\x02\x02\x8C\x8B\x03\x02\x02\x02\x8C\x8D\x03" +
+    "\x02\x02\x02\x88\x0F\x03\x02\x02\x02\x89\x90\x07H\x02\x02\x8A\x8C\x07" +
+    "\x1E\x02\x02\x8B\x8D\x07H\x02\x02\x8C\x8B\x03\x02\x02\x02\x8C\x8D\x03" +
     "\x02\x02\x02\x8D\x8F\x03\x02\x02\x02\x8E\x8A\x03\x02\x02\x02\x8F\x92\x03" +
     "\x02\x02\x02\x90\x8E\x03\x02\x02\x02\x90\x91\x03\x02\x02\x02\x91\x9C\x03" +
     "\x02\x02\x02\x92\x90\x03\x02\x02\x02\x93\x95\x07\x1E\x02\x02\x94\x96\x07" +
-    "M\x02\x02\x95\x94\x03\x02\x02\x02\x95\x96\x03\x02\x02\x02\x96\x98\x03" +
+    "H\x02\x02\x95\x94\x03\x02\x02\x02\x95\x96\x03\x02\x02\x02\x96\x98\x03" +
     "\x02\x02\x02\x97\x93\x03\x02\x02\x02\x98\x99\x03\x02\x02\x02\x99\x97\x03" +
     "\x02\x02\x02\x99\x9A\x03\x02\x02\x02\x9A\x9C\x03\x02\x02\x02\x9B\x89\x03" +
     "\x02\x02\x02\x9B\x97\x03\x02\x02\x02\x9C\x11\x03\x02\x02\x02\x9D\x9F\x07" +
-    "E\x02\x02\x9E\xA0\x07M\x02\x02\x9F\x9E\x03\x02\x02\x02\x9F\xA0\x03\x02" +
-    "\x02\x02\xA0\xA8\x03\x02\x02\x02\xA1\xA2\x07\x1E\x02\x02\xA2\xA4\x07E" +
-    "\x02\x02\xA3\xA5\x07M\x02\x02\xA4\xA3\x03\x02\x02\x02\xA4\xA5\x03\x02" +
+    "@\x02\x02\x9E\xA0\x07H\x02\x02\x9F\x9E\x03\x02\x02\x02\x9F\xA0\x03\x02" +
+    "\x02\x02\xA0\xA8\x03\x02\x02\x02\xA1\xA2\x07\x1E\x02\x02\xA2\xA4\x07@" +
+    "\x02\x02\xA3\xA5\x07H\x02\x02\xA4\xA3\x03\x02\x02\x02\xA4\xA5\x03\x02" +
     "\x02\x02\xA5\xA7\x03\x02\x02\x02\xA6\xA1\x03\x02\x02\x02\xA7\xAA\x03\x02" +
     "\x02\x02\xA8\xA6\x03\x02\x02\x02\xA8\xA9\x03\x02\x02\x02\xA9\x13\x03\x02" +
-    "\x02\x02\xAA\xA8\x03\x02\x02\x02\xAB\xAD\x07\x1E\x02\x02\xAC\xAE\x07M" +
+    "\x02\x02\xAA\xA8\x03\x02\x02\x02\xAB\xAD\x07\x1E\x02\x02\xAC\xAE\x07H" +
     "\x02\x02\xAD\xAC\x03\x02\x02\x02\xAD\xAE\x03\x02\x02\x02\xAE\xB0\x03\x02" +
     "\x02\x02\xAF\xAB\x03\x02\x02\x02\xB0\xB1\x03\x02\x02\x02\xB1\xAF\x03\x02" +
     "\x02\x02\xB1\xB2\x03\x02\x02\x02\xB2\x15\x03\x02\x02\x02\xB3\xB4\b\f\x01" +
-    "\x02\xB4\xD0\x07M\x02\x02\xB5\xB6\x07\x1B\x02\x02\xB6\xB7\x07M\x02\x02" +
-    "\xB7\xBD\x05\x16\f\x02\xB8\xB9\x07\x1E\x02\x02\xB9\xBA\x07M\x02\x02\xBA" +
+    "\x02\xB4\xD0\x07H\x02\x02\xB5\xB6\x07\x1B\x02\x02\xB6\xB7\x07H\x02\x02" +
+    "\xB7\xBD\x05\x16\f\x02\xB8\xB9\x07\x1E\x02\x02\xB9\xBA\x07H\x02\x02\xBA" +
     "\xBC\x05\x16\f\x02\xBB\xB8\x03\x02\x02\x02\xBC\xBF\x03\x02\x02\x02\xBD" +
     "\xBB\x03\x02\x02\x02\xBD\xBE\x03\x02\x02\x02\xBE\xC0\x03\x02\x02\x02\xBF" +
     "\xBD\x03\x02\x02\x02\xC0\xC1\x07\x1C\x02\x02\xC1\xD0\x03\x02\x02\x02\xC2" +
@@ -3518,14 +3509,14 @@ XonParser._serializedATN = "\x03\uC91D\uCABA\u058D\uAFBA\u4F53\u0607\uEA8B\uC241
     "\xD6\x03\x02\x02\x02\xD1\xD2\f\x05\x02\x02\xD2\xD3\x07\x17\x02\x02\xD3" +
     "\xD5\x07\x18\x02\x02\xD4\xD1\x03\x02\x02\x02\xD5\xD8\x03\x02\x02\x02\xD6" +
     "\xD4\x03\x02\x02\x02\xD6\xD7\x03\x02\x02\x02\xD7\x17\x03\x02\x02\x02\xD8" +
-    "\xD6\x03\x02\x02\x02\xD9\xDA\x07M\x02\x02\xDA\xE3\x07\x19\x02\x02\xDB" +
+    "\xD6\x03\x02\x02\x02\xD9\xDA\x07H\x02\x02\xDA\xE3\x07\x19\x02\x02\xDB" +
     "\xE0\x05\x1A\x0E\x02\xDC\xDD\x07\x1E\x02\x02\xDD\xDF\x05\x1A\x0E\x02\xDE" +
     "\xDC\x03\x02\x02\x02\xDF\xE2\x03\x02\x02\x02\xE0\xDE\x03\x02\x02\x02\xE0" +
     "\xE1\x03\x02\x02\x02\xE1\xE4\x03\x02\x02\x02\xE2\xE0\x03\x02\x02\x02\xE3" +
     "\xDB\x03\x02\x02\x02\xE3\xE4\x03\x02\x02\x02\xE4\xE5\x03\x02\x02\x02\xE5" +
     "\xE7\x07\x1A\x02\x02\xE6\xE8\x05\x16\f\x02\xE7\xE6\x03\x02\x02\x02\xE7" +
     "\xE8\x03\x02\x02\x02\xE8\xE9\x03\x02\x02\x02\xE9\xEA\x05\x1C\x0F\x02\xEA" +
-    "\x19\x03\x02\x02\x02\xEB\xF2\x07M\x02\x02\xEC\xF3\x05\x16\f\x02\xED\xEF" +
+    "\x19\x03\x02\x02\x02\xEB\xF2\x07H\x02\x02\xEC\xF3\x05\x16\f\x02\xED\xEF" +
     "\x05\x16\f\x02\xEE\xED\x03\x02\x02\x02\xEE\xEF\x03\x02\x02\x02\xEF\xF0" +
     "\x03\x02\x02\x02\xF0\xF1\x07\x1F\x02\x02\xF1\xF3\x05\x1E\x10\x02\xF2\xEC" +
     "\x03\x02\x02\x02\xF2\xEE\x03\x02\x02\x02\xF3\x1B\x03\x02\x02\x02\xF4\xFF" +
@@ -3540,17 +3531,17 @@ XonParser._serializedATN = "\x03\uC91D\uCABA\u058D\uAFBA\u4F53\u0607\uEA8B\uC241
     "\x02\x02\u0108\u0109\x03\x02\x02\x02\u0109\u010A\x03\x02\x02\x02\u010A" +
     "\u010C\x05\x1C\x0F\x02\u010B\u0105\x03\x02\x02\x02\u010B\u010C\x03\x02" +
     "\x02\x02\u010C\u0196\x03\x02\x02\x02\u010D\u011D\x07\b\x02\x02\u010E\u0113" +
-    "\x07M\x02\x02\u010F\u0111\x07\x1E\x02\x02\u0110\u0112\x07M\x02\x02\u0111" +
+    "\x07H\x02\x02\u010F\u0111\x07\x1E\x02\x02\u0110\u0112\x07H\x02\x02\u0111" +
     "\u0110\x03\x02\x02\x02\u0111\u0112\x03\x02\x02\x02\u0112\u0114\x03\x02" +
     "\x02\x02\u0113\u010F\x03\x02\x02\x02\u0113\u0114\x03\x02\x02\x02\u0114" +
-    "\u0117\x03\x02\x02\x02\u0115\u0116\x07\x1E\x02\x02\u0116\u0118\x07M\x02" +
+    "\u0117\x03\x02\x02\x02\u0115\u0116\x07\x1E\x02\x02\u0116\u0118\x07H\x02" +
     "\x02\u0117\u0115\x03\x02\x02\x02\u0117\u0118\x03\x02\x02\x02\u0118\u0119" +
     "\x03\x02\x02\x02\u0119\u011B\x07\t\x02\x02\u011A\u010E\x03\x02\x02\x02" +
     "\u011A\u011B\x03\x02\x02\x02\u011B\u011C\x03\x02\x02\x02\u011C\u011E\x05" +
     "\x1E\x10\x02\u011D\u011A\x03\x02\x02\x02\u011D\u011E\x03\x02\x02\x02\u011E" +
     "\u011F\x03\x02\x02\x02\u011F\u0196\x05\x1C\x0F\x02\u0120\u0126\x07\x0E" +
     "\x02\x02\u0121\u0124\x05\x1E\x10\x02\u0122\u0123\x07\x05\x02\x02\u0123" +
-    "\u0125\x07M\x02\x02\u0124\u0122\x03\x02\x02\x02\u0124\u0125\x03\x02\x02" +
+    "\u0125\x07H\x02\x02\u0124\u0122\x03\x02\x02\x02\u0124\u0125\x03\x02\x02" +
     "\x02\u0125\u0127\x03\x02\x02\x02\u0126\u0121\x03\x02\x02\x02\u0126\u0127" +
     "\x03\x02\x02\x02\u0127\u0128\x03\x02\x02\x02\u0128\u0129\x07!\x02\x02" +
     "\u0129\u012A\x07\x10\x02\x02\u012A\u0130\x07\x03\x02\x02\u012B\u012C\x05" +
@@ -3559,16 +3550,16 @@ XonParser._serializedATN = "\x03\uC91D\uCABA\u058D\uAFBA\u4F53\u0607\uEA8B\uC241
     "\x02\x02\u0130\u012B\x03\x02\x02\x02\u0131\u0132\x03\x02\x02\x02\u0132" +
     "\u0130\x03\x02\x02\x02\u0132\u0133\x03\x02\x02\x02\u0133\u0134\x03\x02" +
     "\x02\x02\u0134\u0135\x07\x04\x02\x02\u0135\u0196\x03\x02\x02\x02\u0136" +
-    "\u0137\x07#\x02\x02\u0137\u0196\x07M\x02\x02\u0138\u0139\x07\x1D\x02\x02" +
-    "\u0139\u0196\x05\x1E\x10\x1B\u013A\u013B\x07$\x02\x02\u013B\u0196\x05" +
-    "\x1E\x10\x19\u013C\u013D\x07%\x02\x02\u013D\u0196\x05\x1E\x10\x18\u013E" +
-    "\u013F\x07&\x02\x02\u013F\u0196\x05\x1E\x10\x17\u0140\u0141\x07\'\x02" +
-    "\x02\u0141\u0196\x05\x1E\x10\x16\u0142\u0196\x07M\x02\x02\u0143\u0196" +
-    "\x05\"\x12\x02\u0144\u014A\x07J\x02\x02\u0145\u0146\x05\x1E\x10\x02\u0146" +
-    "\u0147\x07K\x02\x02\u0147\u0149\x03\x02\x02\x02\u0148\u0145\x03\x02\x02" +
+    "\u0137\x07\"\x02\x02\u0137\u0196\x07H\x02\x02\u0138\u0139\x07\x1D\x02" +
+    "\x02\u0139\u0196\x05\x1E\x10\x1B\u013A\u013B\x07#\x02\x02\u013B\u0196" +
+    "\x05\x1E\x10\x19\u013C\u013D\x07$\x02\x02\u013D\u0196\x05\x1E\x10\x18" +
+    "\u013E\u013F\x07\x14\x02\x02\u013F\u0196\x05\x1E\x10\x17\u0140\u0141\x07" +
+    "%\x02\x02\u0141\u0196\x05\x1E\x10\x16\u0142\u0196\x07H\x02\x02\u0143\u0196" +
+    "\x05\"\x12\x02\u0144\u014A\x07E\x02\x02\u0145\u0146\x05\x1E\x10\x02\u0146" +
+    "\u0147\x07F\x02\x02\u0147\u0149\x03\x02\x02\x02\u0148\u0145\x03\x02\x02" +
     "\x02\u0149\u014C\x03\x02\x02\x02\u014A\u0148\x03\x02\x02\x02\u014A\u014B" +
     "\x03\x02\x02\x02\u014B\u014D\x03\x02\x02\x02\u014C\u014A\x03\x02\x02\x02" +
-    "\u014D\u014E\x05\x1E\x10\x02\u014E\u014F\x07L\x02\x02\u014F\u0196\x03" +
+    "\u014D\u014E\x05\x1E\x10\x02\u014E\u014F\x07G\x02\x02\u014F\u0196\x03" +
     "\x02\x02\x02\u0150\u0159\x07\x17\x02\x02\u0151\u0156\x05 \x11\x02\u0152" +
     "\u0153\x07\x1E\x02\x02\u0153\u0155\x05 \x11\x02\u0154\u0152\x03\x02\x02" +
     "\x02\u0155\u0158\x03\x02\x02\x02\u0156\u0154\x03\x02\x02\x02\u0156\u0157" +
@@ -3579,23 +3570,23 @@ XonParser._serializedATN = "\x03\uC91D\uCABA\u058D\uAFBA\u4F53\u0607\uEA8B\uC241
     "\x02\u0160\u0161\x07!\x02\x02\u0161\u0163\x05\x1E\x10\x02\u0162\u0160" +
     "\x03\x02\x02\x02\u0162\u0163\x03\x02\x02\x02\u0163\u0164\x03\x02\x02\x02" +
     "\u0164\u0165\x07\x18\x02\x02\u0165\u0196\x03\x02\x02\x02\u0166\u0181\x07" +
-    "\x1B\x02\x02\u0167\u0168\x07#\x02\x02\u0168\u016E\x07M\x02\x02\u0169\u016B" +
-    "\x07E\x02\x02\u016A\u0169\x03\x02\x02\x02\u016A\u016B\x03\x02\x02\x02" +
-    "\u016B\u016C\x03\x02\x02\x02\u016C\u016E\x05\x1E\x10\x02\u016D\u0167\x03" +
-    "\x02\x02\x02\u016D\u016A\x03\x02\x02\x02\u016E\u016F\x03\x02\x02\x02\u016F" +
-    "\u0170\x07\x1F\x02\x02\u0170\u017E\x05\x1E\x10\x02\u0171\u0178\x07\x1E" +
-    "\x02\x02\u0172\u0173\x07#\x02\x02\u0173\u0179\x07M\x02\x02\u0174\u0176" +
-    "\x07E\x02\x02\u0175\u0174\x03\x02\x02\x02\u0175\u0176\x03\x02\x02\x02" +
-    "\u0176\u0177\x03\x02\x02\x02\u0177\u0179\x05\x1E\x10\x02\u0178\u0172\x03" +
-    "\x02\x02\x02\u0178\u0175\x03\x02\x02\x02\u0179\u017A\x03\x02\x02\x02\u017A" +
-    "\u017B\x07\x1F\x02\x02\u017B\u017D\x05\x1E\x10\x02\u017C\u0171\x03\x02" +
-    "\x02\x02\u017D\u0180\x03\x02\x02\x02\u017E\u017C\x03\x02\x02\x02\u017E" +
+    "\x1B\x02\x02\u0167\u0168\x07\"\x02\x02\u0168\u016E\x07H\x02\x02\u0169" +
+    "\u016B\x07@\x02\x02\u016A\u0169\x03\x02\x02\x02\u016A\u016B\x03\x02\x02" +
+    "\x02\u016B\u016C\x03\x02\x02\x02\u016C\u016E\x05\x1E\x10\x02\u016D\u0167" +
+    "\x03\x02\x02\x02\u016D\u016A\x03\x02\x02\x02\u016E\u016F\x03\x02\x02\x02" +
+    "\u016F\u0170\x07\x1F\x02\x02\u0170\u017E\x05\x1E\x10\x02\u0171\u0178\x07" +
+    "\x1E\x02\x02\u0172\u0173\x07\"\x02\x02\u0173\u0179\x07H\x02\x02\u0174" +
+    "\u0176\x07@\x02\x02\u0175\u0174\x03\x02\x02\x02\u0175\u0176\x03\x02\x02" +
+    "\x02\u0176\u0177\x03\x02\x02\x02\u0177\u0179\x05\x1E\x10\x02\u0178\u0172" +
+    "\x03\x02\x02\x02\u0178\u0175\x03\x02\x02\x02\u0179\u017A\x03\x02\x02\x02" +
+    "\u017A\u017B\x07\x1F\x02\x02\u017B\u017D\x05\x1E\x10\x02\u017C\u0171\x03" +
+    "\x02\x02\x02\u017D\u0180\x03\x02\x02\x02\u017E\u017C\x03\x02\x02\x02\u017E" +
     "\u017F\x03\x02\x02\x02\u017F\u0182\x03\x02\x02\x02\u0180\u017E\x03\x02" +
     "\x02\x02\u0181\u016D\x03\x02\x02\x02\u0181\u0182\x03\x02\x02\x02\u0182" +
     "\u0183\x03\x02\x02\x02\u0183\u0196\x07\x1C\x02\x02\u0184\u0185\x07\x19" +
     "\x02\x02\u0185\u0186\x05\x1E\x10\x02\u0186\u0187\x07\x1A\x02\x02\u0187" +
-    "\u0196\x03\x02\x02\x02\u0188\u0192\x07@\x02\x02\u0189\u018E\x07M\x02\x02" +
-    "\u018A\u018B\x07\x1E\x02\x02\u018B\u018D\x07M\x02\x02\u018C\u018A\x03" +
+    "\u0196\x03\x02\x02\x02\u0188\u0192\x07=\x02\x02\u0189\u018E\x07H\x02\x02" +
+    "\u018A\u018B\x07\x1E\x02\x02\u018B\u018D\x07H\x02\x02\u018C\u018A\x03" +
     "\x02\x02\x02\u018D\u0190\x03\x02\x02\x02\u018E\u018C\x03\x02\x02\x02\u018E" +
     "\u018F\x03\x02\x02\x02\u018F\u0191\x03\x02\x02\x02\u0190\u018E\x03\x02" +
     "\x02\x02\u0191\u0193\x07!\x02\x02\u0192\u0189\x03\x02\x02\x02\u0192\u0193" +
@@ -3607,7 +3598,7 @@ XonParser._serializedATN = "\x03\uC91D\uCABA\u058D\uAFBA\u4F53\u0607\uEA8B\uC241
     "\u0143\x03\x02\x02\x02\u0195\u0144\x03\x02\x02\x02\u0195\u0150\x03\x02" +
     "\x02\x02\u0195\u015C\x03\x02\x02\x02\u0195\u0166\x03\x02\x02\x02\u0195" +
     "\u0184\x03\x02\x02\x02\u0195\u0188\x03\x02\x02\x02\u0196\u01E6\x03\x02" +
-    "\x02\x02\u0197\u0198\f\x1A\x02\x02\u0198\u0199\x07+\x02\x02\u0199\u01E5" +
+    "\x02\x02\u0197\u0198\f\x1A\x02\x02\u0198\u0199\x07)\x02\x02\u0199\u01E5" +
     "\x05\x1E\x10\x1B\u019A\u019B\f\x15\x02\x02\u019B\u019C\t\x02\x02\x02\u019C" +
     "\u01E5\x05\x1E\x10\x16\u019D\u019E\f\x14\x02\x02\u019E\u019F\t\x03\x02" +
     "\x02\u019F\u01E5\x05\x1E\x10\x15\u01A0\u01A1\f\x13\x02\x02\u01A1\u01A2" +
@@ -3617,10 +3608,10 @@ XonParser._serializedATN = "\x03\uC91D\uCABA\u058D\uAFBA\u4F53\u0607\uEA8B\uC241
     "\f\x10\x02\x02\u01AA\u01AB\x07\x11\x02\x02\u01AB\u01E5\x05\x1E\x10\x11" +
     "\u01AC\u01AD\f\x0F\x02\x02\u01AD\u01AE\x07\x13\x02\x02\u01AE\u01E5\x05" +
     "\x1E\x10\x10\u01AF\u01B0\f\x0E\x02\x02\u01B0\u01B1\x07\x12\x02\x02\u01B1" +
-    "\u01E5\x05\x1E\x10\x0F\u01B2\u01B3\f\r\x02\x02\u01B3\u01B4\x073\x02\x02" +
-    "\u01B4\u01E5\x05\x1E\x10\x0E\u01B5\u01B6\f\f\x02\x02\u01B6\u01B7\x074" +
+    "\u01E5\x05\x1E\x10\x0F\u01B2\u01B3\f\r\x02\x02\u01B3\u01B4\x071\x02\x02" +
+    "\u01B4\u01E5\x05\x1E\x10\x0E\u01B5\u01B6\f\f\x02\x02\u01B6\u01B7\x072" +
     "\x02\x02\u01B7\u01E5\x05\x1E\x10\r\u01B8\u01B9\f\x04\x02\x02\u01B9\u01BC" +
-    "\x07A\x02\x02\u01BA\u01BB\x07M\x02\x02\u01BB\u01BD\x07!\x02\x02\u01BC" +
+    "\x07>\x02\x02\u01BA\u01BB\x07H\x02\x02\u01BB\u01BD\x07!\x02\x02\u01BC" +
     "\u01BA\x03\x02\x02\x02\u01BC\u01BD\x03\x02\x02\x02\u01BD\u01BE\x03\x02" +
     "\x02\x02\u01BE\u01E5\x05\x1E\x10\x05\u01BF\u01C0\f \x02\x02\u01C0\u01C9" +
     "\x07\x19\x02\x02\u01C1\u01C6\x05\x1E\x10\x02\u01C2\u01C3\x07\x1E\x02\x02" +
@@ -3638,19 +3629,19 @@ XonParser._serializedATN = "\x03\uC91D\uCABA\u058D\uAFBA\u4F53\u0607\uEA8B\uC241
     "\x03\x02\x02\x02\u01DC\u01DD\x07\x18\x02\x02\u01DD\u01E5\x03\x02\x02\x02" +
     "\u01DE\u01E0\f\x1D\x02\x02\u01DF\u01E1\x07 \x02\x02\u01E0\u01DF\x03\x02" +
     "\x02\x02\u01E0\u01E1\x03\x02\x02\x02\u01E1\u01E2\x03\x02\x02\x02\u01E2" +
-    "\u01E3\x07#\x02\x02\u01E3\u01E5\x07M\x02\x02\u01E4\u0197\x03\x02\x02\x02" +
-    "\u01E4\u019A\x03\x02\x02\x02\u01E4\u019D\x03\x02\x02\x02\u01E4\u01A0\x03" +
-    "\x02\x02\x02\u01E4\u01A3\x03\x02\x02\x02\u01E4\u01A6\x03\x02\x02\x02\u01E4" +
-    "\u01A9\x03\x02\x02\x02\u01E4\u01AC\x03\x02\x02\x02\u01E4\u01AF\x03\x02" +
-    "\x02\x02\u01E4\u01B2\x03\x02\x02\x02\u01E4\u01B5\x03\x02\x02\x02\u01E4" +
+    "\u01E3\x07\"\x02\x02\u01E3\u01E5\x07H\x02\x02\u01E4\u0197\x03\x02\x02" +
+    "\x02\u01E4\u019A\x03\x02\x02\x02\u01E4\u019D\x03\x02\x02\x02\u01E4\u01A0" +
+    "\x03\x02\x02\x02\u01E4\u01A3\x03\x02\x02\x02\u01E4\u01A6\x03\x02\x02\x02" +
+    "\u01E4\u01A9\x03\x02\x02\x02\u01E4\u01AC\x03\x02\x02\x02\u01E4\u01AF\x03" +
+    "\x02\x02\x02\u01E4\u01B2\x03\x02\x02\x02\u01E4\u01B5\x03\x02\x02\x02\u01E4" +
     "\u01B8\x03\x02\x02\x02\u01E4\u01BF\x03\x02\x02\x02\u01E4\u01CC\x03\x02" +
     "\x02\x02\u01E4\u01D1\x03\x02\x02\x02\u01E4\u01DE\x03\x02\x02\x02\u01E5" +
     "\u01E8\x03\x02\x02\x02\u01E6\u01E4\x03\x02\x02\x02\u01E6\u01E7\x03\x02" +
     "\x02\x02\u01E7\x1F\x03\x02\x02\x02\u01E8\u01E6\x03\x02\x02\x02\u01E9\u01EB" +
-    "\x07E\x02\x02\u01EA\u01E9\x03\x02\x02\x02\u01EA\u01EB\x03\x02\x02\x02" +
+    "\x07@\x02\x02\u01EA\u01E9\x03\x02\x02\x02\u01EA\u01EB\x03\x02\x02\x02" +
     "\u01EB\u01EC\x03\x02\x02\x02\u01EC\u01ED\x05\x1E\x10\x02\u01ED!\x03\x02" +
-    "\x02\x02\u01EE\u01F3\x07F\x02\x02\u01EF\u01F3\x07G\x02\x02\u01F0\u01F3" +
-    "\x07H\x02\x02\u01F1\u01F3\x07I\x02\x02\u01F2\u01EE\x03\x02\x02\x02\u01F2" +
+    "\x02\x02\u01EE\u01F3\x07A\x02\x02\u01EF\u01F3\x07B\x02\x02\u01F0\u01F3" +
+    "\x07C\x02\x02\u01F1\u01F3\x07D\x02\x02\u01F2\u01EE\x03\x02\x02\x02\u01F2" +
     "\u01EF\x03\x02\x02\x02\u01F2\u01F0\x03\x02\x02\x02\u01F2\u01F1\x03\x02" +
     "\x02\x02\u01F3#\x03\x02\x02\x02L\',.;>AFOVZ_gnw{\x81\x85\x87\x8C\x90\x95" +
     "\x99\x9B\x9F\xA4\xA8\xAD\xB1\xBD\xC8\xCB\xCF\xD6\xE0\xE3\xE7\xEE\xF2\xFB" +
@@ -4372,7 +4363,7 @@ class MemberExpressionContext extends ExpressionContext {
     }
     Dot() { return this.getToken(XonParser.Dot, 0); }
     ID() { return this.getToken(XonParser.ID, 0); }
-    QuestionMark() { return this.tryGetToken(XonParser.QuestionMark, 0); }
+    Question() { return this.tryGetToken(XonParser.Question, 0); }
     constructor(ctx) {
         super(ctx.parent, ctx.invokingState);
         this.copyFrom(ctx);
@@ -4416,7 +4407,7 @@ class PowExpressionContext extends ExpressionContext {
 }
 exports.PowExpressionContext = PowExpressionContext;
 class UnaryPlusExpressionContext extends ExpressionContext {
-    Plus() { return this.getToken(XonParser.Plus, 0); }
+    Add() { return this.getToken(XonParser.Add, 0); }
     expression() {
         return this.getRuleContext(0, ExpressionContext);
     }
@@ -4427,7 +4418,7 @@ class UnaryPlusExpressionContext extends ExpressionContext {
 }
 exports.UnaryPlusExpressionContext = UnaryPlusExpressionContext;
 class UnaryMinusExpressionContext extends ExpressionContext {
-    Minus() { return this.getToken(XonParser.Minus, 0); }
+    Substract() { return this.getToken(XonParser.Substract, 0); }
     expression() {
         return this.getRuleContext(0, ExpressionContext);
     }
@@ -4474,7 +4465,7 @@ class MulDivModExpressionContext extends ExpressionContext {
     }
     Multiply() { return this.tryGetToken(XonParser.Multiply, 0); }
     Divide() { return this.tryGetToken(XonParser.Divide, 0); }
-    Modulus() { return this.tryGetToken(XonParser.Modulus, 0); }
+    Modulo() { return this.tryGetToken(XonParser.Modulo, 0); }
 }
 exports.MulDivModExpressionContext = MulDivModExpressionContext;
 class AddSubExpressionContext extends ExpressionContext {
@@ -4490,8 +4481,8 @@ class AddSubExpressionContext extends ExpressionContext {
             return this.getRuleContext(i, ExpressionContext);
         }
     }
-    Plus() { return this.tryGetToken(XonParser.Plus, 0); }
-    Minus() { return this.tryGetToken(XonParser.Minus, 0); }
+    Add() { return this.tryGetToken(XonParser.Add, 0); }
+    Substract() { return this.tryGetToken(XonParser.Substract, 0); }
 }
 exports.AddSubExpressionContext = AddSubExpressionContext;
 class BitShiftExpressionContext extends ExpressionContext {
@@ -4893,7 +4884,7 @@ class StringLiteralContext extends LiteralContext {
 }
 exports.StringLiteralContext = StringLiteralContext;
 
-},{"antlr4ts/FailedPredicateException":232,"antlr4ts/NoViableAltException":240,"antlr4ts/Parser":241,"antlr4ts/ParserRuleContext":243,"antlr4ts/RecognitionException":246,"antlr4ts/Token":252,"antlr4ts/VocabularyImpl":254,"antlr4ts/atn/ATN":255,"antlr4ts/atn/ATNDeserializer":259,"antlr4ts/atn/ParserATNSimulator":296,"antlr4ts/misc/Utils":341}],9:[function(require,module,exports){
+},{"antlr4ts/FailedPredicateException":264,"antlr4ts/NoViableAltException":272,"antlr4ts/Parser":273,"antlr4ts/ParserRuleContext":275,"antlr4ts/RecognitionException":278,"antlr4ts/Token":284,"antlr4ts/VocabularyImpl":286,"antlr4ts/atn/ATN":287,"antlr4ts/atn/ATNDeserializer":291,"antlr4ts/atn/ParserATNSimulator":328,"antlr4ts/misc/Utils":373}],9:[function(require,module,exports){
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -4999,7 +4990,7 @@ function camelize(str) {
 }
 
 }).call(this,require('_process'))
-},{"./grammar/xon-lexer":7,"./grammar/xon-parser":8,"./tree/expression/expression-helper":34,"./tree/statement/statement-helper":127,"_process":371,"antlr4ts":324,"fs":368,"path":370}],11:[function(require,module,exports){
+},{"./grammar/xon-lexer":7,"./grammar/xon-parser":8,"./tree/expression/expression-helper":34,"./tree/statement/statement-helper":127,"_process":403,"antlr4ts":356,"fs":400,"path":402}],11:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BaseTree = void 0;
@@ -5613,16 +5604,16 @@ function getExpressionTree(ctx) {
     if (ctx instanceof xon_parser_1.MulDivModExpressionContext) {
         if (ctx.Divide())
             return new divide_expression_tree_1.DivideExpressionTree(ctx);
-        if (ctx.Modulus())
+        if (ctx.Modulo())
             return new modulo_expression_tree_1.ModuloExpressionTree(ctx);
         if (ctx.Multiply())
             return new multiply_expression_tree_1.MultiplyExpressionTree(ctx);
     }
     if (ctx instanceof xon_parser_1.AddSubExpressionContext) {
-        if (ctx.Minus())
-            return new substract_expression_tree_1.SubstractExpressionTree(ctx);
-        if (ctx.Plus())
+        if (ctx.Add())
             return new add_expression_tree_1.AddExpressionTree(ctx);
+        if (ctx.Substract())
+            return new substract_expression_tree_1.SubstractExpressionTree(ctx);
     }
     if (ctx instanceof xon_parser_1.BitShiftExpressionContext) {
         if (ctx.LeftShiftArithmetic())
@@ -6213,7 +6204,7 @@ class LoopExpressionTree extends expression_tree_1.ExpressionTree {
         var _a, _b, _c;
         super();
         this.ctx = ctx;
-        this.infinity = !ctx.expression();
+        this.isInfinity = !ctx.expression();
         this.indexName = (_a = ctx._index) === null || _a === void 0 ? void 0 : _a.text;
         this.keyName = (_b = ctx._key) === null || _b === void 0 ? void 0 : _b.text;
         this.valueName = (_c = ctx._value) === null || _c === void 0 ? void 0 : _c.text;
@@ -6224,7 +6215,7 @@ class LoopExpressionTree extends expression_tree_1.ExpressionTree {
         return type_helper_1.createArrayTreeType(base_types_1.BaseTypes.Any);
     }
     toPlain() {
-        return Object.assign(Object.assign({}, super.toPlain()), { infinity: this.infinity, indexName: this.indexName, keyName: this.keyName, valueName: this.valueName, expression: this.expression.toPlain(), statements: this.statements.map((x) => x.toPlain()) });
+        return Object.assign(Object.assign({}, super.toPlain()), { infinity: this.isInfinity, indexName: this.indexName, keyName: this.keyName, valueName: this.valueName, expression: this.expression.toPlain(), statements: this.statements.map((x) => x.toPlain()) });
     }
 }
 exports.LoopExpressionTree = LoopExpressionTree;
@@ -6255,7 +6246,7 @@ class MemberExpressionTree extends expression_tree_1.ExpressionTree {
     constructor(ctx) {
         super();
         this.ctx = ctx;
-        this.hasElvis = !!ctx.QuestionMark();
+        this.hasElvis = !!ctx.Question();
         this.memberName = ctx.ID().text;
         this.object = expression_helper_1.getExpressionTree(ctx.expression());
     }
@@ -7144,7 +7135,32 @@ class NumberLiteralTree extends literal_tree_1.LiteralTree {
     constructor(ctx) {
         super();
         this.ctx = ctx;
-        this.value = +ctx.NumberLiteral().text.replace(/_/g, '');
+        let strValue = ctx.NumberLiteral().text.replace(/_/g, '');
+        if (strValue.includes('x')) {
+            const split = strValue.split('x');
+            this.base = +split[0];
+            strValue = split[1];
+        }
+        const split = strValue.split('.');
+        this.integerValue = split[0];
+        this.fractionValue = split[1];
+        this.bitsCount = (+this.integerValue).toString(2).length;
+        if (split.length) {
+            this.value = this.parseFloat(strValue, this.base);
+        }
+        else {
+            this.value = +strValue;
+        }
+    }
+    parseFloat(str, radix) {
+        if (!radix)
+            return parseFloat(str);
+        var parts = str.split('.');
+        if (parts.length > 1) {
+            return (parseInt(parts[0], radix) +
+                parseInt(parts[1], radix) / Math.pow(radix, parts[1].length));
+        }
+        return parseInt(parts[0], radix);
     }
     getType() {
         return base_types_1.BaseTypes.Number;
@@ -7808,7 +7824,7 @@ __exportStar(require("./types"), exports);
 __exportStar(require("./tree"), exports);
 __exportStar(require("./util"), exports);
 
-},{"./translate":142,"./tree":197,"./types":215,"./util":216}],142:[function(require,module,exports){
+},{"./translate":142,"./tree":229,"./types":247,"./util":248}],142:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.translateProgram = exports.translateExpression = void 0;
@@ -7828,7 +7844,7 @@ function translateProgram(xonCode) {
 }
 exports.translateProgram = translateProgram;
 
-},{"./tree/expression/expression-helper":156,"./tree/program/program.translator":199,"@xon/ast":2}],143:[function(require,module,exports){
+},{"./tree/expression/expression-helper":166,"./tree/program/program.translator":231,"@xon/ast":2}],143:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BaseTranslator = void 0;
@@ -7880,7 +7896,7 @@ class DefinitionTranslator extends base_translator_1.BaseTranslator {
 }
 exports.DefinitionTranslator = DefinitionTranslator;
 
-},{"../../types":215,"../../util/string.util":217,"../base.translator":143,"../expression/expression-helper":156,"../function/function.translator":195}],145:[function(require,module,exports){
+},{"../../types":247,"../../util/string.util":249,"../base.translator":143,"../expression/expression-helper":166,"../function/function.translator":227}],145:[function(require,module,exports){
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -7914,7 +7930,7 @@ class AddExpressionTranslator extends expression_translator_1.ExpressionTranslat
 }
 exports.AddExpressionTranslator = AddExpressionTranslator;
 
-},{"../expression-helper":156,"../expression.translator":157}],147:[function(require,module,exports){
+},{"../expression-helper":166,"../expression.translator":167}],147:[function(require,module,exports){
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -7947,7 +7963,7 @@ class ArrayExpressionTranslator extends expression_translator_1.ExpressionTransl
 }
 exports.ArrayExpressionTranslator = ArrayExpressionTranslator;
 
-},{"../expression-helper":156,"../expression.translator":157}],149:[function(require,module,exports){
+},{"../expression-helper":166,"../expression.translator":167}],149:[function(require,module,exports){
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -7965,6 +7981,74 @@ __exportStar(require("./array-expression.translator"), exports);
 },{"./array-expression.translator":148}],150:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.BitAndExpressionTranslator = void 0;
+const expression_helper_1 = require("../expression-helper");
+const expression_translator_1 = require("../expression.translator");
+class BitAndExpressionTranslator extends expression_translator_1.ExpressionTranslator {
+    constructor(tree) {
+        super();
+        this.tree = tree;
+    }
+    translate() {
+        const left = expression_helper_1.getExpressionTranslator(this.tree.left).translate();
+        const right = expression_helper_1.getExpressionTranslator(this.tree.right).translate();
+        return `${left} & ${right}`;
+    }
+}
+exports.BitAndExpressionTranslator = BitAndExpressionTranslator;
+
+},{"../expression-helper":166,"../expression.translator":167}],151:[function(require,module,exports){
+"use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+__exportStar(require("./bit-and-expression.translator"), exports);
+
+},{"./bit-and-expression.translator":150}],152:[function(require,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.BitLeftShiftExpressionTranslator = void 0;
+const expression_helper_1 = require("../expression-helper");
+const expression_translator_1 = require("../expression.translator");
+class BitLeftShiftExpressionTranslator extends expression_translator_1.ExpressionTranslator {
+    constructor(tree) {
+        super();
+        this.tree = tree;
+    }
+    translate() {
+        const left = expression_helper_1.getExpressionTranslator(this.tree.left).translate();
+        const right = expression_helper_1.getExpressionTranslator(this.tree.right).translate();
+        return `${left} << ${right}`;
+    }
+}
+exports.BitLeftShiftExpressionTranslator = BitLeftShiftExpressionTranslator;
+
+},{"../expression-helper":166,"../expression.translator":167}],153:[function(require,module,exports){
+"use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+__exportStar(require("./bit-left-shift-expression.translator"), exports);
+
+},{"./bit-left-shift-expression.translator":152}],154:[function(require,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.BitNotExpressionTranslator = void 0;
 const expression_helper_1 = require("../expression-helper");
 const expression_translator_1 = require("../expression.translator");
@@ -7980,7 +8064,7 @@ class BitNotExpressionTranslator extends expression_translator_1.ExpressionTrans
 }
 exports.BitNotExpressionTranslator = BitNotExpressionTranslator;
 
-},{"../expression-helper":156,"../expression.translator":157}],151:[function(require,module,exports){
+},{"../expression-helper":166,"../expression.translator":167}],155:[function(require,module,exports){
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -7995,7 +8079,109 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./bit-not-expression.translator"), exports);
 
-},{"./bit-not-expression.translator":150}],152:[function(require,module,exports){
+},{"./bit-not-expression.translator":154}],156:[function(require,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.BitOrExpressionTranslator = void 0;
+const expression_helper_1 = require("../expression-helper");
+const expression_translator_1 = require("../expression.translator");
+class BitOrExpressionTranslator extends expression_translator_1.ExpressionTranslator {
+    constructor(tree) {
+        super();
+        this.tree = tree;
+    }
+    translate() {
+        const left = expression_helper_1.getExpressionTranslator(this.tree.left).translate();
+        const right = expression_helper_1.getExpressionTranslator(this.tree.right).translate();
+        return `${left} | ${right}`;
+    }
+}
+exports.BitOrExpressionTranslator = BitOrExpressionTranslator;
+
+},{"../expression-helper":166,"../expression.translator":167}],157:[function(require,module,exports){
+"use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+__exportStar(require("./bit-or-expression.translator"), exports);
+
+},{"./bit-or-expression.translator":156}],158:[function(require,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.BitRightShiftExpressionTranslator = void 0;
+const expression_helper_1 = require("../expression-helper");
+const expression_translator_1 = require("../expression.translator");
+class BitRightShiftExpressionTranslator extends expression_translator_1.ExpressionTranslator {
+    constructor(tree) {
+        super();
+        this.tree = tree;
+    }
+    translate() {
+        const left = expression_helper_1.getExpressionTranslator(this.tree.left).translate();
+        const right = expression_helper_1.getExpressionTranslator(this.tree.right).translate();
+        return `${left} >> ${right}`;
+    }
+}
+exports.BitRightShiftExpressionTranslator = BitRightShiftExpressionTranslator;
+
+},{"../expression-helper":166,"../expression.translator":167}],159:[function(require,module,exports){
+"use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+__exportStar(require("./bit-right-shift-expression.translator"), exports);
+
+},{"./bit-right-shift-expression.translator":158}],160:[function(require,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.BitXorExpressionTranslator = void 0;
+const expression_helper_1 = require("../expression-helper");
+const expression_translator_1 = require("../expression.translator");
+class BitXorExpressionTranslator extends expression_translator_1.ExpressionTranslator {
+    constructor(tree) {
+        super();
+        this.tree = tree;
+    }
+    translate() {
+        const left = expression_helper_1.getExpressionTranslator(this.tree.left).translate();
+        const right = expression_helper_1.getExpressionTranslator(this.tree.right).translate();
+        return `${left} ^ ${right}`;
+    }
+}
+exports.BitXorExpressionTranslator = BitXorExpressionTranslator;
+
+},{"../expression-helper":166,"../expression.translator":167}],161:[function(require,module,exports){
+"use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+__exportStar(require("./bit-xor-expression.translator"), exports);
+
+},{"./bit-xor-expression.translator":160}],162:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DivideExpressionTranslator = void 0;
@@ -8014,7 +8200,7 @@ class DivideExpressionTranslator extends expression_translator_1.ExpressionTrans
 }
 exports.DivideExpressionTranslator = DivideExpressionTranslator;
 
-},{"../expression-helper":156,"../expression.translator":157}],153:[function(require,module,exports){
+},{"../expression-helper":166,"../expression.translator":167}],163:[function(require,module,exports){
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -8029,7 +8215,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./divide-expression.translator"), exports);
 
-},{"./divide-expression.translator":152}],154:[function(require,module,exports){
+},{"./divide-expression.translator":162}],164:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.EqualsExpressionTranslator = void 0;
@@ -8048,7 +8234,7 @@ class EqualsExpressionTranslator extends expression_translator_1.ExpressionTrans
 }
 exports.EqualsExpressionTranslator = EqualsExpressionTranslator;
 
-},{"../expression-helper":156,"../expression.translator":157}],155:[function(require,module,exports){
+},{"../expression-helper":166,"../expression.translator":167}],165:[function(require,module,exports){
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -8063,34 +8249,50 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./equals-expression.translator"), exports);
 
-},{"./equals-expression.translator":154}],156:[function(require,module,exports){
+},{"./equals-expression.translator":164}],166:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getExpressionTranslator = void 0;
 const ast_1 = require("@xon/ast");
 const add_expression_translator_1 = require("./add-expression/add-expression.translator");
 const array_expression_translator_1 = require("./array-expression/array-expression.translator");
-const bit_not_expression_translator_1 = require("./bit-not-expression.translator/bit-not-expression.translator");
+const bit_and_expression_translator_1 = require("./bit-and-expression/bit-and-expression.translator");
+const bit_left_shift_expression_translator_1 = require("./bit-left-shift-expression/bit-left-shift-expression.translator");
+const bit_not_expression_translator_1 = require("./bit-not-expression/bit-not-expression.translator");
+const bit_or_expression_translator_1 = require("./bit-or-expression/bit-or-expression.translator");
+const bit_right_shift_expression_translator_1 = require("./bit-right-shift-expression/bit-right-shift-expression.translator");
+const bit_xor_expression_translator_1 = require("./bit-xor-expression/bit-xor-expression.translator");
 const divide_expression_translator_1 = require("./divide-expression/divide-expression.translator");
 const equals_expression_translator_1 = require("./equals-expression/equals-expression.translator");
 const function_expression_translator_1 = require("./function-expression/function-expression.translator");
 const id_expression_translator_1 = require("./id-expression/id-expression.translator");
 const if_expression_translator_1 = require("./if-expression/if-expression.translator");
-const instance_member_expression_translator_1 = require("./instance-expression/instance-member-expression.translator");
+const index_expression_translator_1 = require("./index-expression/index-expression.translator");
+const instance_member_expression_translator_1 = require("./instance-member-expression/instance-member-expression.translator");
+const lambda_expression_translator_1 = require("./lambda-expression/lambda-expression.translator");
 const less_than_equals_expression_translator_1 = require("./less-than-equals-expression/less-than-equals-expression.translator");
 const less_than_expression_translator_1 = require("./less-than-expression/less-than-expression.translator");
 const literal_expression_translator_1 = require("./literal-expression/literal-expression.translator");
 const logical_and_expression_translator_1 = require("./logical-and-expression/logical-and-expression.translator");
+const logical_not_expression_translator_1 = require("./logical-not-expression/logical-not-expression.translator");
 const logical_or_expression_translator_1 = require("./logical-or-expression/logical-or-expression.translator");
+const loop_expression_translator_1 = require("./loop-expression/loop-expression.translator");
 const member_expression_translator_1 = require("./member-expression/member-expression.translator");
+const modulo_expression_translator_1 = require("./modulo-expression/modulo-expression.translator");
 const more_than_equals_expression_translator_1 = require("./more-than-equals-expression/more-than-equals-expression.translator");
 const more_than_expression_translator_1 = require("./more-than-expression/more-than-expression.translator");
 const multiply_expression_translator_1 = require("./multiply-expression/multiply-expression.translator");
 const not_equals_expression_translator_1 = require("./not-equals-expression/not-equals-expression.translator");
 const parenthesized_expression_translator_1 = require("./parenthesized-expression/parenthesized-expression.translator");
+const pipe_expression_translator_1 = require("./pipe-expression/pipe-expression.translator");
+const pow_expression_translator_1 = require("./pow-expression/pow-expression.translator");
+const range_expression_translator_1 = require("./range-expression/range-expression.translator");
 const select_expression_translator_1 = require("./select-expression/select-expression.translator");
+const slice_expression_translator_1 = require("./slice-expression/slice-expression.translator");
 const string_format_expression_translator_1 = require("./string-format-expression/string-format-expression.translator");
 const substract_expression_translator_1 = require("./substract-expression/substract-expression.translator");
+const unary_minus_expression_translator_1 = require("./unary-minus-expression/unary-minus-expression.translator");
+const unary_plus_expression_translator_1 = require("./unary-plus-expression/unary-plus-expression.translator");
 function getExpressionTranslator(tree) {
     if (tree === undefined)
         return undefined;
@@ -8126,8 +8328,18 @@ function getExpressionTranslator(tree) {
         return new logical_or_expression_translator_1.LogicalOrExpressionTranslator(tree);
     if (tree instanceof ast_1.StringFormatExpressionTree)
         return new string_format_expression_translator_1.StringFormatExpressionTranslator(tree);
+    if (tree instanceof ast_1.BitAndExpressionTree)
+        return new bit_and_expression_translator_1.BitAndExpressionTranslator(tree);
+    if (tree instanceof ast_1.BitLeftShiftExpressionTree)
+        return new bit_left_shift_expression_translator_1.BitLeftShiftExpressionTranslator(tree);
     if (tree instanceof ast_1.BitNotExpressionTree)
         return new bit_not_expression_translator_1.BitNotExpressionTranslator(tree);
+    if (tree instanceof ast_1.BitOrExpressionTree)
+        return new bit_or_expression_translator_1.BitOrExpressionTranslator(tree);
+    if (tree instanceof ast_1.BitRightShiftExpressionTree)
+        return new bit_right_shift_expression_translator_1.BitRightShiftExpressionTranslator(tree);
+    if (tree instanceof ast_1.BitXorExpressionTree)
+        return new bit_xor_expression_translator_1.BitXorExpressionTranslator(tree);
     if (tree instanceof ast_1.IfExpressionTree)
         return new if_expression_translator_1.IfExpressionTranslator(tree);
     if (tree instanceof ast_1.SelectExpressionTree)
@@ -8138,6 +8350,28 @@ function getExpressionTranslator(tree) {
         return new equals_expression_translator_1.EqualsExpressionTranslator(tree);
     if (tree instanceof ast_1.NotEqualsExpressionTree)
         return new not_equals_expression_translator_1.NotEqualsExpressionTranslator(tree);
+    if (tree instanceof ast_1.IndexExpressionTree)
+        return new index_expression_translator_1.IndexExpressionTranslator(tree);
+    if (tree instanceof ast_1.LambdaExpressionTree)
+        return new lambda_expression_translator_1.LambdaExpressionTranslator(tree);
+    if (tree instanceof ast_1.LogicalNotExpressionTree)
+        return new logical_not_expression_translator_1.LogicalNotExpressionTranslator(tree);
+    if (tree instanceof ast_1.LoopExpressionTree)
+        return new loop_expression_translator_1.LoopExpressionTranslator(tree);
+    if (tree instanceof ast_1.ModuloExpressionTree)
+        return new modulo_expression_translator_1.ModuloExpressionTranslator(tree);
+    if (tree instanceof ast_1.PipeExpressionTree)
+        return new pipe_expression_translator_1.PipeExpressionTranslator(tree);
+    if (tree instanceof ast_1.PowExpressionTree)
+        return new pow_expression_translator_1.PowExpressionTranslator(tree);
+    if (tree instanceof ast_1.RangeExpressionTree)
+        return new range_expression_translator_1.RangeExpressionTranslator(tree);
+    if (tree instanceof ast_1.SliceExpressionTree)
+        return new slice_expression_translator_1.SliceExpressionTranslator(tree);
+    if (tree instanceof ast_1.UnaryMinusExpressionTree)
+        return new unary_minus_expression_translator_1.UnaryMinusExpressionTranslator(tree);
+    if (tree instanceof ast_1.UnaryPlusExpressionTree)
+        return new unary_plus_expression_translator_1.UnaryPlusExpressionTranslator(tree);
     if (tree instanceof ast_1.ParenthesizedExpressionTree) {
         if ('left' in tree.value ||
             tree instanceof ast_1.SelectExpressionTree ||
@@ -8151,7 +8385,7 @@ function getExpressionTranslator(tree) {
 }
 exports.getExpressionTranslator = getExpressionTranslator;
 
-},{"./add-expression/add-expression.translator":146,"./array-expression/array-expression.translator":148,"./bit-not-expression.translator/bit-not-expression.translator":150,"./divide-expression/divide-expression.translator":152,"./equals-expression/equals-expression.translator":154,"./function-expression/function-expression.translator":158,"./id-expression/id-expression.translator":160,"./if-expression/if-expression.translator":162,"./instance-expression/instance-member-expression.translator":166,"./less-than-equals-expression/less-than-equals-expression.translator":168,"./less-than-expression/less-than-expression.translator":170,"./literal-expression/literal-expression.translator":172,"./logical-and-expression/logical-and-expression.translator":174,"./logical-or-expression/logical-or-expression.translator":176,"./member-expression/member-expression.translator":178,"./more-than-equals-expression/more-than-equals-expression.translator":180,"./more-than-expression/more-than-expression.translator":182,"./multiply-expression/multiply-expression.translator":184,"./not-equals-expression/not-equals-expression.translator":186,"./parenthesized-expression/parenthesized-expression.translator":188,"./select-expression/select-expression.translator":190,"./string-format-expression/string-format-expression.translator":192,"./substract-expression/substract-expression.translator":194,"@xon/ast":2}],157:[function(require,module,exports){
+},{"./add-expression/add-expression.translator":146,"./array-expression/array-expression.translator":148,"./bit-and-expression/bit-and-expression.translator":150,"./bit-left-shift-expression/bit-left-shift-expression.translator":152,"./bit-not-expression/bit-not-expression.translator":154,"./bit-or-expression/bit-or-expression.translator":156,"./bit-right-shift-expression/bit-right-shift-expression.translator":158,"./bit-xor-expression/bit-xor-expression.translator":160,"./divide-expression/divide-expression.translator":162,"./equals-expression/equals-expression.translator":164,"./function-expression/function-expression.translator":168,"./id-expression/id-expression.translator":170,"./if-expression/if-expression.translator":172,"./index-expression/index-expression.translator":174,"./instance-member-expression/instance-member-expression.translator":178,"./lambda-expression/lambda-expression.translator":180,"./less-than-equals-expression/less-than-equals-expression.translator":182,"./less-than-expression/less-than-expression.translator":184,"./literal-expression/literal-expression.translator":186,"./logical-and-expression/logical-and-expression.translator":188,"./logical-not-expression/logical-not-expression.translator":190,"./logical-or-expression/logical-or-expression.translator":192,"./loop-expression/loop-expression.translator":194,"./member-expression/member-expression.translator":196,"./modulo-expression/modulo-expression.translator":198,"./more-than-equals-expression/more-than-equals-expression.translator":200,"./more-than-expression/more-than-expression.translator":202,"./multiply-expression/multiply-expression.translator":204,"./not-equals-expression/not-equals-expression.translator":206,"./parenthesized-expression/parenthesized-expression.translator":208,"./pipe-expression/pipe-expression.translator":210,"./pow-expression/pow-expression.translator":212,"./range-expression/range-expression.translator":214,"./select-expression/select-expression.translator":216,"./slice-expression/slice-expression.translator":218,"./string-format-expression/string-format-expression.translator":220,"./substract-expression/substract-expression.translator":222,"./unary-minus-expression/unary-minus-expression.translator":224,"./unary-plus-expression/unary-plus-expression.translator":226,"@xon/ast":2}],167:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ExpressionTranslator = void 0;
@@ -8160,7 +8394,7 @@ class ExpressionTranslator extends base_translator_1.BaseTranslator {
 }
 exports.ExpressionTranslator = ExpressionTranslator;
 
-},{"../base.translator":143}],158:[function(require,module,exports){
+},{"../base.translator":143}],168:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.FunctionExpressionTranslator = void 0;
@@ -8182,7 +8416,7 @@ class FunctionExpressionTranslator extends expression_translator_1.ExpressionTra
 }
 exports.FunctionExpressionTranslator = FunctionExpressionTranslator;
 
-},{"../expression-helper":156,"../expression.translator":157}],159:[function(require,module,exports){
+},{"../expression-helper":166,"../expression.translator":167}],169:[function(require,module,exports){
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -8197,7 +8431,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./function-expression.translator"), exports);
 
-},{"./function-expression.translator":158}],160:[function(require,module,exports){
+},{"./function-expression.translator":168}],170:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.IdExpressionTranslator = void 0;
@@ -8213,7 +8447,7 @@ class IdExpressionTranslator extends expression_translator_1.ExpressionTranslato
 }
 exports.IdExpressionTranslator = IdExpressionTranslator;
 
-},{"../expression.translator":157}],161:[function(require,module,exports){
+},{"../expression.translator":167}],171:[function(require,module,exports){
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -8228,7 +8462,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./id-expression.translator"), exports);
 
-},{"./id-expression.translator":160}],162:[function(require,module,exports){
+},{"./id-expression.translator":170}],172:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.IfExpressionTranslator = void 0;
@@ -8266,7 +8500,7 @@ class IfExpressionTranslator extends expression_translator_1.ExpressionTranslato
 }
 exports.IfExpressionTranslator = IfExpressionTranslator;
 
-},{"../../../util/string.util":217,"../../statement/statement-helper":213,"../expression-helper":156,"../expression.translator":157}],163:[function(require,module,exports){
+},{"../../../util/string.util":249,"../../statement/statement-helper":245,"../expression-helper":166,"../expression.translator":167}],173:[function(require,module,exports){
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -8281,7 +8515,41 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./if-expression.translator"), exports);
 
-},{"./if-expression.translator":162}],164:[function(require,module,exports){
+},{"./if-expression.translator":172}],174:[function(require,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.IndexExpressionTranslator = void 0;
+const expression_helper_1 = require("../expression-helper");
+const expression_translator_1 = require("../expression.translator");
+class IndexExpressionTranslator extends expression_translator_1.ExpressionTranslator {
+    constructor(tree) {
+        super();
+        this.tree = tree;
+    }
+    translate() {
+        const value = expression_helper_1.getExpressionTranslator(this.tree.value).translate();
+        const index = expression_helper_1.getExpressionTranslator(this.tree.index).translate();
+        return `${value}[${index}]`;
+    }
+}
+exports.IndexExpressionTranslator = IndexExpressionTranslator;
+
+},{"../expression-helper":166,"../expression.translator":167}],175:[function(require,module,exports){
+"use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+__exportStar(require("./index-expression.translator"), exports);
+
+},{"./index-expression.translator":174}],176:[function(require,module,exports){
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -8298,29 +8566,45 @@ __exportStar(require("./expression-helper"), exports);
 __exportStar(require("./expression.translator"), exports);
 __exportStar(require("./add-expression"), exports);
 __exportStar(require("./array-expression"), exports);
-__exportStar(require("./bit-not-expression.translator"), exports);
+__exportStar(require("./bit-and-expression"), exports);
+__exportStar(require("./bit-left-shift-expression"), exports);
+__exportStar(require("./bit-not-expression"), exports);
+__exportStar(require("./bit-or-expression"), exports);
+__exportStar(require("./bit-right-shift-expression"), exports);
+__exportStar(require("./bit-xor-expression"), exports);
 __exportStar(require("./divide-expression"), exports);
 __exportStar(require("./equals-expression"), exports);
 __exportStar(require("./function-expression"), exports);
 __exportStar(require("./id-expression"), exports);
 __exportStar(require("./if-expression"), exports);
-__exportStar(require("./instance-expression"), exports);
+__exportStar(require("./index-expression"), exports);
+__exportStar(require("./instance-member-expression"), exports);
+__exportStar(require("./lambda-expression"), exports);
 __exportStar(require("./less-than-equals-expression"), exports);
 __exportStar(require("./less-than-expression"), exports);
 __exportStar(require("./literal-expression"), exports);
 __exportStar(require("./logical-and-expression"), exports);
+__exportStar(require("./logical-not-expression"), exports);
 __exportStar(require("./logical-or-expression"), exports);
+__exportStar(require("./loop-expression"), exports);
 __exportStar(require("./member-expression"), exports);
+__exportStar(require("./modulo-expression"), exports);
 __exportStar(require("./more-than-equals-expression"), exports);
 __exportStar(require("./more-than-expression"), exports);
 __exportStar(require("./multiply-expression"), exports);
 __exportStar(require("./not-equals-expression"), exports);
 __exportStar(require("./parenthesized-expression"), exports);
+__exportStar(require("./pipe-expression"), exports);
+__exportStar(require("./pow-expression"), exports);
+__exportStar(require("./range-expression"), exports);
 __exportStar(require("./select-expression"), exports);
+__exportStar(require("./slice-expression"), exports);
 __exportStar(require("./string-format-expression"), exports);
 __exportStar(require("./substract-expression"), exports);
+__exportStar(require("./unary-minus-expression"), exports);
+__exportStar(require("./unary-plus-expression"), exports);
 
-},{"./add-expression":147,"./array-expression":149,"./bit-not-expression.translator":151,"./divide-expression":153,"./equals-expression":155,"./expression-helper":156,"./expression.translator":157,"./function-expression":159,"./id-expression":161,"./if-expression":163,"./instance-expression":165,"./less-than-equals-expression":167,"./less-than-expression":169,"./literal-expression":171,"./logical-and-expression":173,"./logical-or-expression":175,"./member-expression":177,"./more-than-equals-expression":179,"./more-than-expression":181,"./multiply-expression":183,"./not-equals-expression":185,"./parenthesized-expression":187,"./select-expression":189,"./string-format-expression":191,"./substract-expression":193}],165:[function(require,module,exports){
+},{"./add-expression":147,"./array-expression":149,"./bit-and-expression":151,"./bit-left-shift-expression":153,"./bit-not-expression":155,"./bit-or-expression":157,"./bit-right-shift-expression":159,"./bit-xor-expression":161,"./divide-expression":163,"./equals-expression":165,"./expression-helper":166,"./expression.translator":167,"./function-expression":169,"./id-expression":171,"./if-expression":173,"./index-expression":175,"./instance-member-expression":177,"./lambda-expression":179,"./less-than-equals-expression":181,"./less-than-expression":183,"./literal-expression":185,"./logical-and-expression":187,"./logical-not-expression":189,"./logical-or-expression":191,"./loop-expression":193,"./member-expression":195,"./modulo-expression":197,"./more-than-equals-expression":199,"./more-than-expression":201,"./multiply-expression":203,"./not-equals-expression":205,"./parenthesized-expression":207,"./pipe-expression":209,"./pow-expression":211,"./range-expression":213,"./select-expression":215,"./slice-expression":217,"./string-format-expression":219,"./substract-expression":221,"./unary-minus-expression":223,"./unary-plus-expression":225}],177:[function(require,module,exports){
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -8335,7 +8619,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./instance-member-expression.translator"), exports);
 
-},{"./instance-member-expression.translator":166}],166:[function(require,module,exports){
+},{"./instance-member-expression.translator":178}],178:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.InstanceMemberExpressionTranslator = void 0;
@@ -8351,7 +8635,41 @@ class InstanceMemberExpressionTranslator extends expression_translator_1.Express
 }
 exports.InstanceMemberExpressionTranslator = InstanceMemberExpressionTranslator;
 
-},{"../expression.translator":157}],167:[function(require,module,exports){
+},{"../expression.translator":167}],179:[function(require,module,exports){
+"use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+__exportStar(require("./lambda-expression.translator"), exports);
+
+},{"./lambda-expression.translator":180}],180:[function(require,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.LambdaExpressionTranslator = void 0;
+const expression_helper_1 = require("../expression-helper");
+const expression_translator_1 = require("../expression.translator");
+class LambdaExpressionTranslator extends expression_translator_1.ExpressionTranslator {
+    constructor(tree) {
+        super();
+        this.tree = tree;
+    }
+    translate() {
+        const args = this.tree.args.join(', ');
+        const body = expression_helper_1.getExpressionTranslator(this.tree.body).translate();
+        return `(${args}) => ${body}`;
+    }
+}
+exports.LambdaExpressionTranslator = LambdaExpressionTranslator;
+
+},{"../expression-helper":166,"../expression.translator":167}],181:[function(require,module,exports){
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -8366,7 +8684,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./less-than-equals-expression.translator"), exports);
 
-},{"./less-than-equals-expression.translator":168}],168:[function(require,module,exports){
+},{"./less-than-equals-expression.translator":182}],182:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.LessThanEqualsExpressionTranslator = void 0;
@@ -8385,7 +8703,7 @@ class LessThanEqualsExpressionTranslator extends expression_translator_1.Express
 }
 exports.LessThanEqualsExpressionTranslator = LessThanEqualsExpressionTranslator;
 
-},{"../expression-helper":156,"../expression.translator":157}],169:[function(require,module,exports){
+},{"../expression-helper":166,"../expression.translator":167}],183:[function(require,module,exports){
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -8400,7 +8718,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./less-than-expression.translator"), exports);
 
-},{"./less-than-expression.translator":170}],170:[function(require,module,exports){
+},{"./less-than-expression.translator":184}],184:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.LessThanExpressionTranslator = void 0;
@@ -8419,7 +8737,7 @@ class LessThanExpressionTranslator extends expression_translator_1.ExpressionTra
 }
 exports.LessThanExpressionTranslator = LessThanExpressionTranslator;
 
-},{"../expression-helper":156,"../expression.translator":157}],171:[function(require,module,exports){
+},{"../expression-helper":166,"../expression.translator":167}],185:[function(require,module,exports){
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -8434,12 +8752,11 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./literal-expression.translator"), exports);
 
-},{"./literal-expression.translator":172}],172:[function(require,module,exports){
+},{"./literal-expression.translator":186}],186:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.LiteralExpressionTranslator = void 0;
 const ast_1 = require("@xon/ast");
-// import {  StringLiteralTree } from '@xon/ast/dist/tree/literal/string-literal/string-literal.tree';
 const expression_translator_1 = require("../expression.translator");
 class LiteralExpressionTranslator extends expression_translator_1.ExpressionTranslator {
     constructor(tree) {
@@ -8448,19 +8765,14 @@ class LiteralExpressionTranslator extends expression_translator_1.ExpressionTran
     }
     translate() {
         if (this.tree.literal instanceof ast_1.StringLiteralTree) {
-            const lines = this.tree.literal.value.split('\n');
-            if (lines.length > 1) {
-                const s = lines.map(x => `'${x}\\n'`).join(` +\n`);
-                return `${s}`;
-            }
-            return `'${this.tree.literal.value}'`;
+            return `\`${this.tree.literal.value}\``;
         }
         return this.tree.literal.value.toString();
     }
 }
 exports.LiteralExpressionTranslator = LiteralExpressionTranslator;
 
-},{"../expression.translator":157,"@xon/ast":2}],173:[function(require,module,exports){
+},{"../expression.translator":167,"@xon/ast":2}],187:[function(require,module,exports){
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -8475,7 +8787,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./logical-and-expression.translator"), exports);
 
-},{"./logical-and-expression.translator":174}],174:[function(require,module,exports){
+},{"./logical-and-expression.translator":188}],188:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.LogicalAndExpressionTranslator = void 0;
@@ -8494,7 +8806,40 @@ class LogicalAndExpressionTranslator extends expression_translator_1.ExpressionT
 }
 exports.LogicalAndExpressionTranslator = LogicalAndExpressionTranslator;
 
-},{"../expression-helper":156,"../expression.translator":157}],175:[function(require,module,exports){
+},{"../expression-helper":166,"../expression.translator":167}],189:[function(require,module,exports){
+"use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+__exportStar(require("./logical-not-expression.translator"), exports);
+
+},{"./logical-not-expression.translator":190}],190:[function(require,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.LogicalNotExpressionTranslator = void 0;
+const expression_helper_1 = require("../expression-helper");
+const expression_translator_1 = require("../expression.translator");
+class LogicalNotExpressionTranslator extends expression_translator_1.ExpressionTranslator {
+    constructor(tree) {
+        super();
+        this.tree = tree;
+    }
+    translate() {
+        const value = expression_helper_1.getExpressionTranslator(this.tree.value).translate();
+        return `!${value}`;
+    }
+}
+exports.LogicalNotExpressionTranslator = LogicalNotExpressionTranslator;
+
+},{"../expression-helper":166,"../expression.translator":167}],191:[function(require,module,exports){
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -8509,7 +8854,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./logical-or-expression.translator"), exports);
 
-},{"./logical-or-expression.translator":176}],176:[function(require,module,exports){
+},{"./logical-or-expression.translator":192}],192:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.LogicalOrExpressionTranslator = void 0;
@@ -8528,7 +8873,56 @@ class LogicalOrExpressionTranslator extends expression_translator_1.ExpressionTr
 }
 exports.LogicalOrExpressionTranslator = LogicalOrExpressionTranslator;
 
-},{"../expression-helper":156,"../expression.translator":157}],177:[function(require,module,exports){
+},{"../expression-helper":166,"../expression.translator":167}],193:[function(require,module,exports){
+"use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+__exportStar(require("./loop-expression.translator"), exports);
+
+},{"./loop-expression.translator":194}],194:[function(require,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.LoopExpressionTranslator = void 0;
+const string_util_1 = require("../../../util/string.util");
+const statement_helper_1 = require("../../statement/statement-helper");
+const expression_helper_1 = require("../expression-helper");
+const expression_translator_1 = require("../expression.translator");
+class LoopExpressionTranslator extends expression_translator_1.ExpressionTranslator {
+    constructor(tree) {
+        super();
+        this.tree = tree;
+    }
+    translate() {
+        const indexName = this.tree.indexName || this.getUniqueId();
+        const keyName = this.tree.keyName || this.getUniqueId();
+        const valueName = this.tree.valueName || this.getUniqueId();
+        const statements = this.tree.statements
+            .map((x) => statement_helper_1.getStatementTranslator(x).translate())
+            .join('\n');
+        if (this.tree.isInfinity) {
+            return `for(;;) {\n${string_util_1.indent(statements)}\n}`;
+        }
+        const expression = expression_helper_1.getExpressionTranslator(this.tree.expression).translate();
+        return (`let ${indexName} = 0;\n` +
+            `for(let ${keyName} in ${expression}) {\n` +
+            string_util_1.indent(`${indexName}++;\n` +
+                `let ${valueName} = (${expression})[${keyName}];\n` +
+                `${statements}`) +
+            `\n}`);
+    }
+}
+exports.LoopExpressionTranslator = LoopExpressionTranslator;
+
+},{"../../../util/string.util":249,"../../statement/statement-helper":245,"../expression-helper":166,"../expression.translator":167}],195:[function(require,module,exports){
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -8543,7 +8937,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./member-expression.translator"), exports);
 
-},{"./member-expression.translator":178}],178:[function(require,module,exports){
+},{"./member-expression.translator":196}],196:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MemberExpressionTranslator = void 0;
@@ -8561,7 +8955,41 @@ class MemberExpressionTranslator extends expression_translator_1.ExpressionTrans
 }
 exports.MemberExpressionTranslator = MemberExpressionTranslator;
 
-},{"../expression-helper":156,"../expression.translator":157}],179:[function(require,module,exports){
+},{"../expression-helper":166,"../expression.translator":167}],197:[function(require,module,exports){
+"use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+__exportStar(require("./modulo-expression.translator"), exports);
+
+},{"./modulo-expression.translator":198}],198:[function(require,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ModuloExpressionTranslator = void 0;
+const expression_helper_1 = require("../expression-helper");
+const expression_translator_1 = require("../expression.translator");
+class ModuloExpressionTranslator extends expression_translator_1.ExpressionTranslator {
+    constructor(tree) {
+        super();
+        this.tree = tree;
+    }
+    translate() {
+        const left = expression_helper_1.getExpressionTranslator(this.tree.left).translate();
+        const right = expression_helper_1.getExpressionTranslator(this.tree.right).translate();
+        return `${left} % ${right}`;
+    }
+}
+exports.ModuloExpressionTranslator = ModuloExpressionTranslator;
+
+},{"../expression-helper":166,"../expression.translator":167}],199:[function(require,module,exports){
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -8576,7 +9004,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./more-than-equals-expression.translator"), exports);
 
-},{"./more-than-equals-expression.translator":180}],180:[function(require,module,exports){
+},{"./more-than-equals-expression.translator":200}],200:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MoreThanEqualsExpressionTranslator = void 0;
@@ -8595,7 +9023,7 @@ class MoreThanEqualsExpressionTranslator extends expression_translator_1.Express
 }
 exports.MoreThanEqualsExpressionTranslator = MoreThanEqualsExpressionTranslator;
 
-},{"../expression-helper":156,"../expression.translator":157}],181:[function(require,module,exports){
+},{"../expression-helper":166,"../expression.translator":167}],201:[function(require,module,exports){
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -8610,7 +9038,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./more-than-expression.translator"), exports);
 
-},{"./more-than-expression.translator":182}],182:[function(require,module,exports){
+},{"./more-than-expression.translator":202}],202:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MoreThanExpressionTranslator = void 0;
@@ -8629,7 +9057,7 @@ class MoreThanExpressionTranslator extends expression_translator_1.ExpressionTra
 }
 exports.MoreThanExpressionTranslator = MoreThanExpressionTranslator;
 
-},{"../expression-helper":156,"../expression.translator":157}],183:[function(require,module,exports){
+},{"../expression-helper":166,"../expression.translator":167}],203:[function(require,module,exports){
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -8644,7 +9072,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./multiply-expression.translator"), exports);
 
-},{"./multiply-expression.translator":184}],184:[function(require,module,exports){
+},{"./multiply-expression.translator":204}],204:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MultiplyExpressionTranslator = void 0;
@@ -8663,7 +9091,7 @@ class MultiplyExpressionTranslator extends expression_translator_1.ExpressionTra
 }
 exports.MultiplyExpressionTranslator = MultiplyExpressionTranslator;
 
-},{"../expression-helper":156,"../expression.translator":157}],185:[function(require,module,exports){
+},{"../expression-helper":166,"../expression.translator":167}],205:[function(require,module,exports){
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -8678,7 +9106,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./not-equals-expression.translator"), exports);
 
-},{"./not-equals-expression.translator":186}],186:[function(require,module,exports){
+},{"./not-equals-expression.translator":206}],206:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.NotEqualsExpressionTranslator = void 0;
@@ -8697,7 +9125,7 @@ class NotEqualsExpressionTranslator extends expression_translator_1.ExpressionTr
 }
 exports.NotEqualsExpressionTranslator = NotEqualsExpressionTranslator;
 
-},{"../expression-helper":156,"../expression.translator":157}],187:[function(require,module,exports){
+},{"../expression-helper":166,"../expression.translator":167}],207:[function(require,module,exports){
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -8712,7 +9140,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./parenthesized-expression.translator"), exports);
 
-},{"./parenthesized-expression.translator":188}],188:[function(require,module,exports){
+},{"./parenthesized-expression.translator":208}],208:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ParenthesizedExpressionTranslator = void 0;
@@ -8730,7 +9158,110 @@ class ParenthesizedExpressionTranslator extends expression_translator_1.Expressi
 }
 exports.ParenthesizedExpressionTranslator = ParenthesizedExpressionTranslator;
 
-},{"../expression-helper":156,"../expression.translator":157}],189:[function(require,module,exports){
+},{"../expression-helper":166,"../expression.translator":167}],209:[function(require,module,exports){
+"use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+__exportStar(require("./pipe-expression.translator"), exports);
+
+},{"./pipe-expression.translator":210}],210:[function(require,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.PipeExpressionTranslator = void 0;
+const expression_helper_1 = require("../expression-helper");
+const expression_translator_1 = require("../expression.translator");
+class PipeExpressionTranslator extends expression_translator_1.ExpressionTranslator {
+    constructor(tree) {
+        super();
+        this.tree = tree;
+    }
+    translate() {
+        const left = expression_helper_1.getExpressionTranslator(this.tree.left).translate();
+        const right = expression_helper_1.getExpressionTranslator(this.tree.right).translate();
+        return `(${this.tree.arg} => ${right})(${left})`;
+    }
+}
+exports.PipeExpressionTranslator = PipeExpressionTranslator;
+
+},{"../expression-helper":166,"../expression.translator":167}],211:[function(require,module,exports){
+"use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+__exportStar(require("./pow-expression.translator"), exports);
+
+},{"./pow-expression.translator":212}],212:[function(require,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.PowExpressionTranslator = void 0;
+const expression_helper_1 = require("../expression-helper");
+const expression_translator_1 = require("../expression.translator");
+class PowExpressionTranslator extends expression_translator_1.ExpressionTranslator {
+    constructor(tree) {
+        super();
+        this.tree = tree;
+    }
+    translate() {
+        const base = expression_helper_1.getExpressionTranslator(this.tree.base).translate();
+        const exponent = expression_helper_1.getExpressionTranslator(this.tree.exponent).translate();
+        return `Math.pow(${base}, ${exponent})`;
+    }
+}
+exports.PowExpressionTranslator = PowExpressionTranslator;
+
+},{"../expression-helper":166,"../expression.translator":167}],213:[function(require,module,exports){
+"use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+__exportStar(require("./range-expression.translator"), exports);
+
+},{"./range-expression.translator":214}],214:[function(require,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.RangeExpressionTranslator = void 0;
+const expression_helper_1 = require("../expression-helper");
+const expression_translator_1 = require("../expression.translator");
+class RangeExpressionTranslator extends expression_translator_1.ExpressionTranslator {
+    constructor(tree) {
+        super();
+        this.tree = tree;
+    }
+    translate() {
+        const start = expression_helper_1.getExpressionTranslator(this.tree.start).translate();
+        const end = expression_helper_1.getExpressionTranslator(this.tree.end).translate();
+        const step = this.tree.step && expression_helper_1.getExpressionTranslator(this.tree.step).translate();
+        return `range(${start}, ${end}, ${step || 1})`;
+    }
+}
+exports.RangeExpressionTranslator = RangeExpressionTranslator;
+
+},{"../expression-helper":166,"../expression.translator":167}],215:[function(require,module,exports){
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -8745,7 +9276,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./select-expression.translator"), exports);
 
-},{"./select-expression.translator":190}],190:[function(require,module,exports){
+},{"./select-expression.translator":216}],216:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SelectExpressionTranslator = void 0;
@@ -8777,7 +9308,43 @@ class SelectExpressionTranslator extends expression_translator_1.ExpressionTrans
 }
 exports.SelectExpressionTranslator = SelectExpressionTranslator;
 
-},{"../../../util/string.util":217,"../../statement/statement-helper":213,"../expression-helper":156,"../expression.translator":157}],191:[function(require,module,exports){
+},{"../../../util/string.util":249,"../../statement/statement-helper":245,"../expression-helper":166,"../expression.translator":167}],217:[function(require,module,exports){
+"use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+__exportStar(require("./slice-expression.translator"), exports);
+
+},{"./slice-expression.translator":218}],218:[function(require,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.SliceExpressionTranslator = void 0;
+const expression_helper_1 = require("../expression-helper");
+const expression_translator_1 = require("../expression.translator");
+class SliceExpressionTranslator extends expression_translator_1.ExpressionTranslator {
+    constructor(tree) {
+        super();
+        this.tree = tree;
+    }
+    translate() {
+        const start = expression_helper_1.getExpressionTranslator(this.tree.start).translate();
+        const end = expression_helper_1.getExpressionTranslator(this.tree.end).translate();
+        const step = this.tree.step && expression_helper_1.getExpressionTranslator(this.tree.step).translate();
+        const value = expression_helper_1.getExpressionTranslator(this.tree.value).translate();
+        return `slice(${value}, ${start}, ${end}, ${step || 1})`;
+    }
+}
+exports.SliceExpressionTranslator = SliceExpressionTranslator;
+
+},{"../expression-helper":166,"../expression.translator":167}],219:[function(require,module,exports){
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -8792,7 +9359,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./string-format-expression.translator"), exports);
 
-},{"./string-format-expression.translator":192}],192:[function(require,module,exports){
+},{"./string-format-expression.translator":220}],220:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.StringFormatExpressionTranslator = void 0;
@@ -8809,7 +9376,7 @@ class StringFormatExpressionTranslator extends expression_translator_1.Expressio
 }
 exports.StringFormatExpressionTranslator = StringFormatExpressionTranslator;
 
-},{"../expression-helper":156,"../expression.translator":157}],193:[function(require,module,exports){
+},{"../expression-helper":166,"../expression.translator":167}],221:[function(require,module,exports){
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -8824,7 +9391,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./substract-expression.translator"), exports);
 
-},{"./substract-expression.translator":194}],194:[function(require,module,exports){
+},{"./substract-expression.translator":222}],222:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SubstractExpressionTranslator = void 0;
@@ -8843,7 +9410,73 @@ class SubstractExpressionTranslator extends expression_translator_1.ExpressionTr
 }
 exports.SubstractExpressionTranslator = SubstractExpressionTranslator;
 
-},{"../expression-helper":156,"../expression.translator":157}],195:[function(require,module,exports){
+},{"../expression-helper":166,"../expression.translator":167}],223:[function(require,module,exports){
+"use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+__exportStar(require("./unary-minus-expression.translator"), exports);
+
+},{"./unary-minus-expression.translator":224}],224:[function(require,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.UnaryMinusExpressionTranslator = void 0;
+const expression_helper_1 = require("../expression-helper");
+const expression_translator_1 = require("../expression.translator");
+class UnaryMinusExpressionTranslator extends expression_translator_1.ExpressionTranslator {
+    constructor(tree) {
+        super();
+        this.tree = tree;
+    }
+    translate() {
+        const value = expression_helper_1.getExpressionTranslator(this.tree.value).translate();
+        return `-${value}`;
+    }
+}
+exports.UnaryMinusExpressionTranslator = UnaryMinusExpressionTranslator;
+
+},{"../expression-helper":166,"../expression.translator":167}],225:[function(require,module,exports){
+"use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+__exportStar(require("./unary-plus-expression.translator"), exports);
+
+},{"./unary-plus-expression.translator":226}],226:[function(require,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.UnaryPlusExpressionTranslator = void 0;
+const expression_helper_1 = require("../expression-helper");
+const expression_translator_1 = require("../expression.translator");
+class UnaryPlusExpressionTranslator extends expression_translator_1.ExpressionTranslator {
+    constructor(tree) {
+        super();
+        this.tree = tree;
+    }
+    translate() {
+        const value = expression_helper_1.getExpressionTranslator(this.tree.value).translate();
+        return `+${value}`;
+    }
+}
+exports.UnaryPlusExpressionTranslator = UnaryPlusExpressionTranslator;
+
+},{"../expression-helper":166,"../expression.translator":167}],227:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.FunctionTranslator = void 0;
@@ -8879,7 +9512,7 @@ class FunctionTranslator extends base_translator_1.BaseTranslator {
 }
 exports.FunctionTranslator = FunctionTranslator;
 
-},{"../../types":215,"../../util/string.util":217,"../base.translator":143,"../expression/expression-helper":156,"../statement/statement-helper":213}],196:[function(require,module,exports){
+},{"../../types":247,"../../util/string.util":249,"../base.translator":143,"../expression/expression-helper":166,"../statement/statement-helper":245}],228:[function(require,module,exports){
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -8894,7 +9527,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./function.translator"), exports);
 
-},{"./function.translator":195}],197:[function(require,module,exports){
+},{"./function.translator":227}],229:[function(require,module,exports){
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -8914,7 +9547,7 @@ __exportStar(require("./function"), exports);
 __exportStar(require("./program"), exports);
 __exportStar(require("./statement"), exports);
 
-},{"./base.translator":143,"./definition":145,"./expression":164,"./function":196,"./program":198,"./statement":206}],198:[function(require,module,exports){
+},{"./base.translator":143,"./definition":145,"./expression":176,"./function":228,"./program":230,"./statement":238}],230:[function(require,module,exports){
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -8929,7 +9562,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./program.translator"), exports);
 
-},{"./program.translator":199}],199:[function(require,module,exports){
+},{"./program.translator":231}],231:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProgramTranslator = void 0;
@@ -8982,7 +9615,7 @@ class ProgramTranslator extends base_translator_1.BaseTranslator {
 }
 exports.ProgramTranslator = ProgramTranslator;
 
-},{"../base.translator":143,"../definition/definition.translator":144,"../statement/function-statement/function-statement.translator":204,"../statement/statement-helper":213}],200:[function(require,module,exports){
+},{"../base.translator":143,"../definition/definition.translator":144,"../statement/function-statement/function-statement.translator":236,"../statement/statement-helper":245}],232:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AssignmentStatementTranslator = void 0;
@@ -9024,7 +9657,7 @@ class AssignmentStatementTranslator extends statement_translator_1.StatementTran
 }
 exports.AssignmentStatementTranslator = AssignmentStatementTranslator;
 
-},{"../../expression/expression-helper":156,"../statement.translator":214}],201:[function(require,module,exports){
+},{"../../expression/expression-helper":166,"../statement.translator":246}],233:[function(require,module,exports){
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -9039,7 +9672,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./assignment-statement.translator"), exports);
 
-},{"./assignment-statement.translator":200}],202:[function(require,module,exports){
+},{"./assignment-statement.translator":232}],234:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ExpressionStatementTranslator = void 0;
@@ -9056,7 +9689,7 @@ class ExpressionStatementTranslator extends statement_translator_1.StatementTran
 }
 exports.ExpressionStatementTranslator = ExpressionStatementTranslator;
 
-},{"../../expression/expression-helper":156,"../statement.translator":214}],203:[function(require,module,exports){
+},{"../../expression/expression-helper":166,"../statement.translator":246}],235:[function(require,module,exports){
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -9071,7 +9704,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./expression-statement.translator"), exports);
 
-},{"./expression-statement.translator":202}],204:[function(require,module,exports){
+},{"./expression-statement.translator":234}],236:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.FunctionStatementTranslator = void 0;
@@ -9088,7 +9721,7 @@ class FunctionStatementTranslator extends base_translator_1.BaseTranslator {
 }
 exports.FunctionStatementTranslator = FunctionStatementTranslator;
 
-},{"../../base.translator":143,"../../function/function.translator":195}],205:[function(require,module,exports){
+},{"../../base.translator":143,"../../function/function.translator":227}],237:[function(require,module,exports){
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -9103,7 +9736,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./function-statement.translator"), exports);
 
-},{"./function-statement.translator":204}],206:[function(require,module,exports){
+},{"./function-statement.translator":236}],238:[function(require,module,exports){
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -9125,7 +9758,7 @@ __exportStar(require("./line-break-statement"), exports);
 __exportStar(require("./preprocessor-statement"), exports);
 __exportStar(require("./return-statement"), exports);
 
-},{"./assignment-statement":201,"./expression-statement":203,"./function-statement":205,"./line-break-statement":207,"./preprocessor-statement":209,"./return-statement":211,"./statement-helper":213,"./statement.translator":214}],207:[function(require,module,exports){
+},{"./assignment-statement":233,"./expression-statement":235,"./function-statement":237,"./line-break-statement":239,"./preprocessor-statement":241,"./return-statement":243,"./statement-helper":245,"./statement.translator":246}],239:[function(require,module,exports){
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -9140,7 +9773,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./line-break-statement.translator"), exports);
 
-},{"./line-break-statement.translator":208}],208:[function(require,module,exports){
+},{"./line-break-statement.translator":240}],240:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.LineBreakStatementTranslator = void 0;
@@ -9156,7 +9789,7 @@ class LineBreakStatementTranslator extends statement_translator_1.StatementTrans
 }
 exports.LineBreakStatementTranslator = LineBreakStatementTranslator;
 
-},{"../statement.translator":214}],209:[function(require,module,exports){
+},{"../statement.translator":246}],241:[function(require,module,exports){
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -9171,7 +9804,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./preprocessor-statement.translator"), exports);
 
-},{"./preprocessor-statement.translator":210}],210:[function(require,module,exports){
+},{"./preprocessor-statement.translator":242}],242:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PreprocessorStatementTranslator = void 0;
@@ -9187,7 +9820,7 @@ class PreprocessorStatementTranslator extends statement_translator_1.StatementTr
 }
 exports.PreprocessorStatementTranslator = PreprocessorStatementTranslator;
 
-},{"../statement.translator":214}],211:[function(require,module,exports){
+},{"../statement.translator":246}],243:[function(require,module,exports){
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -9202,7 +9835,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./return-statement.translator"), exports);
 
-},{"./return-statement.translator":212}],212:[function(require,module,exports){
+},{"./return-statement.translator":244}],244:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ReturnStatementTranslator = void 0;
@@ -9225,7 +9858,7 @@ class ReturnStatementTranslator extends statement_translator_1.StatementTranslat
 }
 exports.ReturnStatementTranslator = ReturnStatementTranslator;
 
-},{"../../../util/string.util":217,"../../expression/expression-helper":156,"../statement.translator":214}],213:[function(require,module,exports){
+},{"../../../util/string.util":249,"../../expression/expression-helper":166,"../statement.translator":246}],245:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getStatementTranslator = void 0;
@@ -9253,7 +9886,7 @@ function getStatementTranslator(tree) {
 }
 exports.getStatementTranslator = getStatementTranslator;
 
-},{"./assignment-statement/assignment-statement.translator":200,"./expression-statement/expression-statement.translator":202,"./function-statement/function-statement.translator":204,"./line-break-statement/line-break-statement.translator":208,"./preprocessor-statement/preprocessor-statement.translator":210,"./return-statement/return-statement.translator":212,"@xon/ast":2}],214:[function(require,module,exports){
+},{"./assignment-statement/assignment-statement.translator":232,"./expression-statement/expression-statement.translator":234,"./function-statement/function-statement.translator":236,"./line-break-statement/line-break-statement.translator":240,"./preprocessor-statement/preprocessor-statement.translator":242,"./return-statement/return-statement.translator":244,"@xon/ast":2}],246:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.StatementTranslator = void 0;
@@ -9262,7 +9895,7 @@ class StatementTranslator extends base_translator_1.BaseTranslator {
 }
 exports.StatementTranslator = StatementTranslator;
 
-},{"../base.translator":143}],215:[function(require,module,exports){
+},{"../base.translator":143}],247:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getType = void 0;
@@ -9290,7 +9923,7 @@ function getType(type) {
 }
 exports.getType = getType;
 
-},{"@xon/ast":2}],216:[function(require,module,exports){
+},{"@xon/ast":2}],248:[function(require,module,exports){
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -9305,7 +9938,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./string.util"), exports);
 
-},{"./string.util":217}],217:[function(require,module,exports){
+},{"./string.util":249}],249:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.indent_skip_first = exports.indent = exports.INDENT_STR = void 0;
@@ -9325,7 +9958,7 @@ function indent_skip_first(s) {
 }
 exports.indent_skip_first = indent_skip_first;
 
-},{}],218:[function(require,module,exports){
+},{}],250:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -9486,7 +10119,7 @@ __decorate([
 ], ANTLRInputStream.prototype, "toString", null);
 exports.ANTLRInputStream = ANTLRInputStream;
 
-},{"./Decorators":228,"./IntStream":234,"assert":364}],219:[function(require,module,exports){
+},{"./Decorators":260,"./IntStream":266,"assert":396}],251:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -9568,7 +10201,7 @@ __decorate([
 ], BailErrorStrategy.prototype, "sync", null);
 exports.BailErrorStrategy = BailErrorStrategy;
 
-},{"./Decorators":228,"./DefaultErrorStrategy":229,"./InputMismatchException":233,"./misc/ParseCancellationException":339}],220:[function(require,module,exports){
+},{"./Decorators":260,"./DefaultErrorStrategy":261,"./InputMismatchException":265,"./misc/ParseCancellationException":371}],252:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -10057,7 +10690,7 @@ BufferedTokenStream = __decorate([
 ], BufferedTokenStream);
 exports.BufferedTokenStream = BufferedTokenStream;
 
-},{"./CommonToken":224,"./Decorators":228,"./Lexer":236,"./Token":252,"./misc/Interval":334,"assert":364}],221:[function(require,module,exports){
+},{"./CommonToken":256,"./Decorators":260,"./Lexer":268,"./Token":284,"./misc/Interval":366,"assert":396}],253:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -10190,7 +10823,7 @@ var CharStreams;
     // }
 })(CharStreams = exports.CharStreams || (exports.CharStreams = {}));
 
-},{"./CodePointBuffer":222,"./CodePointCharStream":223,"./IntStream":234}],222:[function(require,module,exports){
+},{"./CodePointBuffer":254,"./CodePointCharStream":255,"./IntStream":266}],254:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -10424,7 +11057,7 @@ exports.CodePointBuffer = CodePointBuffer;
     CodePointBuffer.Builder = Builder;
 })(CodePointBuffer = exports.CodePointBuffer || (exports.CodePointBuffer = {}));
 
-},{"./misc/Character":330,"assert":364}],223:[function(require,module,exports){
+},{"./misc/Character":362,"assert":396}],255:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -10573,7 +11206,7 @@ __decorate([
 ], CodePointCharStream.prototype, "getText", null);
 exports.CodePointCharStream = CodePointCharStream;
 
-},{"./Decorators":228,"./IntStream":234,"./misc/Interval":334,"assert":364}],224:[function(require,module,exports){
+},{"./Decorators":260,"./IntStream":266,"./misc/Interval":366,"assert":396}],256:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -10802,7 +11435,7 @@ CommonToken = __decorate([
 ], CommonToken);
 exports.CommonToken = CommonToken;
 
-},{"./Decorators":228,"./Token":252,"./misc/Interval":334}],225:[function(require,module,exports){
+},{"./Decorators":260,"./Token":284,"./misc/Interval":366}],257:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -10865,7 +11498,7 @@ exports.CommonTokenFactory = CommonTokenFactory;
     CommonTokenFactory.DEFAULT = new CommonTokenFactory();
 })(CommonTokenFactory = exports.CommonTokenFactory || (exports.CommonTokenFactory = {}));
 
-},{"./CommonToken":224,"./Decorators":228,"./misc/Interval":334}],226:[function(require,module,exports){
+},{"./CommonToken":256,"./Decorators":260,"./misc/Interval":366}],258:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -10991,7 +11624,7 @@ CommonTokenStream = __decorate([
 ], CommonTokenStream);
 exports.CommonTokenStream = CommonTokenStream;
 
-},{"./BufferedTokenStream":220,"./Decorators":228,"./Token":252}],227:[function(require,module,exports){
+},{"./BufferedTokenStream":252,"./Decorators":260,"./Token":284}],259:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -11024,7 +11657,7 @@ class ConsoleErrorListener {
 ConsoleErrorListener.INSTANCE = new ConsoleErrorListener();
 exports.ConsoleErrorListener = ConsoleErrorListener;
 
-},{}],228:[function(require,module,exports){
+},{}],260:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -11050,7 +11683,7 @@ function SuppressWarnings(options) {
 }
 exports.SuppressWarnings = SuppressWarnings;
 
-},{}],229:[function(require,module,exports){
+},{}],261:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -11863,7 +12496,7 @@ __decorate([
 ], DefaultErrorStrategy.prototype, "consumeUntil", null);
 exports.DefaultErrorStrategy = DefaultErrorStrategy;
 
-},{"./Decorators":228,"./FailedPredicateException":232,"./InputMismatchException":233,"./NoViableAltException":240,"./Token":252,"./atn/ATNState":261,"./atn/ATNStateType":262,"./atn/PredictionContext":302,"./misc/IntervalSet":335}],230:[function(require,module,exports){
+},{"./Decorators":260,"./FailedPredicateException":264,"./InputMismatchException":265,"./NoViableAltException":272,"./Token":284,"./atn/ATNState":293,"./atn/ATNStateType":294,"./atn/PredictionContext":334,"./misc/IntervalSet":367}],262:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -11938,7 +12571,7 @@ var Dependents;
     Dependents[Dependents["FOLLOWING"] = 9] = "FOLLOWING";
 })(Dependents = exports.Dependents || (exports.Dependents = {}));
 
-},{}],231:[function(require,module,exports){
+},{}],263:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -12085,7 +12718,7 @@ __decorate([
 ], DiagnosticErrorListener.prototype, "getConflictingAlts", null);
 exports.DiagnosticErrorListener = DiagnosticErrorListener;
 
-},{"./Decorators":228,"./misc/BitSet":329,"./misc/Interval":334}],232:[function(require,module,exports){
+},{"./Decorators":260,"./misc/BitSet":361,"./misc/Interval":366}],264:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -12149,7 +12782,7 @@ FailedPredicateException = __decorate([
 ], FailedPredicateException);
 exports.FailedPredicateException = FailedPredicateException;
 
-},{"./Decorators":228,"./RecognitionException":246,"./atn/PredicateTransition":301}],233:[function(require,module,exports){
+},{"./Decorators":260,"./RecognitionException":278,"./atn/PredicateTransition":333}],265:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -12188,7 +12821,7 @@ InputMismatchException = __decorate([
 ], InputMismatchException);
 exports.InputMismatchException = InputMismatchException;
 
-},{"./Decorators":228,"./RecognitionException":246}],234:[function(require,module,exports){
+},{"./Decorators":260,"./RecognitionException":278}],266:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -12210,7 +12843,7 @@ var IntStream;
     IntStream.UNKNOWN_SOURCE_NAME = "<unknown>";
 })(IntStream = exports.IntStream || (exports.IntStream = {}));
 
-},{}],235:[function(require,module,exports){
+},{}],267:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -12256,7 +12889,7 @@ __decorate([
 ], InterpreterRuleContext.prototype, "ruleIndex", null);
 exports.InterpreterRuleContext = InterpreterRuleContext;
 
-},{"./Decorators":228,"./ParserRuleContext":243}],236:[function(require,module,exports){
+},{"./Decorators":260,"./ParserRuleContext":275}],268:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -12591,7 +13224,7 @@ __decorate([
 ], Lexer.prototype, "charPositionInLine", null);
 exports.Lexer = Lexer;
 
-},{"./CommonTokenFactory":225,"./Decorators":228,"./IntStream":234,"./LexerNoViableAltException":238,"./Recognizer":247,"./Token":252,"./atn/LexerATNSimulator":280,"./misc/IntegerStack":333,"./misc/Interval":334}],237:[function(require,module,exports){
+},{"./CommonTokenFactory":257,"./Decorators":260,"./IntStream":266,"./LexerNoViableAltException":270,"./Recognizer":279,"./Token":284,"./atn/LexerATNSimulator":312,"./misc/IntegerStack":365,"./misc/Interval":366}],269:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -12670,7 +13303,7 @@ LexerInterpreter = __decorate([
 ], LexerInterpreter);
 exports.LexerInterpreter = LexerInterpreter;
 
-},{"./Decorators":228,"./Lexer":236,"./atn/LexerATNSimulator":280}],238:[function(require,module,exports){
+},{"./Decorators":260,"./Lexer":268,"./atn/LexerATNSimulator":312}],270:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -12726,7 +13359,7 @@ LexerNoViableAltException = __decorate([
 ], LexerNoViableAltException);
 exports.LexerNoViableAltException = LexerNoViableAltException;
 
-},{"./Decorators":228,"./RecognitionException":246,"./misc/Interval":334,"./misc/Utils":341}],239:[function(require,module,exports){
+},{"./Decorators":260,"./RecognitionException":278,"./misc/Interval":366,"./misc/Utils":373}],271:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -12935,7 +13568,7 @@ ListTokenSource = __decorate([
 ], ListTokenSource);
 exports.ListTokenSource = ListTokenSource;
 
-},{"./CommonTokenFactory":225,"./Decorators":228,"./Token":252}],240:[function(require,module,exports){
+},{"./CommonTokenFactory":257,"./Decorators":260,"./Token":284}],272:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -12989,7 +13622,7 @@ __decorate([
 ], NoViableAltException.prototype, "_startToken", void 0);
 exports.NoViableAltException = NoViableAltException;
 
-},{"./Decorators":228,"./Parser":241,"./RecognitionException":246}],241:[function(require,module,exports){
+},{"./Decorators":260,"./Parser":273,"./RecognitionException":278}],273:[function(require,module,exports){
 (function (process){
 "use strict";
 /*!
@@ -13833,7 +14466,7 @@ __decorate([
 exports.Parser = Parser;
 
 }).call(this,require('_process'))
-},{"./Decorators":228,"./DefaultErrorStrategy":229,"./Lexer":236,"./ProxyParserErrorListener":245,"./Recognizer":247,"./Token":252,"./atn/ATNDeserializationOptions":258,"./atn/ATNDeserializer":259,"./atn/ParseInfo":295,"./atn/ParserATNSimulator":296,"./atn/ProfilingATNSimulator":305,"./misc/IntegerStack":333,"./misc/Utils":341,"./tree/ErrorNode":342,"./tree/TerminalNode":344,"./tree/pattern/ParseTreePatternMatcher":349,"_process":371}],242:[function(require,module,exports){
+},{"./Decorators":260,"./DefaultErrorStrategy":261,"./Lexer":268,"./ProxyParserErrorListener":277,"./Recognizer":279,"./Token":284,"./atn/ATNDeserializationOptions":290,"./atn/ATNDeserializer":291,"./atn/ParseInfo":327,"./atn/ParserATNSimulator":328,"./atn/ProfilingATNSimulator":337,"./misc/IntegerStack":365,"./misc/Utils":373,"./tree/ErrorNode":374,"./tree/TerminalNode":376,"./tree/pattern/ParseTreePatternMatcher":381,"_process":403}],274:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -14240,7 +14873,7 @@ ParserInterpreter = __decorate([
 ], ParserInterpreter);
 exports.ParserInterpreter = ParserInterpreter;
 
-},{"./Decorators":228,"./FailedPredicateException":232,"./InputMismatchException":233,"./InterpreterRuleContext":235,"./Parser":241,"./RecognitionException":246,"./Token":252,"./atn/ATNState":261,"./atn/ATNStateType":262,"./atn/LoopEndState":292,"./atn/ParserATNSimulator":296,"./atn/StarLoopEntryState":314,"./misc/BitSet":329}],243:[function(require,module,exports){
+},{"./Decorators":260,"./FailedPredicateException":264,"./InputMismatchException":265,"./InterpreterRuleContext":267,"./Parser":273,"./RecognitionException":278,"./Token":284,"./atn/ATNState":293,"./atn/ATNStateType":294,"./atn/LoopEndState":324,"./atn/ParserATNSimulator":328,"./atn/StarLoopEntryState":346,"./misc/BitSet":361}],275:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -14541,7 +15174,7 @@ __decorate([
 ], ParserRuleContext.prototype, "sourceInterval", null);
 exports.ParserRuleContext = ParserRuleContext;
 
-},{"./Decorators":228,"./RuleContext":248,"./misc/Interval":334,"./tree/ErrorNode":342,"./tree/TerminalNode":344}],244:[function(require,module,exports){
+},{"./Decorators":260,"./RuleContext":280,"./misc/Interval":366,"./tree/ErrorNode":374,"./tree/TerminalNode":376}],276:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -14590,7 +15223,7 @@ __decorate([
 ], ProxyErrorListener.prototype, "syntaxError", null);
 exports.ProxyErrorListener = ProxyErrorListener;
 
-},{"./Decorators":228}],245:[function(require,module,exports){
+},{"./Decorators":260}],277:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -14648,7 +15281,7 @@ __decorate([
 ], ProxyParserErrorListener.prototype, "reportContextSensitivity", null);
 exports.ProxyParserErrorListener = ProxyParserErrorListener;
 
-},{"./Decorators":228,"./ProxyErrorListener":244}],246:[function(require,module,exports){
+},{"./Decorators":260,"./ProxyErrorListener":276}],278:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -14752,7 +15385,7 @@ class RecognitionException extends Error {
 }
 exports.RecognitionException = RecognitionException;
 
-},{}],247:[function(require,module,exports){
+},{}],279:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -14970,7 +15603,7 @@ __decorate([
 ], Recognizer.prototype, "getErrorListeners", null);
 exports.Recognizer = Recognizer;
 
-},{"./ConsoleErrorListener":227,"./Decorators":228,"./ProxyErrorListener":244,"./Token":252,"./misc/Utils":341}],248:[function(require,module,exports){
+},{"./ConsoleErrorListener":259,"./Decorators":260,"./ProxyErrorListener":276,"./Token":284,"./misc/Utils":373}],280:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -15186,7 +15819,7 @@ __decorate([
 ], RuleContext.prototype, "toStringTree", null);
 exports.RuleContext = RuleContext;
 
-},{"./Decorators":228,"./ParserRuleContext":243,"./Recognizer":247,"./atn/ATN":255,"./misc/Interval":334,"./tree/RuleNode":343,"./tree/Trees":345}],249:[function(require,module,exports){
+},{"./Decorators":260,"./ParserRuleContext":275,"./Recognizer":279,"./atn/ATN":287,"./misc/Interval":366,"./tree/RuleNode":375,"./tree/Trees":377}],281:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -15236,7 +15869,7 @@ __decorate([
 ], RuleContextWithAltNum.prototype, "altNumber", null);
 exports.RuleContextWithAltNum = RuleContextWithAltNum;
 
-},{"./Decorators":228,"./ParserRuleContext":243,"./atn/ATN":255}],250:[function(require,module,exports){
+},{"./Decorators":260,"./ParserRuleContext":275,"./atn/ATN":287}],282:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -15258,7 +15891,7 @@ function RuleDependency(dependency) {
 }
 exports.RuleDependency = RuleDependency;
 
-},{}],251:[function(require,module,exports){
+},{}],283:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -15276,7 +15909,7 @@ function RuleVersion(version) {
 }
 exports.RuleVersion = RuleVersion;
 
-},{}],252:[function(require,module,exports){
+},{}],284:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -15315,7 +15948,7 @@ var Token;
     Token.MIN_USER_CHANNEL_VALUE = 2;
 })(Token = exports.Token || (exports.Token = {}));
 
-},{"./IntStream":234}],253:[function(require,module,exports){
+},{"./IntStream":266}],285:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -15824,7 +16457,7 @@ __decorate([
     Decorators_1.Override
 ], ReplaceOp.prototype, "toString", null);
 
-},{"./Decorators":228,"./Token":252,"./misc/Interval":334}],254:[function(require,module,exports){
+},{"./Decorators":260,"./Token":284,"./misc/Interval":366}],286:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -15943,7 +16576,7 @@ __decorate([
 ], VocabularyImpl, "EMPTY_VOCABULARY", void 0);
 exports.VocabularyImpl = VocabularyImpl;
 
-},{"./Decorators":228,"./Token":252}],255:[function(require,module,exports){
+},{"./Decorators":260,"./Token":284}],287:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -16164,7 +16797,7 @@ exports.ATN = ATN;
 })(ATN = exports.ATN || (exports.ATN = {}));
 exports.ATN = ATN;
 
-},{"../Decorators":228,"../Token":252,"../dfa/DFA":320,"../misc/Array2DHashMap":325,"../misc/IntervalSet":335,"../misc/ObjectEqualityComparator":338,"./InvalidState":278,"./LL1Analyzer":279,"./PredictionContext":302,"assert":364}],256:[function(require,module,exports){
+},{"../Decorators":260,"../Token":284,"../dfa/DFA":352,"../misc/Array2DHashMap":357,"../misc/IntervalSet":367,"../misc/ObjectEqualityComparator":370,"./InvalidState":310,"./LL1Analyzer":311,"./PredictionContext":334,"assert":396}],288:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -16688,7 +17321,7 @@ ActionSemanticContextATNConfig = __decorate([
     __param(1, Decorators_1.NotNull), __param(2, Decorators_1.NotNull)
 ], ActionSemanticContextATNConfig);
 
-},{"../Decorators":228,"../misc/Array2DHashMap":325,"../misc/MurmurHash":337,"../misc/ObjectEqualityComparator":338,"./DecisionState":275,"./PredictionContext":302,"./SemanticContext":310,"assert":364}],257:[function(require,module,exports){
+},{"../Decorators":260,"../misc/Array2DHashMap":357,"../misc/MurmurHash":369,"../misc/ObjectEqualityComparator":370,"./DecisionState":307,"./PredictionContext":334,"./SemanticContext":342,"assert":396}],289:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -17134,7 +17767,7 @@ __decorate([
 ], ATNConfigSet.prototype, "hashCode", null);
 exports.ATNConfigSet = ATNConfigSet;
 
-},{"../Decorators":228,"../misc/Array2DHashMap":325,"../misc/Array2DHashSet":326,"../misc/ArrayEqualityComparator":327,"../misc/BitSet":329,"../misc/ObjectEqualityComparator":338,"../misc/Utils":341,"./ATN":255,"./ATNConfig":256,"./PredictionContext":302,"./PredictionContextCache":303,"./SemanticContext":310,"assert":364}],258:[function(require,module,exports){
+},{"../Decorators":260,"../misc/Array2DHashMap":357,"../misc/Array2DHashSet":358,"../misc/ArrayEqualityComparator":359,"../misc/BitSet":361,"../misc/ObjectEqualityComparator":370,"../misc/Utils":373,"./ATN":287,"./ATNConfig":288,"./PredictionContext":334,"./PredictionContextCache":335,"./SemanticContext":342,"assert":396}],290:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -17212,7 +17845,7 @@ __decorate([
 ], ATNDeserializationOptions, "defaultOptions", null);
 exports.ATNDeserializationOptions = ATNDeserializationOptions;
 
-},{"../Decorators":228}],259:[function(require,module,exports){
+},{"../Decorators":260}],291:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -18298,7 +18931,7 @@ __decorate([
 ], ATNDeserializer.prototype, "edgeFactory", null);
 exports.ATNDeserializer = ATNDeserializer;
 
-},{"../Decorators":228,"../Token":252,"../dfa/DFA":320,"../misc/Array2DHashSet":326,"../misc/BitSet":329,"../misc/IntervalSet":335,"../misc/UUID":340,"./ATN":255,"./ATNDeserializationOptions":258,"./ATNStateType":262,"./ActionTransition":264,"./AtomTransition":266,"./BasicBlockStartState":267,"./BasicState":268,"./BlockEndState":269,"./BlockStartState":270,"./DecisionState":275,"./EpsilonTransition":276,"./InvalidState":278,"./LexerChannelAction":282,"./LexerCustomAction":283,"./LexerModeAction":285,"./LexerMoreAction":286,"./LexerPopModeAction":287,"./LexerPushModeAction":288,"./LexerSkipAction":289,"./LexerTypeAction":290,"./LoopEndState":292,"./NotSetTransition":293,"./ParserATNSimulator":296,"./PlusBlockStartState":297,"./PlusLoopbackState":298,"./PrecedencePredicateTransition":299,"./PredicateTransition":301,"./RangeTransition":306,"./RuleStartState":307,"./RuleStopState":308,"./RuleTransition":309,"./SetTransition":311,"./StarBlockStartState":313,"./StarLoopEntryState":314,"./StarLoopbackState":315,"./TokensStartState":316,"./WildcardTransition":318}],260:[function(require,module,exports){
+},{"../Decorators":260,"../Token":284,"../dfa/DFA":352,"../misc/Array2DHashSet":358,"../misc/BitSet":361,"../misc/IntervalSet":367,"../misc/UUID":372,"./ATN":287,"./ATNDeserializationOptions":290,"./ATNStateType":294,"./ActionTransition":296,"./AtomTransition":298,"./BasicBlockStartState":299,"./BasicState":300,"./BlockEndState":301,"./BlockStartState":302,"./DecisionState":307,"./EpsilonTransition":308,"./InvalidState":310,"./LexerChannelAction":314,"./LexerCustomAction":315,"./LexerModeAction":317,"./LexerMoreAction":318,"./LexerPopModeAction":319,"./LexerPushModeAction":320,"./LexerSkipAction":321,"./LexerTypeAction":322,"./LoopEndState":324,"./NotSetTransition":325,"./ParserATNSimulator":328,"./PlusBlockStartState":329,"./PlusLoopbackState":330,"./PrecedencePredicateTransition":331,"./PredicateTransition":333,"./RangeTransition":338,"./RuleStartState":339,"./RuleStopState":340,"./RuleTransition":341,"./SetTransition":343,"./StarBlockStartState":345,"./StarLoopEntryState":346,"./StarLoopbackState":347,"./TokensStartState":348,"./WildcardTransition":350}],292:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -18361,7 +18994,7 @@ exports.ATNSimulator = ATNSimulator;
 })(ATNSimulator = exports.ATNSimulator || (exports.ATNSimulator = {}));
 exports.ATNSimulator = ATNSimulator;
 
-},{"../Decorators":228,"../dfa/DFAState":322,"./ATNConfigSet":257,"./PredictionContext":302}],261:[function(require,module,exports){
+},{"../Decorators":260,"../dfa/DFAState":354,"./ATNConfigSet":289,"./PredictionContext":334}],293:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -18547,7 +19180,7 @@ exports.ATNState = ATNState;
     ATNState.INVALID_STATE_NUMBER = -1;
 })(ATNState = exports.ATNState || (exports.ATNState = {}));
 
-},{"../Decorators":228}],262:[function(require,module,exports){
+},{"../Decorators":260}],294:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -18572,7 +19205,7 @@ var ATNStateType;
     ATNStateType[ATNStateType["LOOP_END"] = 12] = "LOOP_END";
 })(ATNStateType = exports.ATNStateType || (exports.ATNStateType = {}));
 
-},{}],263:[function(require,module,exports){
+},{}],295:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -18591,7 +19224,7 @@ class AbstractPredicateTransition extends Transition_1.Transition {
 }
 exports.AbstractPredicateTransition = AbstractPredicateTransition;
 
-},{"./Transition":317}],264:[function(require,module,exports){
+},{"./Transition":349}],296:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -18646,7 +19279,7 @@ ActionTransition = __decorate([
 ], ActionTransition);
 exports.ActionTransition = ActionTransition;
 
-},{"../Decorators":228,"./Transition":317}],265:[function(require,module,exports){
+},{"../Decorators":260,"./Transition":349}],297:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -18732,7 +19365,7 @@ AmbiguityInfo = __decorate([
 ], AmbiguityInfo);
 exports.AmbiguityInfo = AmbiguityInfo;
 
-},{"../Decorators":228,"./DecisionEventInfo":273}],266:[function(require,module,exports){
+},{"../Decorators":260,"./DecisionEventInfo":305}],298:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -18789,7 +19422,7 @@ AtomTransition = __decorate([
 ], AtomTransition);
 exports.AtomTransition = AtomTransition;
 
-},{"../Decorators":228,"../misc/IntervalSet":335,"./Transition":317}],267:[function(require,module,exports){
+},{"../Decorators":260,"../misc/IntervalSet":367,"./Transition":349}],299:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -18820,7 +19453,7 @@ __decorate([
 ], BasicBlockStartState.prototype, "stateType", null);
 exports.BasicBlockStartState = BasicBlockStartState;
 
-},{"../Decorators":228,"./ATNStateType":262,"./BlockStartState":270}],268:[function(require,module,exports){
+},{"../Decorators":260,"./ATNStateType":294,"./BlockStartState":302}],300:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -18851,7 +19484,7 @@ __decorate([
 ], BasicState.prototype, "stateType", null);
 exports.BasicState = BasicState;
 
-},{"../Decorators":228,"./ATNState":261,"./ATNStateType":262}],269:[function(require,module,exports){
+},{"../Decorators":260,"./ATNState":293,"./ATNStateType":294}],301:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -18879,7 +19512,7 @@ __decorate([
 ], BlockEndState.prototype, "stateType", null);
 exports.BlockEndState = BlockEndState;
 
-},{"../Decorators":228,"./ATNState":261,"./ATNStateType":262}],270:[function(require,module,exports){
+},{"../Decorators":260,"./ATNState":293,"./ATNStateType":294}],302:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -18892,7 +19525,7 @@ class BlockStartState extends DecisionState_1.DecisionState {
 }
 exports.BlockStartState = BlockStartState;
 
-},{"./DecisionState":275}],271:[function(require,module,exports){
+},{"./DecisionState":307}],303:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -18961,7 +19594,7 @@ __decorate([
 ], ConflictInfo.prototype, "hashCode", null);
 exports.ConflictInfo = ConflictInfo;
 
-},{"../Decorators":228,"../misc/Utils":341}],272:[function(require,module,exports){
+},{"../Decorators":260,"../misc/Utils":373}],304:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -19020,7 +19653,7 @@ ContextSensitivityInfo = __decorate([
 ], ContextSensitivityInfo);
 exports.ContextSensitivityInfo = ContextSensitivityInfo;
 
-},{"../Decorators":228,"./DecisionEventInfo":273}],273:[function(require,module,exports){
+},{"../Decorators":260,"./DecisionEventInfo":305}],305:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -19071,7 +19704,7 @@ DecisionEventInfo = __decorate([
 ], DecisionEventInfo);
 exports.DecisionEventInfo = DecisionEventInfo;
 
-},{"../Decorators":228}],274:[function(require,module,exports){
+},{"../Decorators":260}],306:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -19283,7 +19916,7 @@ __decorate([
 ], DecisionInfo.prototype, "toString", null);
 exports.DecisionInfo = DecisionInfo;
 
-},{"../Decorators":228}],275:[function(require,module,exports){
+},{"../Decorators":260}],307:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -19302,7 +19935,7 @@ class DecisionState extends ATNState_1.ATNState {
 }
 exports.DecisionState = DecisionState;
 
-},{"./ATNState":261}],276:[function(require,module,exports){
+},{"./ATNState":293}],308:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -19367,7 +20000,7 @@ EpsilonTransition = __decorate([
 ], EpsilonTransition);
 exports.EpsilonTransition = EpsilonTransition;
 
-},{"../Decorators":228,"./Transition":317}],277:[function(require,module,exports){
+},{"../Decorators":260,"./Transition":349}],309:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -19419,7 +20052,7 @@ ErrorInfo = __decorate([
 ], ErrorInfo);
 exports.ErrorInfo = ErrorInfo;
 
-},{"../Decorators":228,"./DecisionEventInfo":273}],278:[function(require,module,exports){
+},{"../Decorators":260,"./DecisionEventInfo":305}],310:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -19449,7 +20082,7 @@ __decorate([
 ], InvalidState.prototype, "stateType", null);
 exports.InvalidState = InvalidState;
 
-},{"../Decorators":228,"./ATNStateType":262,"./BasicState":268}],279:[function(require,module,exports){
+},{"../Decorators":260,"./ATNStateType":294,"./BasicState":300}],311:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -19670,7 +20303,7 @@ LL1Analyzer = __decorate([
 ], LL1Analyzer);
 exports.LL1Analyzer = LL1Analyzer;
 
-},{"../Decorators":228,"../Token":252,"../misc/Array2DHashSet":326,"../misc/BitSet":329,"../misc/IntervalSet":335,"../misc/ObjectEqualityComparator":338,"./ATNConfig":256,"./AbstractPredicateTransition":263,"./NotSetTransition":293,"./PredictionContext":302,"./RuleStopState":308,"./RuleTransition":309,"./WildcardTransition":318}],280:[function(require,module,exports){
+},{"../Decorators":260,"../Token":284,"../misc/Array2DHashSet":358,"../misc/BitSet":361,"../misc/IntervalSet":367,"../misc/ObjectEqualityComparator":370,"./ATNConfig":288,"./AbstractPredicateTransition":295,"./NotSetTransition":325,"./PredictionContext":334,"./RuleStopState":340,"./RuleTransition":341,"./WildcardTransition":350}],312:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -20388,7 +21021,7 @@ exports.LexerATNSimulator = LexerATNSimulator;
 })(LexerATNSimulator = exports.LexerATNSimulator || (exports.LexerATNSimulator = {}));
 exports.LexerATNSimulator = LexerATNSimulator;
 
-},{"../Decorators":228,"../IntStream":234,"../Lexer":236,"../LexerNoViableAltException":238,"../Token":252,"../dfa/AcceptStateInfo":319,"../dfa/DFAState":322,"../misc/Interval":334,"./ATN":255,"./ATNConfig":256,"./ATNConfigSet":257,"./ATNSimulator":260,"./LexerActionExecutor":281,"./OrderedATNConfigSet":294,"./PredictionContext":302,"./RuleStopState":308,"assert":364}],281:[function(require,module,exports){
+},{"../Decorators":260,"../IntStream":266,"../Lexer":268,"../LexerNoViableAltException":270,"../Token":284,"../dfa/AcceptStateInfo":351,"../dfa/DFAState":354,"../misc/Interval":366,"./ATN":287,"./ATNConfig":288,"./ATNConfigSet":289,"./ATNSimulator":292,"./LexerActionExecutor":313,"./OrderedATNConfigSet":326,"./PredictionContext":334,"./RuleStopState":340,"assert":396}],313:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -20588,7 +21221,7 @@ LexerActionExecutor = __decorate([
 ], LexerActionExecutor);
 exports.LexerActionExecutor = LexerActionExecutor;
 
-},{"../Decorators":228,"../misc/ArrayEqualityComparator":327,"../misc/MurmurHash":337,"./LexerIndexedCustomAction":284}],282:[function(require,module,exports){
+},{"../Decorators":260,"../misc/ArrayEqualityComparator":359,"../misc/MurmurHash":369,"./LexerIndexedCustomAction":316}],314:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -20692,7 +21325,7 @@ __decorate([
 ], LexerChannelAction.prototype, "toString", null);
 exports.LexerChannelAction = LexerChannelAction;
 
-},{"../Decorators":228,"../misc/MurmurHash":337}],283:[function(require,module,exports){
+},{"../Decorators":260,"../misc/MurmurHash":369}],315:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -20820,7 +21453,7 @@ __decorate([
 ], LexerCustomAction.prototype, "equals", null);
 exports.LexerCustomAction = LexerCustomAction;
 
-},{"../Decorators":228,"../misc/MurmurHash":337}],284:[function(require,module,exports){
+},{"../Decorators":260,"../misc/MurmurHash":369}],316:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -20954,7 +21587,7 @@ LexerIndexedCustomAction = __decorate([
 ], LexerIndexedCustomAction);
 exports.LexerIndexedCustomAction = LexerIndexedCustomAction;
 
-},{"../Decorators":228,"../misc/MurmurHash":337}],285:[function(require,module,exports){
+},{"../Decorators":260,"../misc/MurmurHash":369}],317:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -21058,7 +21691,7 @@ __decorate([
 ], LexerModeAction.prototype, "toString", null);
 exports.LexerModeAction = LexerModeAction;
 
-},{"../Decorators":228,"../misc/MurmurHash":337}],286:[function(require,module,exports){
+},{"../Decorators":260,"../misc/MurmurHash":369}],318:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -21153,7 +21786,7 @@ exports.LexerMoreAction = LexerMoreAction;
     LexerMoreAction.INSTANCE = new LexerMoreAction();
 })(LexerMoreAction = exports.LexerMoreAction || (exports.LexerMoreAction = {}));
 
-},{"../Decorators":228,"../misc/MurmurHash":337}],287:[function(require,module,exports){
+},{"../Decorators":260,"../misc/MurmurHash":369}],319:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -21248,7 +21881,7 @@ exports.LexerPopModeAction = LexerPopModeAction;
     LexerPopModeAction.INSTANCE = new LexerPopModeAction();
 })(LexerPopModeAction = exports.LexerPopModeAction || (exports.LexerPopModeAction = {}));
 
-},{"../Decorators":228,"../misc/MurmurHash":337}],288:[function(require,module,exports){
+},{"../Decorators":260,"../misc/MurmurHash":369}],320:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -21352,7 +21985,7 @@ __decorate([
 ], LexerPushModeAction.prototype, "toString", null);
 exports.LexerPushModeAction = LexerPushModeAction;
 
-},{"../Decorators":228,"../misc/MurmurHash":337}],289:[function(require,module,exports){
+},{"../Decorators":260,"../misc/MurmurHash":369}],321:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -21447,7 +22080,7 @@ exports.LexerSkipAction = LexerSkipAction;
     LexerSkipAction.INSTANCE = new LexerSkipAction();
 })(LexerSkipAction = exports.LexerSkipAction || (exports.LexerSkipAction = {}));
 
-},{"../Decorators":228,"../misc/MurmurHash":337}],290:[function(require,module,exports){
+},{"../Decorators":260,"../misc/MurmurHash":369}],322:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -21550,7 +22183,7 @@ __decorate([
 ], LexerTypeAction.prototype, "toString", null);
 exports.LexerTypeAction = LexerTypeAction;
 
-},{"../Decorators":228,"../misc/MurmurHash":337}],291:[function(require,module,exports){
+},{"../Decorators":260,"../misc/MurmurHash":369}],323:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -21601,7 +22234,7 @@ LookaheadEventInfo = __decorate([
 ], LookaheadEventInfo);
 exports.LookaheadEventInfo = LookaheadEventInfo;
 
-},{"../Decorators":228,"./DecisionEventInfo":273}],292:[function(require,module,exports){
+},{"../Decorators":260,"./DecisionEventInfo":305}],324:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -21629,7 +22262,7 @@ __decorate([
 ], LoopEndState.prototype, "stateType", null);
 exports.LoopEndState = LoopEndState;
 
-},{"../Decorators":228,"./ATNState":261,"./ATNStateType":262}],293:[function(require,module,exports){
+},{"../Decorators":260,"./ATNState":293,"./ATNStateType":294}],325:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -21677,7 +22310,7 @@ NotSetTransition = __decorate([
 ], NotSetTransition);
 exports.NotSetTransition = NotSetTransition;
 
-},{"../Decorators":228,"./SetTransition":311}],294:[function(require,module,exports){
+},{"../Decorators":260,"./SetTransition":343}],326:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -21731,7 +22364,7 @@ __decorate([
 ], OrderedATNConfigSet.prototype, "canMerge", null);
 exports.OrderedATNConfigSet = OrderedATNConfigSet;
 
-},{"../Decorators":228,"./ATNConfigSet":257}],295:[function(require,module,exports){
+},{"../Decorators":260,"./ATNConfigSet":289}],327:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -21892,7 +22525,7 @@ ParseInfo = __decorate([
 ], ParseInfo);
 exports.ParseInfo = ParseInfo;
 
-},{"../Decorators":228}],296:[function(require,module,exports){
+},{"../Decorators":260}],328:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -24164,7 +24797,7 @@ ParserATNSimulator = __decorate([
 ], ParserATNSimulator);
 exports.ParserATNSimulator = ParserATNSimulator;
 
-},{"../Decorators":228,"../IntStream":234,"../NoViableAltException":240,"../ParserRuleContext":243,"../Token":252,"../VocabularyImpl":254,"../dfa/AcceptStateInfo":319,"../dfa/DFAState":322,"../misc/Array2DHashSet":326,"../misc/Arrays":328,"../misc/BitSet":329,"../misc/IntegerList":332,"../misc/Interval":334,"../misc/ObjectEqualityComparator":338,"./ATN":255,"./ATNConfig":256,"./ATNConfigSet":257,"./ATNSimulator":260,"./ATNStateType":262,"./ActionTransition":264,"./AtomTransition":266,"./ConflictInfo":271,"./DecisionState":275,"./NotSetTransition":293,"./PredictionContext":302,"./PredictionContextCache":303,"./PredictionMode":304,"./RuleStopState":308,"./RuleTransition":309,"./SemanticContext":310,"./SetTransition":311,"./SimulatorState":312,"assert":364}],297:[function(require,module,exports){
+},{"../Decorators":260,"../IntStream":266,"../NoViableAltException":272,"../ParserRuleContext":275,"../Token":284,"../VocabularyImpl":286,"../dfa/AcceptStateInfo":351,"../dfa/DFAState":354,"../misc/Array2DHashSet":358,"../misc/Arrays":360,"../misc/BitSet":361,"../misc/IntegerList":364,"../misc/Interval":366,"../misc/ObjectEqualityComparator":370,"./ATN":287,"./ATNConfig":288,"./ATNConfigSet":289,"./ATNSimulator":292,"./ATNStateType":294,"./ActionTransition":296,"./AtomTransition":298,"./ConflictInfo":303,"./DecisionState":307,"./NotSetTransition":325,"./PredictionContext":334,"./PredictionContextCache":335,"./PredictionMode":336,"./RuleStopState":340,"./RuleTransition":341,"./SemanticContext":342,"./SetTransition":343,"./SimulatorState":344,"assert":396}],329:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -24196,7 +24829,7 @@ __decorate([
 ], PlusBlockStartState.prototype, "stateType", null);
 exports.PlusBlockStartState = PlusBlockStartState;
 
-},{"../Decorators":228,"./ATNStateType":262,"./BlockStartState":270}],298:[function(require,module,exports){
+},{"../Decorators":260,"./ATNStateType":294,"./BlockStartState":302}],330:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -24226,7 +24859,7 @@ __decorate([
 ], PlusLoopbackState.prototype, "stateType", null);
 exports.PlusLoopbackState = PlusLoopbackState;
 
-},{"../Decorators":228,"./ATNStateType":262,"./DecisionState":275}],299:[function(require,module,exports){
+},{"../Decorators":260,"./ATNStateType":294,"./DecisionState":307}],331:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -24288,7 +24921,7 @@ PrecedencePredicateTransition = __decorate([
 ], PrecedencePredicateTransition);
 exports.PrecedencePredicateTransition = PrecedencePredicateTransition;
 
-},{"../Decorators":228,"./AbstractPredicateTransition":263,"./SemanticContext":310}],300:[function(require,module,exports){
+},{"../Decorators":260,"./AbstractPredicateTransition":295,"./SemanticContext":342}],332:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -24350,7 +24983,7 @@ PredicateEvalInfo = __decorate([
 ], PredicateEvalInfo);
 exports.PredicateEvalInfo = PredicateEvalInfo;
 
-},{"../Decorators":228,"./DecisionEventInfo":273}],301:[function(require,module,exports){
+},{"../Decorators":260,"./DecisionEventInfo":305}],333:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -24415,7 +25048,7 @@ PredicateTransition = __decorate([
 ], PredicateTransition);
 exports.PredicateTransition = PredicateTransition;
 
-},{"../Decorators":228,"./AbstractPredicateTransition":263,"./SemanticContext":310}],302:[function(require,module,exports){
+},{"../Decorators":260,"./AbstractPredicateTransition":295,"./SemanticContext":342}],334:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -25105,7 +25738,7 @@ exports.SingletonPredictionContext = SingletonPredictionContext;
     PredictionContext.IdentityEqualityComparator = IdentityEqualityComparator;
 })(PredictionContext = exports.PredictionContext || (exports.PredictionContext = {}));
 
-},{"../Decorators":228,"../misc/Array2DHashMap":325,"../misc/Array2DHashSet":326,"../misc/Arrays":328,"../misc/MurmurHash":337,"./PredictionContextCache":303,"assert":364}],303:[function(require,module,exports){
+},{"../Decorators":260,"../misc/Array2DHashMap":357,"../misc/Array2DHashSet":358,"../misc/Arrays":360,"../misc/MurmurHash":369,"./PredictionContextCache":335,"assert":396}],335:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -25245,7 +25878,7 @@ exports.PredictionContextCache = PredictionContextCache;
     PredictionContextCache.IdentityCommutativePredictionContextOperands = IdentityCommutativePredictionContextOperands;
 })(PredictionContextCache = exports.PredictionContextCache || (exports.PredictionContextCache = {}));
 
-},{"../Decorators":228,"../misc/Array2DHashMap":325,"../misc/ObjectEqualityComparator":338,"./PredictionContext":302,"assert":364}],304:[function(require,module,exports){
+},{"../Decorators":260,"../misc/Array2DHashMap":357,"../misc/ObjectEqualityComparator":370,"./PredictionContext":334,"assert":396}],336:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -25405,7 +26038,7 @@ var PredictionMode;
     PredictionMode.allConfigsInRuleStopStates = allConfigsInRuleStopStates;
 })(PredictionMode = exports.PredictionMode || (exports.PredictionMode = {}));
 
-},{"../Decorators":228,"../misc/Array2DHashMap":325,"../misc/MurmurHash":337,"./RuleStopState":308}],305:[function(require,module,exports){
+},{"../Decorators":260,"../misc/Array2DHashMap":357,"../misc/MurmurHash":369,"./RuleStopState":340}],337:[function(require,module,exports){
 (function (process){
 "use strict";
 /*!
@@ -25673,7 +26306,7 @@ __decorate([
 exports.ProfilingATNSimulator = ProfilingATNSimulator;
 
 }).call(this,require('_process'))
-},{"../Decorators":228,"./ATN":255,"./ATNSimulator":260,"./AmbiguityInfo":265,"./ContextSensitivityInfo":272,"./DecisionInfo":274,"./ErrorInfo":277,"./LookaheadEventInfo":291,"./ParserATNSimulator":296,"./PredicateEvalInfo":300,"./SemanticContext":310,"./SimulatorState":312,"_process":371}],306:[function(require,module,exports){
+},{"../Decorators":260,"./ATN":287,"./ATNSimulator":292,"./AmbiguityInfo":297,"./ContextSensitivityInfo":304,"./DecisionInfo":306,"./ErrorInfo":309,"./LookaheadEventInfo":323,"./ParserATNSimulator":328,"./PredicateEvalInfo":332,"./SemanticContext":342,"./SimulatorState":344,"_process":403}],338:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -25730,7 +26363,7 @@ RangeTransition = __decorate([
 ], RangeTransition);
 exports.RangeTransition = RangeTransition;
 
-},{"../Decorators":228,"../misc/IntervalSet":335,"./Transition":317}],307:[function(require,module,exports){
+},{"../Decorators":260,"../misc/IntervalSet":367,"./Transition":349}],339:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -25762,7 +26395,7 @@ __decorate([
 ], RuleStartState.prototype, "stateType", null);
 exports.RuleStartState = RuleStartState;
 
-},{"../Decorators":228,"./ATNState":261,"./ATNStateType":262}],308:[function(require,module,exports){
+},{"../Decorators":260,"./ATNState":293,"./ATNStateType":294}],340:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -25800,7 +26433,7 @@ __decorate([
 ], RuleStopState.prototype, "stateType", null);
 exports.RuleStopState = RuleStopState;
 
-},{"../Decorators":228,"./ATNState":261,"./ATNStateType":262}],309:[function(require,module,exports){
+},{"../Decorators":260,"./ATNState":293,"./ATNStateType":294}],341:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -25855,7 +26488,7 @@ RuleTransition = __decorate([
 ], RuleTransition);
 exports.RuleTransition = RuleTransition;
 
-},{"../Decorators":228,"./Transition":317}],310:[function(require,module,exports){
+},{"../Decorators":260,"./Transition":349}],342:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -26335,7 +26968,7 @@ exports.SemanticContext = SemanticContext;
     SemanticContext.OR = OR;
 })(SemanticContext = exports.SemanticContext || (exports.SemanticContext = {}));
 
-},{"../Decorators":228,"../misc/Array2DHashSet":326,"../misc/ArrayEqualityComparator":327,"../misc/MurmurHash":337,"../misc/ObjectEqualityComparator":338,"../misc/Utils":341}],311:[function(require,module,exports){
+},{"../Decorators":260,"../misc/Array2DHashSet":358,"../misc/ArrayEqualityComparator":359,"../misc/MurmurHash":369,"../misc/ObjectEqualityComparator":370,"../misc/Utils":373}],343:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -26400,7 +27033,7 @@ SetTransition = __decorate([
 ], SetTransition);
 exports.SetTransition = SetTransition;
 
-},{"../Decorators":228,"../Token":252,"../misc/IntervalSet":335,"./Transition":317}],312:[function(require,module,exports){
+},{"../Decorators":260,"../Token":284,"../misc/IntervalSet":367,"./Transition":349}],344:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -26435,7 +27068,7 @@ SimulatorState = __decorate([
 ], SimulatorState);
 exports.SimulatorState = SimulatorState;
 
-},{"../Decorators":228,"../ParserRuleContext":243}],313:[function(require,module,exports){
+},{"../Decorators":260,"../ParserRuleContext":275}],345:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -26462,7 +27095,7 @@ __decorate([
 ], StarBlockStartState.prototype, "stateType", null);
 exports.StarBlockStartState = StarBlockStartState;
 
-},{"../Decorators":228,"./ATNStateType":262,"./BlockStartState":270}],314:[function(require,module,exports){
+},{"../Decorators":260,"./ATNStateType":294,"./BlockStartState":302}],346:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -26518,7 +27151,7 @@ __decorate([
 ], StarLoopEntryState.prototype, "stateType", null);
 exports.StarLoopEntryState = StarLoopEntryState;
 
-},{"../Decorators":228,"../misc/BitSet":329,"./ATNStateType":262,"./DecisionState":275}],315:[function(require,module,exports){
+},{"../Decorators":260,"../misc/BitSet":361,"./ATNStateType":294,"./DecisionState":307}],347:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -26548,7 +27181,7 @@ __decorate([
 ], StarLoopbackState.prototype, "stateType", null);
 exports.StarLoopbackState = StarLoopbackState;
 
-},{"../Decorators":228,"./ATNState":261,"./ATNStateType":262}],316:[function(require,module,exports){
+},{"../Decorators":260,"./ATNState":293,"./ATNStateType":294}],348:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -26576,7 +27209,7 @@ __decorate([
 ], TokensStartState.prototype, "stateType", null);
 exports.TokensStartState = TokensStartState;
 
-},{"../Decorators":228,"./ATNStateType":262,"./DecisionState":275}],317:[function(require,module,exports){
+},{"../Decorators":260,"./ATNStateType":294,"./DecisionState":307}],349:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -26649,7 +27282,7 @@ Transition = __decorate([
 ], Transition);
 exports.Transition = Transition;
 
-},{"../Decorators":228}],318:[function(require,module,exports){
+},{"../Decorators":260}],350:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -26696,7 +27329,7 @@ WildcardTransition = __decorate([
 ], WildcardTransition);
 exports.WildcardTransition = WildcardTransition;
 
-},{"../Decorators":228,"./Transition":317}],319:[function(require,module,exports){
+},{"../Decorators":260,"./Transition":349}],351:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -26737,7 +27370,7 @@ class AcceptStateInfo {
 }
 exports.AcceptStateInfo = AcceptStateInfo;
 
-},{}],320:[function(require,module,exports){
+},{}],352:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -26911,7 +27544,7 @@ DFA = __decorate([
 ], DFA);
 exports.DFA = DFA;
 
-},{"../Decorators":228,"../VocabularyImpl":254,"../atn/ATNConfigSet":257,"../atn/StarLoopEntryState":314,"../misc/Array2DHashSet":326,"../misc/ObjectEqualityComparator":338,"./DFASerializer":321,"./DFAState":322,"./LexerDFASerializer":323}],321:[function(require,module,exports){
+},{"../Decorators":260,"../VocabularyImpl":286,"../atn/ATNConfigSet":289,"../atn/StarLoopEntryState":346,"../misc/Array2DHashSet":358,"../misc/ObjectEqualityComparator":370,"./DFASerializer":353,"./DFAState":354,"./LexerDFASerializer":355}],353:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -27052,7 +27685,7 @@ __decorate([
 ], DFASerializer.prototype, "toString", null);
 exports.DFASerializer = DFASerializer;
 
-},{"../Decorators":228,"../Recognizer":247,"../VocabularyImpl":254,"../atn/ATNSimulator":260,"../atn/PredictionContext":302}],322:[function(require,module,exports){
+},{"../Decorators":260,"../Recognizer":279,"../VocabularyImpl":286,"../atn/ATNSimulator":292,"../atn/PredictionContext":334}],354:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -27282,7 +27915,7 @@ exports.DFAState = DFAState;
     DFAState.PredPrediction = PredPrediction;
 })(DFAState = exports.DFAState || (exports.DFAState = {}));
 
-},{"../Decorators":228,"../atn/ATN":255,"../atn/PredictionContext":302,"../misc/BitSet":329,"../misc/MurmurHash":337,"assert":364}],323:[function(require,module,exports){
+},{"../Decorators":260,"../atn/ATN":287,"../atn/PredictionContext":334,"../misc/BitSet":361,"../misc/MurmurHash":369,"assert":396}],355:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -27318,7 +27951,7 @@ LexerDFASerializer = __decorate([
 ], LexerDFASerializer);
 exports.LexerDFASerializer = LexerDFASerializer;
 
-},{"../Decorators":228,"../VocabularyImpl":254,"./DFASerializer":321}],324:[function(require,module,exports){
+},{"../Decorators":260,"../VocabularyImpl":286,"./DFASerializer":353}],356:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -27366,7 +27999,7 @@ __export(require("./Token"));
 __export(require("./TokenStreamRewriter"));
 __export(require("./VocabularyImpl"));
 
-},{"./ANTLRInputStream":218,"./BailErrorStrategy":219,"./BufferedTokenStream":220,"./CharStreams":221,"./CodePointBuffer":222,"./CodePointCharStream":223,"./CommonToken":224,"./CommonTokenFactory":225,"./CommonTokenStream":226,"./ConsoleErrorListener":227,"./DefaultErrorStrategy":229,"./Dependents":230,"./DiagnosticErrorListener":231,"./FailedPredicateException":232,"./InputMismatchException":233,"./IntStream":234,"./InterpreterRuleContext":235,"./Lexer":236,"./LexerInterpreter":237,"./LexerNoViableAltException":238,"./ListTokenSource":239,"./NoViableAltException":240,"./Parser":241,"./ParserInterpreter":242,"./ParserRuleContext":243,"./ProxyErrorListener":244,"./ProxyParserErrorListener":245,"./RecognitionException":246,"./Recognizer":247,"./RuleContext":248,"./RuleContextWithAltNum":249,"./RuleDependency":250,"./RuleVersion":251,"./Token":252,"./TokenStreamRewriter":253,"./VocabularyImpl":254}],325:[function(require,module,exports){
+},{"./ANTLRInputStream":250,"./BailErrorStrategy":251,"./BufferedTokenStream":252,"./CharStreams":253,"./CodePointBuffer":254,"./CodePointCharStream":255,"./CommonToken":256,"./CommonTokenFactory":257,"./CommonTokenStream":258,"./ConsoleErrorListener":259,"./DefaultErrorStrategy":261,"./Dependents":262,"./DiagnosticErrorListener":263,"./FailedPredicateException":264,"./InputMismatchException":265,"./IntStream":266,"./InterpreterRuleContext":267,"./Lexer":268,"./LexerInterpreter":269,"./LexerNoViableAltException":270,"./ListTokenSource":271,"./NoViableAltException":272,"./Parser":273,"./ParserInterpreter":274,"./ParserRuleContext":275,"./ProxyErrorListener":276,"./ProxyParserErrorListener":277,"./RecognitionException":278,"./Recognizer":279,"./RuleContext":280,"./RuleContextWithAltNum":281,"./RuleDependency":282,"./RuleVersion":283,"./Token":284,"./TokenStreamRewriter":285,"./VocabularyImpl":286}],357:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -27448,7 +28081,7 @@ class Array2DHashMap {
 }
 exports.Array2DHashMap = Array2DHashMap;
 
-},{"./Array2DHashSet":326}],326:[function(require,module,exports){
+},{"./Array2DHashSet":358}],358:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -27814,7 +28447,7 @@ __decorate([
 ], Array2DHashSet.prototype, "createBuckets", null);
 exports.Array2DHashSet = Array2DHashSet;
 
-},{"../Decorators":228,"./DefaultEqualityComparator":331,"./MurmurHash":337,"assert":364}],327:[function(require,module,exports){
+},{"../Decorators":260,"./DefaultEqualityComparator":363,"./MurmurHash":369,"assert":396}],359:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -27885,7 +28518,7 @@ __decorate([
 ], ArrayEqualityComparator.prototype, "equals", null);
 exports.ArrayEqualityComparator = ArrayEqualityComparator;
 
-},{"../Decorators":228,"./MurmurHash":337,"./ObjectEqualityComparator":338}],328:[function(require,module,exports){
+},{"../Decorators":260,"./MurmurHash":369,"./ObjectEqualityComparator":370}],360:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -27954,7 +28587,7 @@ var Arrays;
     Arrays.toString = toString;
 })(Arrays = exports.Arrays || (exports.Arrays = {}));
 
-},{}],329:[function(require,module,exports){
+},{}],361:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -28625,7 +29258,7 @@ class BitSetIterator {
     [Symbol.iterator]() { return this; }
 }
 
-},{"./MurmurHash":337,"util":374}],330:[function(require,module,exports){
+},{"./MurmurHash":369,"util":406}],362:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -28645,7 +29278,7 @@ function isSupplementaryCodePoint(ch) {
 }
 exports.isSupplementaryCodePoint = isSupplementaryCodePoint;
 
-},{}],331:[function(require,module,exports){
+},{}],363:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -28715,7 +29348,7 @@ __decorate([
 ], DefaultEqualityComparator.prototype, "equals", null);
 exports.DefaultEqualityComparator = DefaultEqualityComparator;
 
-},{"../Decorators":228,"./MurmurHash":337,"./ObjectEqualityComparator":338}],332:[function(require,module,exports){
+},{"../Decorators":260,"./MurmurHash":369,"./ObjectEqualityComparator":370}],364:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -29008,7 +29641,7 @@ __decorate([
 ], IntegerList.prototype, "toString", null);
 exports.IntegerList = IntegerList;
 
-},{"../Decorators":228,"./Arrays":328}],333:[function(require,module,exports){
+},{"../Decorators":260,"./Arrays":360}],365:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -29037,7 +29670,7 @@ class IntegerStack extends IntegerList_1.IntegerList {
 }
 exports.IntegerStack = IntegerStack;
 
-},{"./IntegerList":332}],334:[function(require,module,exports){
+},{"./IntegerList":364}],366:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -29179,7 +29812,7 @@ __decorate([
 ], Interval.prototype, "toString", null);
 exports.Interval = Interval;
 
-},{"../Decorators":228}],335:[function(require,module,exports){
+},{"../Decorators":260}],367:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -29824,7 +30457,7 @@ __decorate([
 ], IntervalSet, "subtract", null);
 exports.IntervalSet = IntervalSet;
 
-},{"../Decorators":228,"../Lexer":236,"../Token":252,"./ArrayEqualityComparator":327,"./IntegerList":332,"./Interval":334,"./MurmurHash":337}],336:[function(require,module,exports){
+},{"../Decorators":260,"../Lexer":268,"../Token":284,"./ArrayEqualityComparator":359,"./IntegerList":364,"./Interval":366,"./MurmurHash":369}],368:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -29856,7 +30489,7 @@ class MultiMap extends Map {
 }
 exports.MultiMap = MultiMap;
 
-},{}],337:[function(require,module,exports){
+},{}],369:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -29970,7 +30603,7 @@ var MurmurHash;
     }
 })(MurmurHash = exports.MurmurHash || (exports.MurmurHash = {}));
 
-},{}],338:[function(require,module,exports){
+},{}],370:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -30028,7 +30661,7 @@ __decorate([
 ], ObjectEqualityComparator.prototype, "equals", null);
 exports.ObjectEqualityComparator = ObjectEqualityComparator;
 
-},{"../Decorators":228}],339:[function(require,module,exports){
+},{"../Decorators":260}],371:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -30056,7 +30689,7 @@ class ParseCancellationException extends Error {
 }
 exports.ParseCancellationException = ParseCancellationException;
 
-},{}],340:[function(require,module,exports){
+},{}],372:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -30109,7 +30742,7 @@ class UUID {
 }
 exports.UUID = UUID;
 
-},{"./MurmurHash":337}],341:[function(require,module,exports){
+},{"./MurmurHash":369}],373:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -30283,7 +30916,7 @@ exports.toCharArray = toCharArray;
 // 	return s;
 // }
 
-},{}],342:[function(require,module,exports){
+},{}],374:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -30318,7 +30951,7 @@ __decorate([
 ], ErrorNode.prototype, "accept", null);
 exports.ErrorNode = ErrorNode;
 
-},{"../Decorators":228,"./TerminalNode":344}],343:[function(require,module,exports){
+},{"../Decorators":260,"./TerminalNode":376}],375:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -30329,7 +30962,7 @@ class RuleNode {
 }
 exports.RuleNode = RuleNode;
 
-},{}],344:[function(require,module,exports){
+},{}],376:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -30420,7 +31053,7 @@ __decorate([
 ], TerminalNode.prototype, "toString", null);
 exports.TerminalNode = TerminalNode;
 
-},{"../Decorators":228,"../Token":252,"../misc/Interval":334}],345:[function(require,module,exports){
+},{"../Decorators":260,"../Token":284,"../misc/Interval":366}],377:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -30663,7 +31296,7 @@ __decorate([
 ], Trees, "getRootOfSubtreeEnclosingRegion", null);
 exports.Trees = Trees;
 
-},{"../CommonToken":224,"../Decorators":228,"../Parser":241,"../ParserRuleContext":243,"../Token":252,"../atn/ATN":255,"../misc/Utils":341,"./ErrorNode":342,"./RuleNode":343,"./TerminalNode":344}],346:[function(require,module,exports){
+},{"../CommonToken":256,"../Decorators":260,"../Parser":273,"../ParserRuleContext":275,"../Token":284,"../atn/ATN":287,"../misc/Utils":373,"./ErrorNode":374,"./RuleNode":375,"./TerminalNode":376}],378:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -30686,7 +31319,7 @@ class Chunk {
 }
 exports.Chunk = Chunk;
 
-},{}],347:[function(require,module,exports){
+},{}],379:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -30865,7 +31498,7 @@ ParseTreeMatch = __decorate([
 ], ParseTreeMatch);
 exports.ParseTreeMatch = ParseTreeMatch;
 
-},{"../../Decorators":228}],348:[function(require,module,exports){
+},{"../../Decorators":260}],380:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -31022,7 +31655,7 @@ ParseTreePattern = __decorate([
 ], ParseTreePattern);
 exports.ParseTreePattern = ParseTreePattern;
 
-},{"../../Decorators":228,"../xpath/XPath":354}],349:[function(require,module,exports){
+},{"../../Decorators":260,"../xpath/XPath":386}],381:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -31499,7 +32132,7 @@ exports.ParseTreePatternMatcher = ParseTreePatternMatcher;
     ParseTreePatternMatcher.StartRuleDoesNotConsumeFullPattern = StartRuleDoesNotConsumeFullPattern;
 })(ParseTreePatternMatcher = exports.ParseTreePatternMatcher || (exports.ParseTreePatternMatcher = {}));
 
-},{"../../BailErrorStrategy":219,"../../CharStreams":221,"../../CommonTokenStream":226,"../../Decorators":228,"../../ListTokenSource":239,"../../ParserInterpreter":242,"../../ParserRuleContext":243,"../../RecognitionException":246,"../../Token":252,"../../misc/MultiMap":336,"../../misc/ParseCancellationException":339,"../RuleNode":343,"../TerminalNode":344,"./ParseTreeMatch":347,"./ParseTreePattern":348,"./RuleTagToken":350,"./TagChunk":351,"./TextChunk":352,"./TokenTagToken":353}],350:[function(require,module,exports){
+},{"../../BailErrorStrategy":251,"../../CharStreams":253,"../../CommonTokenStream":258,"../../Decorators":260,"../../ListTokenSource":271,"../../ParserInterpreter":274,"../../ParserRuleContext":275,"../../RecognitionException":278,"../../Token":284,"../../misc/MultiMap":368,"../../misc/ParseCancellationException":371,"../RuleNode":375,"../TerminalNode":376,"./ParseTreeMatch":379,"./ParseTreePattern":380,"./RuleTagToken":382,"./TagChunk":383,"./TextChunk":384,"./TokenTagToken":385}],382:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -31696,7 +32329,7 @@ RuleTagToken = __decorate([
 ], RuleTagToken);
 exports.RuleTagToken = RuleTagToken;
 
-},{"../../Decorators":228,"../../Token":252}],351:[function(require,module,exports){
+},{"../../Decorators":260,"../../Token":284}],383:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -31782,7 +32415,7 @@ __decorate([
 ], TagChunk.prototype, "toString", null);
 exports.TagChunk = TagChunk;
 
-},{"../../Decorators":228,"./Chunk":346}],352:[function(require,module,exports){
+},{"../../Decorators":260,"./Chunk":378}],384:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -31851,7 +32484,7 @@ TextChunk = __decorate([
 ], TextChunk);
 exports.TextChunk = TextChunk;
 
-},{"../../Decorators":228,"./Chunk":346}],353:[function(require,module,exports){
+},{"../../Decorators":260,"./Chunk":378}],385:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -31945,7 +32578,7 @@ TokenTagToken = __decorate([
 ], TokenTagToken);
 exports.TokenTagToken = TokenTagToken;
 
-},{"../../CommonToken":224,"../../Decorators":228}],354:[function(require,module,exports){
+},{"../../CommonToken":256,"../../Decorators":260}],386:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -32141,7 +32774,7 @@ XPath.WILDCARD = "*"; // word not operator/separator
 XPath.NOT = "!"; // word for invert operator
 exports.XPath = XPath;
 
-},{"../../CharStreams":221,"../../CommonTokenStream":226,"../../LexerNoViableAltException":238,"../../ParserRuleContext":243,"../../Token":252,"./XPathLexer":356,"./XPathLexerErrorListener":357,"./XPathRuleAnywhereElement":358,"./XPathRuleElement":359,"./XPathTokenAnywhereElement":360,"./XPathTokenElement":361,"./XPathWildcardAnywhereElement":362,"./XPathWildcardElement":363}],355:[function(require,module,exports){
+},{"../../CharStreams":253,"../../CommonTokenStream":258,"../../LexerNoViableAltException":270,"../../ParserRuleContext":275,"../../Token":284,"./XPathLexer":388,"./XPathLexerErrorListener":389,"./XPathRuleAnywhereElement":390,"./XPathRuleElement":391,"./XPathTokenAnywhereElement":392,"./XPathTokenElement":393,"./XPathWildcardAnywhereElement":394,"./XPathWildcardElement":395}],387:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -32175,7 +32808,7 @@ __decorate([
 ], XPathElement.prototype, "toString", null);
 exports.XPathElement = XPathElement;
 
-},{"../../Decorators":228}],356:[function(require,module,exports){
+},{"../../Decorators":260}],388:[function(require,module,exports){
 "use strict";
 // Generated from XPathLexer.g4 by ANTLR 4.7.3-SNAPSHOT
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -32649,7 +33282,7 @@ XPathLexer._serializedATN = Utils.join([
 ], "");
 exports.XPathLexer = XPathLexer;
 
-},{"../../Lexer":236,"../../VocabularyImpl":254,"../../atn/ATNDeserializer":259,"../../atn/LexerATNSimulator":280,"../../misc/Utils":341}],357:[function(require,module,exports){
+},{"../../Lexer":268,"../../VocabularyImpl":286,"../../atn/ATNDeserializer":291,"../../atn/LexerATNSimulator":312,"../../misc/Utils":373}],389:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -32673,7 +33306,7 @@ __decorate([
 ], XPathLexerErrorListener.prototype, "syntaxError", null);
 exports.XPathLexerErrorListener = XPathLexerErrorListener;
 
-},{"../../Decorators":228}],358:[function(require,module,exports){
+},{"../../Decorators":260}],390:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -32706,7 +33339,7 @@ __decorate([
 ], XPathRuleAnywhereElement.prototype, "evaluate", null);
 exports.XPathRuleAnywhereElement = XPathRuleAnywhereElement;
 
-},{"../../Decorators":228,"../Trees":345,"./XPathElement":355}],359:[function(require,module,exports){
+},{"../../Decorators":260,"../Trees":377,"./XPathElement":387}],391:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -32748,7 +33381,7 @@ __decorate([
 ], XPathRuleElement.prototype, "evaluate", null);
 exports.XPathRuleElement = XPathRuleElement;
 
-},{"../../Decorators":228,"../../ParserRuleContext":243,"../Trees":345,"./XPathElement":355}],360:[function(require,module,exports){
+},{"../../Decorators":260,"../../ParserRuleContext":275,"../Trees":377,"./XPathElement":387}],392:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -32779,7 +33412,7 @@ __decorate([
 ], XPathTokenAnywhereElement.prototype, "evaluate", null);
 exports.XPathTokenAnywhereElement = XPathTokenAnywhereElement;
 
-},{"../../Decorators":228,"../Trees":345,"./XPathElement":355}],361:[function(require,module,exports){
+},{"../../Decorators":260,"../Trees":377,"./XPathElement":387}],393:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -32821,7 +33454,7 @@ __decorate([
 ], XPathTokenElement.prototype, "evaluate", null);
 exports.XPathTokenElement = XPathTokenElement;
 
-},{"../../Decorators":228,"../TerminalNode":344,"../Trees":345,"./XPathElement":355}],362:[function(require,module,exports){
+},{"../../Decorators":260,"../TerminalNode":376,"../Trees":377,"./XPathElement":387}],394:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -32856,7 +33489,7 @@ __decorate([
 ], XPathWildcardAnywhereElement.prototype, "evaluate", null);
 exports.XPathWildcardAnywhereElement = XPathWildcardAnywhereElement;
 
-},{"../../Decorators":228,"../Trees":345,"./XPath":354,"./XPathElement":355}],363:[function(require,module,exports){
+},{"../../Decorators":260,"../Trees":377,"./XPath":386,"./XPathElement":387}],395:[function(require,module,exports){
 "use strict";
 /*!
  * Copyright 2016 The ANTLR Project. All rights reserved.
@@ -32895,7 +33528,7 @@ __decorate([
 ], XPathWildcardElement.prototype, "evaluate", null);
 exports.XPathWildcardElement = XPathWildcardElement;
 
-},{"../../Decorators":228,"../Trees":345,"./XPath":354,"./XPathElement":355}],364:[function(require,module,exports){
+},{"../../Decorators":260,"../Trees":377,"./XPath":386,"./XPathElement":387}],396:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -33405,7 +34038,7 @@ var objectKeys = Object.keys || function (obj) {
 };
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"object-assign":369,"util/":367}],365:[function(require,module,exports){
+},{"object-assign":401,"util/":399}],397:[function(require,module,exports){
 if (typeof Object.create === 'function') {
   // implementation from standard node.js 'util' module
   module.exports = function inherits(ctor, superCtor) {
@@ -33430,14 +34063,14 @@ if (typeof Object.create === 'function') {
   }
 }
 
-},{}],366:[function(require,module,exports){
+},{}],398:[function(require,module,exports){
 module.exports = function isBuffer(arg) {
   return arg && typeof arg === 'object'
     && typeof arg.copy === 'function'
     && typeof arg.fill === 'function'
     && typeof arg.readUInt8 === 'function';
 }
-},{}],367:[function(require,module,exports){
+},{}],399:[function(require,module,exports){
 (function (process,global){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -34027,9 +34660,9 @@ function hasOwnProperty(obj, prop) {
 }
 
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./support/isBuffer":366,"_process":371,"inherits":365}],368:[function(require,module,exports){
+},{"./support/isBuffer":398,"_process":403,"inherits":397}],400:[function(require,module,exports){
 
-},{}],369:[function(require,module,exports){
+},{}],401:[function(require,module,exports){
 /*
 object-assign
 (c) Sindre Sorhus
@@ -34121,7 +34754,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 	return to;
 };
 
-},{}],370:[function(require,module,exports){
+},{}],402:[function(require,module,exports){
 (function (process){
 // .dirname, .basename, and .extname methods are extracted from Node.js v8.11.1,
 // backported and transplited with Babel, with backwards-compat fixes
@@ -34427,7 +35060,7 @@ var substr = 'ab'.substr(-1) === 'b'
 ;
 
 }).call(this,require('_process'))
-},{"_process":371}],371:[function(require,module,exports){
+},{"_process":403}],403:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -34613,13 +35246,13 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],372:[function(require,module,exports){
-arguments[4][365][0].apply(exports,arguments)
-},{"dup":365}],373:[function(require,module,exports){
-arguments[4][366][0].apply(exports,arguments)
-},{"dup":366}],374:[function(require,module,exports){
-arguments[4][367][0].apply(exports,arguments)
-},{"./support/isBuffer":373,"_process":371,"dup":367,"inherits":372}],375:[function(require,module,exports){
+},{}],404:[function(require,module,exports){
+arguments[4][397][0].apply(exports,arguments)
+},{"dup":397}],405:[function(require,module,exports){
+arguments[4][398][0].apply(exports,arguments)
+},{"dup":398}],406:[function(require,module,exports){
+arguments[4][399][0].apply(exports,arguments)
+},{"./support/isBuffer":405,"_process":403,"dup":399,"inherits":404}],407:[function(require,module,exports){
 module.exports = `si = require('systeminformation')
 
 render_plugin()

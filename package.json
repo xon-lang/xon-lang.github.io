@@ -1,25 +1,26 @@
 {
-  "name": "xon-lang.github.io",
-  "version": "1.0.0",
-  "description": "XON Web App",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/xon-lang/xon-lang.github.io.git"
-  },
-  "author": "Nizami",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/xon-lang/xon-lang.github.io/issues"
-  },
-  "homepage": "https://github.com/xon-lang/xon-lang.github.io#readme",
-  "devDependencies": {
-    "browserify": "^16.5.2"
-  },
-  "dependencies": {
-    "@xon/translator-ts": "^1.1.0"
-  }
+    "name": "xon-lang.github.io",
+    "version": "1.0.0",
+    "description": "XON Web App",
+    "main": "index.js",
+    "scripts": {
+        "build": "browserify index.js > bundle.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xon-lang/xon-lang.github.io.git"
+    },
+    "author": "Nizami",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/xon-lang/xon-lang.github.io/issues"
+    },
+    "homepage": "https://github.com/xon-lang/xon-lang.github.io#readme",
+    "devDependencies": {
+        "browserify": "^16.5.2"
+    },
+    "dependencies": {
+        "@xon/translator-ts": "^1.1.0"
+    }
 }
