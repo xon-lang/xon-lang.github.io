@@ -10,16 +10,19 @@
 
 <body>
     <h1>XON Playground (alpha)</h1>
-<div class="translator">
-    <div>
-        <h2>XON</h2>
-        <textarea id="input" cols="30" rows="10"></textarea>
+    <p>@xon/ast: v1.2.2</p>
+    <p>@xon/translator-ts: v1.1.0</p>
+    <p>@xon/translator-py: v1.0.0</p>
+    <div class="translator">
+        <div>
+            <h2>XON</h2>
+            <textarea id="input" cols="30" rows="10"></textarea>
+        </div>
+        <div>
+            <h2>TypeScript</h2>
+            <div id="output" class="translating"></div>
+        </div>
     </div>
-    <div>
-        <h2>TypeScript</h2>
-        <div id="output" class="translating"></div>
-    </div>
-</div>
     <div id="error">23</div>
     <script src="bundle.js"></script>
 </body>
