@@ -6,7 +6,7 @@
 .container {
   display: flex;
   justify-content: space-between;
-  height: 500px;
+  height: calc(100vh - 200px);
   & > div {
     width: calc(100% - 10px);
     height: 100%;
@@ -24,9 +24,12 @@ ngx-monaco-editor {
 }
 
 .error {
+  position: sticky;
+  bottom: 0;
   white-space: pre-line;
   font-size: 16px;
-  background: #ffd9d9;
+  background: #ffe4e4;
+  color: red;
   border-left: solid 5px red;
   margin-top: 10px;
   padding: 10px;

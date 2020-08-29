@@ -26,10 +26,23 @@
         <mat-option value="python" selected>Python</mat-option>
       </mat-select>
     </mat-form-field>
+
+    <!-- <label>Languages</label>
+    <br>
+    <mat-radio-group
+      (selectionChange)="changeTargetLanguage($event)"
+      value="typescript"
+    >
+      <mat-radio-button value="typescript">Typescript</mat-radio-button>
+      <mat-radio-button value="python">Python</mat-radio-button>
+    </mat-radio-group> -->
+
     <ngx-monaco-editor
+      *ngIf="targetEditorEnabled"
       [options]="targetEditorOptions"
       [(ngModel)]="outputCode"
       [disabled]="true"
+      #rr
     ></ngx-monaco-editor>
   </div>
 </div>

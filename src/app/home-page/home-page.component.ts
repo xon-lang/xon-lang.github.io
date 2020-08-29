@@ -2,6 +2,7 @@ import { Component, NgZone, OnInit } from '@angular/core';
 import { translateProgram as translatePython } from '@xon/translator-py';
 import { translateProgram as translateTypescript } from '@xon/translator-ts';
 import { Sample1 } from './samples/1';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
@@ -9,6 +10,8 @@ import { Sample1 } from './samples/1';
   styleUrls: ['./home-page.component.scss'],
 })
 export class HomePageComponent implements OnInit {
+  targetEditorEnabled = true;
+
   xonEditorOptions = {
     theme: 'vs-dark',
     language: 'javascript',
@@ -17,7 +20,7 @@ export class HomePageComponent implements OnInit {
   };
   targetEditorOptions = {
     theme: 'vs-dark',
-    language: 'javascript',
+    language: 'typescript',
     fontSize: '16px',
     renderValidationDecorations: 'off',
   };
@@ -38,14 +41,13 @@ export class HomePageComponent implements OnInit {
 
   error = '';
 
-  constructor(private ngZone: NgZone) {}
+  constructor(private activatedRoute: ActivatedRoute) {
+    // activatedRoute.params.subscribe(x=>{
 
-  ngOnInit(): void {
-    console.error = (x) => {
-      console.log(x);
-      setTimeout(() => (this.error += (this.error ? '\n' : '') + x.toString()));
-    };
+    // })
   }
+
+  ngOnInit(): void {}
 
   changeSampleCode(e: any) {
     this.inputCode = this.codeSamples[e.value];
@@ -54,13 +56,24 @@ export class HomePageComponent implements OnInit {
 
   changeTargetLanguage(e) {
     this.currentTranslator = this.translators[e.value];
+    this.targetEditorEnabled = false;
+    this.targetEditorOptions.language = e.value;
+    setTimeout(() => (this.targetEditorEnabled = true));
     this.translate();
   }
 
   translate(code?) {
     try {
+      const prevConsoleError = console.error;
+      console.error = (x) => {
+        console.log(x);
+        setTimeout(
+          () => (this.error += (this.error ? '\n' : '') + x.toString())
+        );
+      };
       this.error = '';
       this.outputCode = this.currentTranslator(code || this.inputCode);
+      console.error = prevConsoleError;
     } catch (error) {
       this.error = error.toString();
     }
