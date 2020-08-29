@@ -1,8 +1,8 @@
-import { Component, NgZone, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { translateProgram as translatePython } from '@xon/translator-py';
 import { translateProgram as translateTypescript } from '@xon/translator-ts';
 import { Sample1 } from './samples/1';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
@@ -25,7 +25,9 @@ export class HomePageComponent implements OnInit {
     renderValidationDecorations: 'off',
   };
 
-  codeSamples = {
+  customCode = '';
+  codeExamples = {
+    custom: this.customCode,
     hello: `console.log('Hello world!')`,
     sample1: Sample1,
   };
@@ -36,37 +38,51 @@ export class HomePageComponent implements OnInit {
     python: translatePython,
   };
 
-  inputCode: string = this.codeSamples.hello;
+  inputCode: string = this.codeExamples.hello;
   outputCode: string = this.currentTranslator(this.inputCode);
+  exampleValue = 'hello';
+  targetValue = 'typescript';
 
   error = '';
 
-  constructor(private activatedRoute: ActivatedRoute) {
-    // activatedRoute.params.subscribe(x=>{
-
-    // })
+  constructor(private activatedRoute: ActivatedRoute, public router: Router) {
+    activatedRoute.queryParams.subscribe((x) => {
+      if (x.code) {
+        this.inputCode = this.customCode = x.code;
+        this.exampleValue = 'custom';
+        this.translate();
+      }
+      if (x.target) {
+        this.changeTargetLanguage({ value: x.target });
+      }
+    });
   }
 
   ngOnInit(): void {}
 
   changeSampleCode(e: any) {
-    this.inputCode = this.codeSamples[e.value];
+    this.inputCode = this.codeExamples[e.value];
     this.translate();
   }
 
   changeTargetLanguage(e) {
+    this.targetValue = e.value;
     this.currentTranslator = this.translators[e.value];
     this.targetEditorEnabled = false;
     this.targetEditorOptions.language = e.value;
     setTimeout(() => (this.targetEditorEnabled = true));
     this.translate();
+    this.router.navigate([], {
+      queryParams: { target: e.value },
+      relativeTo: this.activatedRoute,
+      queryParamsHandling: 'merge',
+    });
   }
 
   translate(code?) {
     try {
       const prevConsoleError = console.error;
       console.error = (x) => {
-        console.log(x);
         setTimeout(
           () => (this.error += (this.error ? '\n' : '') + x.toString())
         );
@@ -78,4 +94,20 @@ export class HomePageComponent implements OnInit {
       this.error = error.toString();
     }
   }
+
+  updateEditor = debounce((code) => {
+    this.router.navigate([], {
+      queryParams: { code: code || undefined },
+      relativeTo: this.activatedRoute,
+      queryParamsHandling: 'merge',
+    });
+  });
+}
+
+function debounce(func) {
+  let timeout;
+  return (x) => {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func(x), 500);
+  };
 }

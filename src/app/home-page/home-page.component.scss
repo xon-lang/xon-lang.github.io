@@ -3,10 +3,19 @@
   padding: 10px;
 }
 
+h1 {
+  font-weight: lighter;
+  text-align: center;
+  sup {
+    color: #827bc7;
+  }
+}
+
 .container {
   display: flex;
   justify-content: space-between;
   height: calc(100vh - 200px);
+  margin-top: 50px;
   & > div {
     width: calc(100% - 10px);
     height: 100%;

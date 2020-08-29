@@ -7,10 +7,6 @@ const routes: Routes = [
     path: '',
     component: HomePageComponent,
   },
-  {
-    path: ':code',
-    component: HomePageComponent,
-  },
 ];
 
 @NgModule({
