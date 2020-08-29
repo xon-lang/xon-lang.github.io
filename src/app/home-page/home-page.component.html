@@ -1,7 +1,7 @@
 <h1>The XON Programming Language <sup>alpha</sup></h1>
 
 <div class="container">
-  <div>
+  <div id="input">
     <mat-form-field appearance="outline">
       <mat-label>Examples</mat-label>
       <mat-select
@@ -14,12 +14,13 @@
       </mat-select>
     </mat-form-field>
     <ngx-monaco-editor
+      *ngIf="inputEditorEnabled"
       [options]="xonEditorOptions"
       [(ngModel)]="inputCode"
       (ngModelChange)="updateEditor($event)"
     ></ngx-monaco-editor>
   </div>
-  <div>
+  <div id="output">
     <mat-form-field appearance="outline">
       <mat-label>Languages</mat-label>
       <mat-select
@@ -42,7 +43,7 @@
     </mat-radio-group> -->
 
     <ngx-monaco-editor
-      *ngIf="targetEditorEnabled"
+      *ngIf="outputEditorEnabled"
       [options]="targetEditorOptions"
       [(ngModel)]="outputCode"
       [disabled]="true"

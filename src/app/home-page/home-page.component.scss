@@ -22,7 +22,7 @@ h1 {
     overflow: hidden;
   }
   & > :first-child {
-    padding-right: 5px;
+    // padding-right: 5px;
   }
 }
 
@@ -45,4 +45,8 @@ ngx-monaco-editor {
 
   max-height: 100px;
   overflow: auto;
+}
+
+::ng-deep .gutter.gutter-horizontal {
+  cursor: col-resize;
 }

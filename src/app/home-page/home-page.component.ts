@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { translateProgram as translatePython } from '@xon/translator-py';
 import { translateProgram as translateTypescript } from '@xon/translator-ts';
+import * as Split from 'split.js';
 import { Sample1 } from './samples/1';
 
 @Component({
@@ -10,7 +11,8 @@ import { Sample1 } from './samples/1';
   styleUrls: ['./home-page.component.scss'],
 })
 export class HomePageComponent implements OnInit {
-  targetEditorEnabled = true;
+  inputEditorEnabled = true;
+  outputEditorEnabled = true;
 
   xonEditorOptions = {
     theme: 'vs-dark',
@@ -58,7 +60,26 @@ export class HomePageComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const sizesString = localStorage.getItem('split-sizes');
+    let sizes = [50, 50];
+    if (sizes) {
+      sizes = JSON.parse(sizesString);
+    }
+    (Split as any).default(['#input', '#output'], {
+      gutterSize: 5,
+      sizes,
+      onDragEnd: (sizes) => {
+        localStorage.setItem('split-sizes', JSON.stringify(sizes));
+        this.inputEditorEnabled = false;
+        this.outputEditorEnabled = false;
+        setTimeout(() => {
+          this.inputEditorEnabled = true;
+          this.outputEditorEnabled = true;
+        });
+      },
+    });
+  }
 
   changeSampleCode(e: any) {
     this.inputCode = this.codeExamples[e.value];
@@ -68,9 +89,9 @@ export class HomePageComponent implements OnInit {
   changeTargetLanguage(e) {
     this.targetValue = e.value;
     this.currentTranslator = this.translators[e.value];
-    this.targetEditorEnabled = false;
+    this.outputEditorEnabled = false;
     this.targetEditorOptions.language = e.value;
-    setTimeout(() => (this.targetEditorEnabled = true));
+    setTimeout(() => (this.outputEditorEnabled = true));
     this.translate();
     this.router.navigate([], {
       queryParams: { target: e.value },
