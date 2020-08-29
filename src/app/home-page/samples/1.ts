@@ -1,4 +1,4 @@
-module.exports = `si = require('systeminformation')
+export const Sample1 = `si = require('systeminformation')
 
 render_plugin()
 
@@ -33,4 +33,4 @@ SimpleClass:
 
     _coord(x Number, y Number):
         console.log(1 + 1)
-        console.log(222)`
+        console.log(222)`;
