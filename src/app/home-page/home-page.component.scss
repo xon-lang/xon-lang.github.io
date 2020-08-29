@@ -6,10 +6,14 @@
 .container {
   display: flex;
   justify-content: space-between;
+  height: 500px;
   & > div {
     width: calc(100% - 10px);
-    height: 500px;
-    padding: 5px;
+    height: 100%;
+    overflow: hidden;
+  }
+  & > :first-child {
+    padding-right: 5px;
   }
 }
 
@@ -17,4 +21,13 @@ ngx-monaco-editor {
   height: 100%;
   padding-top: 10px;
   background: black;
+}
+
+.error {
+  white-space: pre-line;
+  font-size: 16px;
+  background: #ffd9d9;
+  border-left: solid 5px red;
+  margin-top: 10px;
+  padding: 10px;
 }
