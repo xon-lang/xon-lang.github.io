@@ -14,13 +14,13 @@ export class HomePageComponent implements OnInit {
   inputEditorEnabled = true;
   outputEditorEnabled = true;
 
-  xonEditorOptions = {
+  inputEditorOptions = {
     theme: 'vs-dark',
     language: 'javascript',
     fontSize: '16px',
     renderValidationDecorations: 'off',
   };
-  targetEditorOptions = {
+  outputEditorOptions = {
     theme: 'vs-dark',
     language: 'typescript',
     fontSize: '16px',
@@ -90,7 +90,7 @@ export class HomePageComponent implements OnInit {
     this.targetValue = e.value;
     this.currentTranslator = this.translators[e.value];
     this.outputEditorEnabled = false;
-    this.targetEditorOptions.language = e.value;
+    this.outputEditorOptions.language = e.value;
     setTimeout(() => (this.outputEditorEnabled = true));
     this.translate();
     this.router.navigate([], {

@@ -15,7 +15,7 @@
     </mat-form-field>
     <ngx-monaco-editor
       *ngIf="inputEditorEnabled"
-      [options]="xonEditorOptions"
+      [options]="inputEditorOptions"
       [(ngModel)]="inputCode"
       (ngModelChange)="updateEditor($event)"
     ></ngx-monaco-editor>
@@ -44,7 +44,7 @@
 
     <ngx-monaco-editor
       *ngIf="outputEditorEnabled"
-      [options]="targetEditorOptions"
+      [options]="outputEditorOptions"
       [(ngModel)]="outputCode"
       [disabled]="true"
       #rr
