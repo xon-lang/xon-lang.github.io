@@ -18,12 +18,18 @@ export class HomePageComponent implements OnInit {
     theme: 'vs-dark',
     language: 'javascript',
     fontSize: '16px',
+    minimap: {
+      enabled: false,
+    },
     renderValidationDecorations: 'off',
   };
   outputEditorOptions = {
     theme: 'vs-dark',
     language: 'typescript',
     fontSize: '16px',
+    minimap: {
+      enabled: false,
+    },
     renderValidationDecorations: 'off',
   };
 
@@ -54,7 +60,7 @@ export class HomePageComponent implements OnInit {
         this.exampleValue = 'custom';
         this.translate();
       }
-      if (x.target) {
+      if (x.target && x.target != this.targetValue) {
         this.changeTargetLanguage({ value: x.target });
       }
     });
